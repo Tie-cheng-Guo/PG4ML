@@ -1,0 +1,38 @@
+-- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_aggr_x_is_exists_null(anyarray);
+create or replace function sm_sc.fv_aggr_x_is_exists_null
+(
+  i_array          anyarray
+)
+returns boolean[]
+as
+$$
+-- declare 
+begin
+  -- 审计二维长度
+  if array_ndims(i_array) = 2
+  then
+    return 
+    (
+      select 
+        array_agg(array[sm_sc.fv_aggr_slice_is_exists_null(i_array[col_a_y : col_a_y][ : ])] order by col_a_y)
+      from generate_series(1, array_length(i_array, 1)) tb_a_y(col_a_y)
+    );
+  else
+    return null; raise notice 'no method for such length!  Ndim: %; len_1: %; len_2: %;', array_ndims(i_array), array_length(i_array, 1), array_length(i_array, 2);
+  end if;
+end
+$$
+language plpgsql stable
+parallel safe
+cost 100;
+-- -- set search_path to sm_sc;
+-- select sm_sc.fv_aggr_x_is_exists_null
+--   (
+--     array[array[1,2,null,4,5,6]
+--         , array[null,20,30,40,null,60]
+--         , array[100,null,300,400,500,null]
+--         , array[-1,null,-3,null,-5,-6]
+--         , array[-10,null,-30,null,null,-60]
+--          ]
+--   );
