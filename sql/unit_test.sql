@@ -1,0 +1,13765 @@
+set search_path to sm_sc, public;
+
+-- fv_opr_abs
+select fv_opr_abs(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_opr_abs(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_abs(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_abs(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_opr_add
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_add(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_add(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_add(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_add(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_add(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_and boolean[]
+select fv_opr_and(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(round(random())::int::boolean,((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(round(random())::int::boolean,((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(round(random())::int::boolean,((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(round(random())::int::boolean,((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_and(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_and(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+
+-- fv_opr_and varbit[]
+select fv_opr_and(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_and(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+
+-- fv_opr_ceil
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4      ])::decimal[]) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[]) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[]) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[]) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4      ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_ceil(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[],floor(random()*5)::int) is not null;
+
+-- fv_opr_compare
+select fv_opr_compare(<>`(fv_new_rand(array[4      ])::decimal[]-`0.5),<>`(fv_new_rand(array[4      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1      ])::decimal[]-`0.5),<>`(fv_new_rand(array[4      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1      ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,1    ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3    ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1    ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1      ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,1,1  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,1  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,1,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3,1  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1,1  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1      ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,1,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1,1,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3,1,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,1,5,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,1,1,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,1,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1,5,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,1,1,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3,5,1])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,3,1,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[1,1,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4      ])::decimal[]-`0.5),<>`(fv_new_rand(array[1      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5),<>`(fv_new_rand(array[1      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5),<>`(fv_new_rand(array[1,1    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[1      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[1,1,1  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,1  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[1,1,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3,1  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1,1  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,1,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,5,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1,1,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3,1,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,1,5,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,1,1,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,3,1,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1,5,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[4,1,1,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3,5,1])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,3,1,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),<>`(fv_new_rand(array[1,1,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(sign(random()-0.5)::smallint,<>`(fv_new_rand(array[4      ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(sign(random()-0.5)::smallint,<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(sign(random()-0.5)::smallint,<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(sign(random()-0.5)::smallint,<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4      ])::decimal[]-`0.5),sign(random()-0.5)::smallint) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3    ])::decimal[]-`0.5),sign(random()-0.5)::smallint) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5  ])::decimal[]-`0.5),sign(random()-0.5)::smallint) is not null;
+select fv_opr_compare(<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5),sign(random()-0.5)::smallint) is not null;
+
+-- fv_opr_concat varbit[]
+select fv_opr_concat(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_concat(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+
+-- fv_opr_conjugate
+select fv_opr_conjugate(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- fv_opr_conjugate_45
+select fv_opr_conjugate_45(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate_45(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate_45(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate_45(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- fv_opr_conjugate_i
+-- -- select fv_opr_conjugate_i(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex));
+select fv_opr_conjugate_i(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate_i(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_conjugate_i(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- fv_opr_div
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_div(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_div(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_div(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_div(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4      ]),array_fill(0.0::float, array[4      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),array_fill(0.0::float, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),array_fill(0.0::float, array[4      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),array_fill(0.0::float, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1    ]),array_fill(0.0::float, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3    ]),array_fill(0.0::float, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1    ]),array_fill(0.0::float, array[4,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,1  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,5  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,5  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,1  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,5  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,1  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,1  ]),array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1      ]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,5,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,5,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,1,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,1,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,1,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,5,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,1,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,1,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,5,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,1,1,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,5,1]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,3,1,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[1,1,5,2]),array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4      ]),array_fill(0.0::float, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),array_fill(0.0::float, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),array_fill(0.0::float, array[1,1    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),array_fill(0.0::float, array[1,3    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),array_fill(0.0::float, array[4,1    ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[1,1,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[1,3,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[4,1,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[4,3,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[1,1,5  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[1,3,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array_fill(0.0::float, array[4,1,1  ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1      ])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,1,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,3,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,3,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,1,1,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,3,1,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,1,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,1,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,3,1,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,1,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[4,1,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,3,5,1])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,3,1,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array_fill(0.0::float, array[1,1,5,2])) is not null;
+select fv_opr_div(random()-0.5,array_fill(0.0::float, array[4      ])) is not null;
+select fv_opr_div(random()-0.5,array_fill(0.0::float, array[4,3    ])) is not null;
+select fv_opr_div(random()-0.5,array_fill(0.0::float, array[4,3,5  ])) is not null;
+select fv_opr_div(random()-0.5,array_fill(0.0::float, array[4,3,5,2])) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4      ]),0.0::float) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3    ]),0.0::float) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5  ]),0.0::float) is not null;
+select fv_opr_div(fv_new_randn(0.0, 1.1, array[4,3,5,2]),0.0::float) is not null;
+
+-- fv_opr_exp
+select fv_opr_exp(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_opr_exp(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_exp(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_exp(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_opr_floor
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4      ])::decimal[]) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[]) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[]) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[]) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4      ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_floor(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[],floor(random()*5)::int) is not null;
+
+-- fv_opr_greatest
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_greatest(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_greatest(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_greatest(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_greatest(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_greatest(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_imaginary
+select fv_opr_imaginary(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_imaginary(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_imaginary(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_imaginary(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- fv_opr_is_equal
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4      ]),<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,1    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,1,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,1,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,1,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,1,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,1,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,3,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[1,1,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4      ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_is_equal(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_equal(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_equal(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_equal(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4      ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_equal(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),sign(random()-0.5)::smallint) is not null;
+
+-- fv_opr_is_greater
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_is_greater(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_greater(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_is_greater(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_is_greater_ex
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4      ]),<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,1    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4      ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_is_greater_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_greater_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_greater_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_greater_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4      ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_greater_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),sign(random()-0.5)::smallint) is not null;
+
+-- fv_opr_is_less
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_is_less(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_less(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_is_less(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_is_less_ex
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4      ]),<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,1    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1    ]),<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,1  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1      ]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,1,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,1,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,5,1]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,3,1,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[1,1,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4      ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),<>`fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),<>`fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),<>`fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_is_less_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_is_less_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_is_less_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_is_less_ex(sign(random()-0.5)::smallint,<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4      ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3    ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]),sign(random()-0.5)::smallint) is not null;
+select fv_opr_is_less_ex(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]),sign(random()-0.5)::smallint) is not null;
+
+-- fv_opr_is_regexp_match
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,1    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,1,1  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,1  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,1,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3,1  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1,1  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,1,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1,1,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3,1,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,1,5,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,1,1,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,1,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1,5,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,1,1,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3,5,1]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,3,1,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[1,1,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,1    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1    ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,1,1  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,1  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,1,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3,1  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1,1  ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1      ]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,1,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,5,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1,1,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3,1,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,1,5,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,1,1,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,3,1,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1,5,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[4,1,1,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3,5,1]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,3,1,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],(<>`fv_new_randn(0.0, 1.1, array[1,1,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match(sign(random()-0.5)::text,(<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[]) is not null;
+select fv_opr_is_regexp_match(sign(random()-0.5)::text,(<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[]) is not null;
+select fv_opr_is_regexp_match(sign(random()-0.5)::text,(<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[]) is not null;
+select fv_opr_is_regexp_match(sign(random()-0.5)::text,(<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[]) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[],sign(random()-0.5)::text) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[],sign(random()-0.5)::text) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[],sign(random()-0.5)::text) is not null;
+select fv_opr_is_regexp_match((<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[],sign(random()-0.5)::text) is not null;
+
+-- fv_opr_least
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_least(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_least(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_least(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_least(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_least(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_ln
+select fv_opr_ln(fv_new_rand(2.0,array[4      ])) is not null;
+select fv_opr_ln(fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_ln(fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_ln(fv_new_rand(2.0,array[4,3,5,2])) is not null;
+
+-- fv_opr_log
+select fv_opr_log(fv_new_rand(2.0,array[4      ]),fv_new_rand(2.0,array[4      ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4      ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,1    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,1,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,1,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,1,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,1,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,1,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,3,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[1,1,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4      ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1,1    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1,3    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[4,1    ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,1,1  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,3,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,1,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,3,1  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,1,5  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,3,1  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,1,1  ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,1,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,5,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,1,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,1,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,5,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,1,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,1,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,5,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,1,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,5,1])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,1,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,5,2])) is not null;
+select fv_opr_log(random()*2.0,fv_new_rand(2.0,array[4      ])) is not null;
+select fv_opr_log(random()*2.0,fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_opr_log(random()*2.0,fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_opr_log(random()*2.0,fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4      ]),random()*2.0) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3    ]),random()*2.0) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5  ]),random()*2.0) is not null;
+select fv_opr_log(fv_new_rand(2.0,array[4,3,5,2]),random()*2.0) is not null;
+
+-- fv_opr_mod
+select fv_opr_mod(((fv_new_rand(8.0,array[4      ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1      ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1      ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,1    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1      ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,1,1  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,1  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,1,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3,1  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1,1  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1      ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,1,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1,1,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3,1,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,1,5,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,1,1,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,1,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1,5,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,1,1,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3,5,1])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,3,1,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[1,1,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4      ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,1    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3    ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,1,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,1,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,1,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,1,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,3,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[4,1,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,3,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],((fv_new_rand(3.0,array[1,1,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(round(random()*8.0-4.0)::int,((fv_new_rand(3.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(round(random()*8.0-4.0)::int,((fv_new_rand(3.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(round(random()*8.0-4.0)::int,((fv_new_rand(3.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(round(random()*8.0-4.0)::int,((fv_new_rand(3.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4      ])::decimal[]-`4.0)~=`0)::int[],ceil(random()*3.0)::int) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3    ])::decimal[]-`4.0)~=`0)::int[],ceil(random()*3.0)::int) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5  ])::decimal[]-`4.0)~=`0)::int[],ceil(random()*3.0)::int) is not null;
+select fv_opr_mod(((fv_new_rand(8.0,array[4,3,5,2])::decimal[]-`4.0)~=`0)::int[],ceil(random()*3.0)::int) is not null;
+
+-- fv_opr_mul
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_mul(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_mul(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mul(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mul(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_not   boolean[]
+select fv_opr_not(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_not(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_not(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_not(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+
+-- fv_opr_not   varbit[]
+select fv_opr_not(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_not(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_not(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_not(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+
+-- fv_opr_or   boolean[]
+select fv_opr_or(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(round(random())::int::boolean,((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(round(random())::int::boolean,((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(round(random())::int::boolean,((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(round(random())::int::boolean,((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_or(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_or(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+
+-- fv_opr_or varbit[]
+select fv_opr_or(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_or(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+
+-- fv_opr_pow
+select fv_opr_pow(fv_new_rand(2.0,array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_pow(random()*2.0::float,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_pow(random()*2.0::float,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_pow(random()*2.0::float,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_pow(random()*2.0::float,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4      ]),(random()-0.5)*4.0) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3    ]),(random()-0.5)*4.0) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5  ]),(random()-0.5)*4.0) is not null;
+select fv_opr_pow(fv_new_rand(2.0,array[4,3,5,2]),(random()-0.5)*4.0) is not null;
+
+-- fv_opr_real
+select fv_opr_real(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_real(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_real(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5  ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+select fv_opr_real(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- fv_opr_round
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4      ])::decimal[]) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[]) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[]) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[]) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4      ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_round(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[],floor(random()*5)::int) is not null;
+
+-- fv_opr_shift_left
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+select fv_opr_shift_left(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+
+-- fv_opr_shift_right
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4      ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4,3    ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[]) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+select fv_opr_shift_right(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],ceil((random()*4.0))::int) is not null;
+
+-- fv_opr_sign
+select fv_opr_sign(((fv_new_rand(array[4      ])::decimal[]-`0.5)*`2.0)~=`0) is not null;
+select fv_opr_sign(((fv_new_rand(array[4,3    ])::decimal[]-`0.5)*`2.0)~=`0) is not null;
+select fv_opr_sign(((fv_new_rand(array[4,3,5  ])::decimal[]-`0.5)*`2.0)~=`0) is not null;
+select fv_opr_sign(((fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)*`2.0)~=`0) is not null;
+
+-- fv_opr_sub
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_sub(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_sub(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_sub(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_sub(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_sub(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_trunc
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4      ])::decimal[]) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[]) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[]) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[]) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4      ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4,3    ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4,3,5  ])::decimal[],floor(random()*5)::int) is not null;
+select fv_opr_trunc(fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[],floor(random()*5)::int) is not null;
+
+-- fv_opr_xnor boolean[]
+select fv_opr_xnor(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(round(random())::int::boolean,((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(round(random())::int::boolean,((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(round(random())::int::boolean,((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(round(random())::int::boolean,((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_xnor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+
+-- fv_opr_xnor varbit[]
+select fv_opr_xnor(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_xnor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+
+-- fv_opr_xor boolean[]
+select fv_opr_xor(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(round(random())::int::boolean,((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(round(random())::int::boolean,((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(round(random())::int::boolean,((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(round(random())::int::boolean,((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[]) is not null;
+select fv_opr_xor(((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+select fv_opr_xor(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[],round(random())::int::boolean) is not null;
+
+-- fv_opr_xor varbit[]
+select fv_opr_xor(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(floor((random()*16))::int::bit(4)::varbit,((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+select fv_opr_xor(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],floor((random()*16))::int::bit(4)::varbit) is not null;
+
+-- fv_d_abs
+select fv_d_abs(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_d_abs(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_abs(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_abs(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_add
+select fv_d_add(array[4      ],array[4      ]) is not null;
+select fv_d_add(array[4,3    ],array[4,3    ]) is not null;
+select fv_d_add(array[4,3,5  ],array[4,3,5  ]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,3,5,2]) is not null;
+select fv_d_add(array[4      ],array[1      ]) is not null;
+select fv_d_add(array[4,3    ],array[1      ]) is not null;
+select fv_d_add(array[4,3    ],array[1,1    ]) is not null;
+select fv_d_add(array[4,3    ],array[1,3    ]) is not null;
+select fv_d_add(array[4,3    ],array[4,1    ]) is not null;
+select fv_d_add(array[4,3,5  ],array[1      ]) is not null;
+select fv_d_add(array[4,3,5  ],array[1,1,1  ]) is not null;
+select fv_d_add(array[4,3,5  ],array[1,3,5  ]) is not null;
+select fv_d_add(array[4,3,5  ],array[4,1,5  ]) is not null;
+select fv_d_add(array[4,3,5  ],array[4,3,1  ]) is not null;
+select fv_d_add(array[4,3,5  ],array[1,1,5  ]) is not null;
+select fv_d_add(array[4,3,5  ],array[1,3,1  ]) is not null;
+select fv_d_add(array[4,3,5  ],array[4,1,1  ]) is not null;
+select fv_d_add(array[4,3,5,2],array[1      ]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,3,5,2]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,1,5,2]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,3,1,2]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,3,5,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,1,1,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,3,1,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,1,5,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,1,1,2]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,3,1,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,1,5,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[4,1,1,2]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,3,5,1]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,3,1,2]) is not null;
+select fv_d_add(array[4,3,5,2],array[1,1,5,2]) is not null;
+
+-- fv_d_div_1
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4      ]),array[4      ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3    ]),array[4,3    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4      ]),array[1      ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3    ]),array[1      ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3    ]),array[1,1    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3    ]),array[1,3    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3    ]),array[4,1    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1      ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,1,1  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,1,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,3,1  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,1,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,3,1  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,1,1  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1      ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,1,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,5,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,1,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,1,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,1,5,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,1,1,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,1,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,5,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,1,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,5,1]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,1,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,1,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1      ]),array[4      ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1      ]),array[4,3    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,1    ]),array[4,3    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3    ]),array[4,3    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1    ]),array[4,3    ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1      ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,1,1  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3,5  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1,5  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,1  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,1,5  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3,1  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1,1  ]),array[4,3,5  ]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1      ]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3,5,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1,5,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,1,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1,1,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3,1,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,1,5,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,1,1,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,1,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1,5,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,1,1,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3,5,1]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,3,1,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[1,1,5,2]),array[4,3,5,2]) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_1(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- fv_d_div_2
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- fv_d_div_2_un_de_broadcast
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_d_div_2_un_de_broadcast(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+
+-- fv_d_exp
+select fv_d_exp(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_d_exp(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_exp(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_exp(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_d_exp(null::float[],fv_opr_exp(fv_new_randn(0.0, 1.1,array[4      ]))) is not null;
+select fv_d_exp(null::float[],fv_opr_exp(fv_new_randn(0.0, 1.1,array[4,3    ]))) is not null;
+select fv_d_exp(null::float[],fv_opr_exp(fv_new_randn(0.0, 1.1,array[4,3,5  ]))) is not null;
+select fv_d_exp(null::float[],fv_opr_exp(fv_new_randn(0.0, 1.1,array[4,3,5,2]))) is not null;
+
+-- fv_d_ln
+select fv_d_ln(fv_new_rand(2.0,array[4      ])) is not null;
+select fv_d_ln(fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_ln(fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_ln(fv_new_rand(2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_log_1
+with 
+cte_indepdt as 
+(
+            select fv_new_rand(2.0,array[4      ]) as a_indepdt_01,fv_new_rand(2.0,array[4      ]) as a_indepdt_02
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4      ])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[1,1    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[1,3    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[4,1    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,1,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,3,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,1,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,1,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,3,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,1,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,1,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,1,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,1,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,1,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,1,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,1,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4      ])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[1,1    ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[1,3    ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[4,1    ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,1,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,1,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,3,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,1,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,3,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,1,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,1,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,1,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,1,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,1,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,1,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,1,5,2])                
+)
+select 
+  fv_d_log_1(a_indepdt_01, a_indepdt_02) is not null
+, fv_d_log_1(a_indepdt_01, a_indepdt_02, fv_opr_log(a_indepdt_01, a_indepdt_02)) is not null
+from cte_indepdt;
+
+-- fv_d_log_1_un_de_broadcast
+with 
+cte_indepdt as 
+(
+            select fv_new_rand(2.0,array[4      ]) as a_indepdt_01,fv_new_rand(2.0,array[4      ]) as a_indepdt_02
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4      ])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[1,1    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[1,3    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[4,1    ])                ,fv_new_rand(2.0,array[4,3    ])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,1,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,3,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,1,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,1,5  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1,3,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,1,1  ])                ,fv_new_rand(2.0,array[4,3,5  ])                
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,1,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,1,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,1,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,1,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,1,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,1,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,5,1])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,3,1,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[1,1,5,2])                ,fv_new_rand(2.0,array[4,3,5,2])                
+  union all select fv_new_rand(2.0,array[4      ])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[1,1    ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[1,3    ])                
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_rand(2.0,array[4,1    ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,1,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,3,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,1,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,3,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,1,5  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[1,3,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_rand(2.0,array[4,1,1  ])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1      ])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,5,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,1,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,1,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,1,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,1,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,3,1,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[4,1,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,5,1])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,3,1,2])                
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_rand(2.0,array[1,1,5,2])                
+)
+select 
+  fv_d_log_1_un_de_broadcast(a_indepdt_01, a_indepdt_02) is not null
+, fv_d_log_1_un_de_broadcast(a_indepdt_01, a_indepdt_02, fv_opr_log(a_indepdt_01, a_indepdt_02)) is not null
+from cte_indepdt;
+
+-- fv_d_log_2
+select fv_d_log_2(fv_new_rand(2.0,array[4      ]),fv_new_rand(2.0,array[4      ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4      ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,1    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,1,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,1,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,1,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,1,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,1,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,3,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[1,1,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4      ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1,1    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1,3    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[4,1    ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,1,1  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,3,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,1,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,3,1  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,1,5  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,3,1  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,1,1  ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,5,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,1,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,5,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,1,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,1,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,5,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,1,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,1,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,5,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,1,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,5,1])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,1,2])) is not null;
+select fv_d_log_2(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,5,2])) is not null;
+
+-- fv_d_log_2_un_de_broadcast
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4      ]),fv_new_rand(2.0,array[4      ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4      ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,1    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1    ]),fv_new_rand(2.0,array[4,3    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,1,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,1,5  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1,1  ]),fv_new_rand(2.0,array[4,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1      ]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,1,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,1,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,1,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,1,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3,5,1]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,3,1,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[1,1,5,2]),fv_new_rand(2.0,array[4,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4      ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1,1    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[1,3    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3    ]),fv_new_rand(2.0,array[4,1    ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,1,1  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,3,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,1,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,3,1  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,1,5  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[1,3,1  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5  ]),fv_new_rand(2.0,array[4,1,1  ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1      ])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,5,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,1,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,5,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,1,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,1,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,5,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,1,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,3,1,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,5,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[4,1,1,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,5,1])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,3,1,2])) is not null;
+select fv_d_log_2_un_de_broadcast(fv_new_rand(2.0,array[4,3,5,2]),fv_new_rand(2.0,array[1,1,5,2])) is not null;
+
+-- fv_d_mul
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4      ]),array[4      ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),array[4,3    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1      ]),array[4      ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1      ]),array[4,3    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,1    ]),array[4,3    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3    ]),array[4,3    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1    ]),array[4,3    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1      ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,1,1  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3,5  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1,5  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,1  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,1,5  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3,1  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1,1  ]),array[4,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1      ]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3,5,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1,5,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,1,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1,1,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3,1,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,1,5,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,1,1,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,1,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1,5,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,1,1,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3,5,1]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,3,1,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[1,1,5,2]),array[4,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4      ]),array[1      ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),array[1      ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),array[1,1    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),array[1,3    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3    ]),array[4,1    ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1      ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,1,1  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,3,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,1,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,3,1  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,1,5  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[1,3,1  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ]),array[4,1,1  ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1      ]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,1,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,5,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,1,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,1,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,1,5,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,1,1,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,3,1,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,5,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[4,1,1,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,5,1]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,3,1,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2]),array[1,1,5,2]) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_d_mul(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- fv_d_pow_1
+with 
+cte_indepdt as 
+(
+            select fv_new_rand(2.0,array[4      ]) as a_indepdt_01,fv_new_randn(0.0, 1.1, array[4      ]) as a_indepdt_02
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4      ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4      ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,1    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,3    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,1    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+)
+select 
+  fv_d_pow_1(a_indepdt_01, a_indepdt_02) is not null
+, fv_d_pow_1(a_indepdt_01, a_indepdt_02, fv_opr_pow(a_indepdt_01, a_indepdt_02)) is not null
+from cte_indepdt;
+
+-- fv_d_pow_1_un_de_broadcast
+with 
+cte_indepdt as 
+(
+            select fv_new_rand(2.0,array[4      ]) as a_indepdt_01,fv_new_randn(0.0, 1.1, array[4      ]) as a_indepdt_02
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4      ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4      ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,1    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,3    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,1    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+)
+select 
+  fv_d_pow_1_un_de_broadcast(a_indepdt_01, a_indepdt_02) is not null
+, fv_d_pow_1_un_de_broadcast(a_indepdt_01, a_indepdt_02, fv_opr_pow(a_indepdt_01, a_indepdt_02)) is not null
+from cte_indepdt;
+
+-- fv_d_pow_2
+with 
+cte_indepdt as 
+(
+            select fv_new_rand(2.0,array[4      ]) as a_indepdt_01,fv_new_randn(0.0, 1.1, array[4      ]) as a_indepdt_02
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4      ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4      ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,1    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,3    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,1    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+)
+select 
+  fv_d_pow_2(a_indepdt_02, a_indepdt_01) is not null
+, fv_d_pow_2(a_indepdt_02, a_indepdt_01, fv_opr_pow(a_indepdt_01, a_indepdt_02)) is not null
+from cte_indepdt;
+
+-- fv_d_pow_1_un_de_broadcast
+with 
+cte_indepdt as 
+(
+            select fv_new_rand(2.0,array[4      ]) as a_indepdt_01,fv_new_randn(0.0, 1.1, array[4      ]) as a_indepdt_02
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4      ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1,3    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[4,1    ])                ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,1,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1,3,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[4,1,1  ])                ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_rand(2.0,array[1      ])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,1,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4,1,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,5,1])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,3,1,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[1,1,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_rand(2.0,array[4      ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,1    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[1,3    ])
+  union all select fv_new_rand(2.0,array[4,3    ])                ,fv_new_randn(0.0, 1.1, array[4,1    ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5  ])                ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_rand(2.0,array[4,3,5,2])                ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+)
+select 
+  fv_d_pow_2_un_de_broadcast(a_indepdt_02, a_indepdt_01) is not null
+, fv_d_pow_2_un_de_broadcast(a_indepdt_02, a_indepdt_01, fv_opr_pow(a_indepdt_01, a_indepdt_02)) is not null
+from cte_indepdt;
+
+-- fv_d_sub_1
+select fv_d_sub_1(array[4      ],array[4      ]) is not null;
+select fv_d_sub_1(array[4,3    ],array[4,3    ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[4,3,5  ]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,3,5,2]) is not null;
+select fv_d_sub_1(array[4      ],array[1      ]) is not null;
+select fv_d_sub_1(array[4,3    ],array[1      ]) is not null;
+select fv_d_sub_1(array[4,3    ],array[1,1    ]) is not null;
+select fv_d_sub_1(array[4,3    ],array[1,3    ]) is not null;
+select fv_d_sub_1(array[4,3    ],array[4,1    ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[1      ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[1,1,1  ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[1,3,5  ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[4,1,5  ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[4,3,1  ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[1,1,5  ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[1,3,1  ]) is not null;
+select fv_d_sub_1(array[4,3,5  ],array[4,1,1  ]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1      ]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,3,5,2]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,1,5,2]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,3,1,2]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,3,5,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,1,1,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,3,1,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,1,5,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,1,1,2]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,3,1,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,1,5,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[4,1,1,2]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,3,5,1]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,3,1,2]) is not null;
+select fv_d_sub_1(array[4,3,5,2],array[1,1,5,2]) is not null;
+
+-- fv_d_sub_2
+select fv_d_sub_2(array[4      ],array[4      ]) is not null;
+select fv_d_sub_2(array[4,3    ],array[4,3    ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[4,3,5  ]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,3,5,2]) is not null;
+select fv_d_sub_2(array[4      ],array[1      ]) is not null;
+select fv_d_sub_2(array[4,3    ],array[1      ]) is not null;
+select fv_d_sub_2(array[4,3    ],array[1,1    ]) is not null;
+select fv_d_sub_2(array[4,3    ],array[1,3    ]) is not null;
+select fv_d_sub_2(array[4,3    ],array[4,1    ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[1      ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[1,1,1  ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[1,3,5  ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[4,1,5  ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[4,3,1  ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[1,1,5  ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[1,3,1  ]) is not null;
+select fv_d_sub_2(array[4,3,5  ],array[4,1,1  ]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1      ]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,3,5,2]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,1,5,2]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,3,1,2]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,3,5,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,1,1,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,3,1,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,1,5,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,1,1,2]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,3,1,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,1,5,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[4,1,1,2]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,3,5,1]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,3,1,2]) is not null;
+select fv_d_sub_2(array[4,3,5,2],array[1,1,5,2]) is not null;
+
+-- __fv_mirror_x3
+select __fv_mirror_x3(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_mirror_x3(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_mirror_x4
+select __fv_mirror_x4(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x_x3_90
+select __fv_turn_x_x3_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_x_x3_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x_x3_180
+select __fv_turn_x_x3_180(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_x_x3_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x_x4_90
+select __fv_turn_x_x4_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x_x4_180
+select __fv_turn_x_x4_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x_y_90
+select __fv_turn_x_y_90(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select __fv_turn_x_y_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_x_y_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x3_x_90
+select __fv_turn_x3_x_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_x3_x_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x3_x4_90
+select __fv_turn_x3_x4_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x3_x4_180
+select __fv_turn_x3_x4_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x3_y_90
+select __fv_turn_x3_y_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_x3_y_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x4_x_90
+select __fv_turn_x4_x_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x4_x3_90
+select __fv_turn_x4_x3_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_x4_y_90
+select __fv_turn_x4_y_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_y_x_90
+select __fv_turn_y_x_90(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select __fv_turn_y_x_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_y_x_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_y_x_180
+select __fv_turn_y_x_180(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select __fv_turn_y_x_180(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_y_x_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_y_x3_90
+select __fv_turn_y_x3_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_y_x3_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_y_x3_180
+select __fv_turn_y_x3_180(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select __fv_turn_y_x3_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_y_x4_90
+select __fv_turn_y_x4_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- __fv_turn_y_x4_180
+select __fv_turn_y_x4_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_chunk_prod_mx
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+)
+select 
+  fv_chunk_prod_mx
+  (
+    fv_new_randn(0.0, 1.1,array[   ]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4))
+  , fv_new_randn(0.0, 1.1,array[   ]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2))
+  , array[3,4,2]
+  ) is not null
+from cte_chunk_len
+;
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+)
+select 
+  fv_chunk_prod_mx
+  (
+    fv_new_randn(0.0, 1.1,array[4  ]||(a_chunk_heigh*3)||(a_chunk_width::int*4))
+  , fv_new_randn(0.0, 1.1,array[4  ]||(a_chunk_heigh*4)||(a_chunk_width::int*2))
+  , array[3,4,2]
+  ) is not null
+from cte_chunk_len
+;
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+)
+select 
+  fv_chunk_prod_mx
+  (
+    fv_new_randn(0.0, 1.1,array[4,3]||(a_chunk_heigh*3)||(a_chunk_width::int*4))
+  , fv_new_randn(0.0, 1.1,array[4,3]||(a_chunk_heigh*4)||(a_chunk_width::int*2))
+  , array[3,4,2]
+  ) is not null
+from cte_chunk_len
+;
+
+-- fv_concat_x
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_concat_x(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_x(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_concat_x(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_concat_x3
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_concat_x3(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_x3(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_concat_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_concat_x4
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_concat_x4(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_concat_y
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[1      ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_concat_y(random()-0.5,fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_concat_y(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_concat_y(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_concat_y(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4      ]),random()-0.5) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_concat_y(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_concat_heigh
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_concat_heigh(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_heigh(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_heigh(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_concat_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_concat_width
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,1,5  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1,1  ]),fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,1,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,1,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3,5,1]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,3,1,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[1,1,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,1    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[1,3    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,1    ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,1  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,3,1  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,1,5  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[1,3,1  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),fv_new_randn(0.0, 1.1, array[4,1,1  ])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,5,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,1,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,3,1,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,5,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[4,1,1,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,5,1])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,3,1,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),fv_new_randn(0.0, 1.1, array[1,1,5,2])) is not null;
+select fv_opr_concat_width(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_concat_width(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_concat_width(random()-0.5,fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3    ]),random()-0.5) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5  ]),random()-0.5) is not null;
+select fv_opr_concat_width(fv_new_randn(0.0, 1.1, array[4,3,5,2]),random()-0.5) is not null;
+
+-- fv_opr_mirror
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4      ]),1) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3    ]),1) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5  ]),1) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5,2]),1) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3    ]),2) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5  ]),2) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5,2]),2) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5  ]),3) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5,2]),3) is not null;
+select fv_opr_mirror(fv_new_randn(0.0, 1.1, array[4,3,5,2]),4) is not null;
+
+-- fv_opr_mirror_heigh
+select fv_opr_mirror_heigh(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mirror_heigh(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mirror_heigh(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- fv_opr_mirror_width
+select fv_opr_mirror_width(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select fv_opr_mirror_width(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select fv_opr_mirror_width(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- __fv_mirror_x
+select __fv_mirror_x(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select __fv_mirror_x(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select __fv_mirror_x(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- __fv_mirror_x3
+select __fv_mirror_x3(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select __fv_mirror_x3(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- __fv_mirror_x4
+select __fv_mirror_x4(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- __fv_mirror_y
+select __fv_mirror_y(fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select __fv_mirror_y(fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+select __fv_mirror_y(fv_new_randn(0.0, 1.1, array[4,3,5  ])) is not null;
+select __fv_mirror_y(fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+
+-- fv_opr_prod_inner
+select fv_opr_prod_inner(fv_new_randn(0.0, 1.1, array[4      ]),fv_new_randn(0.0, 1.1, array[4      ])) is not null;
+select fv_opr_prod_inner(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[4,3    ])) is not null;
+
+-- fv_opr_prod_inner_pow
+select fv_opr_prod_inner_pow(fv_new_randn(0.0, 1.1, array[4      ]),5.0::float) is not null;
+select fv_opr_prod_inner_pow(fv_new_randn(0.0, 1.1, array[4,3    ]),5.0::float) is not null;
+
+-- fv_opr_prod_kronecker
+select fv_opr_prod_kronecker(fv_new_randn(0.0, 1.1, array[4,3    ]),fv_new_randn(0.0, 1.1, array[5,2    ])) is not null;
+
+-- fv_opr_prod_mx_left
+select fv_opr_prod_mx_left(fv_new_randn(0.0, 1.1, array[4,4    ])) is not null;
+select fv_opr_prod_mx_left(fv_new_randn(0.0, 1.1, array[4,3,3  ])) is not null;
+select fv_opr_prod_mx_left(fv_new_randn(0.0, 1.1, array[4,3,2,2])) is not null;
+
+-- fv_opr_prod_mx_pow
+select fv_opr_prod_mx_pow(fv_new_randn(0.0, 1.1, array[4,4    ]),3) is not null;
+select fv_opr_prod_mx_pow(fv_new_randn(0.0, 1.1, array[4,3,3  ]),3) is not null;
+select fv_opr_prod_mx_pow(fv_new_randn(0.0, 1.1, array[4,3,2,2]),3) is not null;
+
+-- fv_opr_prod_mx_py
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,3,5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,1,5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,1,5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[1,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,3,5,6]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,1,5,6]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,1,5,6]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,3,5,6]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  3,5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  1,5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  3,5,6]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  3,5,6]),fv_new_randn(0.0, 1.1, array[1,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[1,1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[  1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,1,5,6]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,1,5,6]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,3,5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,3,5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[4,1,5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[1,1,5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  3,5,6]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  3,5,6]),fv_new_randn(0.0, 1.1, array[  1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  1,5,6]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[  1,6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  3,5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[  1,5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_opr_prod_mx_py(fv_new_randn(0.0, 1.1, array[    5,6]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+
+-- -- fv_opr_prod_mx_py_cupy
+
+-- fv_opr_prod_mx_right
+select fv_opr_prod_mx_right(fv_new_randn(0.0, 1.1, array[4,4    ])) is not null;
+select fv_opr_prod_mx_right(fv_new_randn(0.0, 1.1, array[4,3,3  ])) is not null;
+select fv_opr_prod_mx_right(fv_new_randn(0.0, 1.1, array[4,3,2,2])) is not null;
+
+-- fv_opr_transpose
+select fv_opr_transpose(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_transpose(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_transpose(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_opr_transpose_3d
+select fv_opr_transpose_3d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2]) is not null,fv_opr_transpose_3d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1]) is not null;
+select fv_opr_transpose_3d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3]) is not null,fv_opr_transpose_3d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1]) is not null;
+select fv_opr_transpose_3d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3]) is not null,fv_opr_transpose_3d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2]) is not null;
+
+-- fv_opr_transpose_i
+select fv_opr_transpose_i(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_transpose_i(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_transpose_i(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_opr_turn_90
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3    ]),array[1,2]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3    ]),array[2,1]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,2]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,3]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,4]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,1]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,3]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,4]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,1]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,2]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,4]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,1]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,2]) is not null;
+select fv_opr_turn_90(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,3]) is not null;
+
+-- fv_opr_turn_180
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3    ]),array[1,2]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3    ]),array[2,1]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,2]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,1]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,3]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,1]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,4]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,1]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,3]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,2]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,4]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,2]) is not null;
+select fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,4]) is not null,fv_opr_turn_180(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,3]) is not null;
+
+-- fv_opr_turn_heigh_width_90
+select fv_opr_turn_heigh_width_90(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_turn_heigh_width_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_turn_heigh_width_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_opr_turn_heigh_width_180
+select fv_opr_turn_heigh_width_180(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_turn_heigh_width_180(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_turn_heigh_width_180(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_opr_turn_width_heigh_90
+select fv_opr_turn_width_heigh_90(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_opr_turn_width_heigh_90(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_opr_turn_width_heigh_90(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_chunk_prod_mx_dloss_dindepdt_1
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+),
+cte_depdt as 
+(
+  select 
+    a_opr_2
+  , fv_chunk_prod_mx
+    (
+      a_opr_1
+    , a_opr_2
+    , array[3,4,2]
+    ) as a_depdt
+  from cte_chunk_len
+    , fv_new_randn(0.0, 1.1,array[   ]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4)) as a_opr_1
+    , fv_new_randn(0.0, 1.1,array[   ]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2)) as a_opr_2
+)
+select 
+  fv_d_chunk_prod_mx_dloss_dindepdt_1
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , a_opr_2
+  , array[3,4,2]
+  ) is not null
+from cte_depdt
+;
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+),
+cte_depdt as 
+(
+  select 
+    a_opr_2
+  , fv_chunk_prod_mx
+    (
+      a_opr_1
+    , a_opr_2
+    , array[3,4,2]
+    ) as a_depdt
+  from cte_chunk_len
+    , fv_new_randn(0.0, 1.1,array[4  ]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4)) as a_opr_1
+    , fv_new_randn(0.0, 1.1,array[4  ]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2)) as a_opr_2
+)
+select 
+  fv_d_chunk_prod_mx_dloss_dindepdt_1
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , a_opr_2
+  , array[3,4,2]
+  ) is not null
+from cte_depdt
+;
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+),
+cte_depdt as 
+(
+  select 
+    a_opr_2
+  , fv_chunk_prod_mx
+    (
+      a_opr_1
+    , a_opr_2
+    , array[3,4,2]
+    ) as a_depdt
+  from cte_chunk_len
+    , fv_new_randn(0.0, 1.1,array[4,3]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4)) as a_opr_1
+    , fv_new_randn(0.0, 1.1,array[4,3]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2)) as a_opr_2
+)
+select 
+  fv_d_chunk_prod_mx_dloss_dindepdt_1
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , a_opr_2
+  , array[3,4,2]
+  ) is not null
+from cte_depdt
+;
+
+-- fv_d_chunk_prod_mx_dloss_dindepdt_2
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+),
+cte_depdt as 
+(
+  select 
+    a_opr_1
+  , fv_chunk_prod_mx
+    (
+      a_opr_1
+    , a_opr_2
+    , array[3,4,2]
+    ) as a_depdt
+  from cte_chunk_len
+    , fv_new_randn(0.0, 1.1,array[   ]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4)) as a_opr_1
+    , fv_new_randn(0.0, 1.1,array[   ]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2)) as a_opr_2
+)
+select 
+  fv_d_chunk_prod_mx_dloss_dindepdt_2
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , a_opr_1
+  , array[3,4,2]
+  ) is not null
+from cte_depdt
+;
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+),
+cte_depdt as 
+(
+  select 
+    a_opr_1
+  , fv_chunk_prod_mx
+    (
+      a_opr_1
+    , a_opr_2
+    , array[3,4,2]
+    ) as a_depdt
+  from cte_chunk_len
+    , fv_new_randn(0.0, 1.1,array[4  ]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4)) as a_opr_1
+    , fv_new_randn(0.0, 1.1,array[4  ]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2)) as a_opr_2
+)
+select 
+  fv_d_chunk_prod_mx_dloss_dindepdt_2
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , a_opr_1
+  , array[3,4,2]
+  ) is not null
+from cte_depdt
+;
+with
+cte_chunk_len as 
+(
+  select ceil(random()*5)::int as a_chunk_heigh,ceil(random()*5)::int as a_chunk_width
+),
+cte_depdt as 
+(
+  select 
+    a_opr_1
+  , fv_chunk_prod_mx
+    (
+      a_opr_1
+    , a_opr_2
+    , array[3,4,2]
+    ) as a_depdt
+  from cte_chunk_len
+    , fv_new_randn(0.0, 1.1,array[4,3]::int[]||(a_chunk_heigh*3)||(a_chunk_width::int*4)) as a_opr_1
+    , fv_new_randn(0.0, 1.1,array[4,3]::int[]||(a_chunk_heigh*4)||(a_chunk_width::int*2)) as a_opr_2
+)
+select 
+  fv_d_chunk_prod_mx_dloss_dindepdt_2
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , a_opr_1
+  , array[3,4,2]
+  ) is not null
+from cte_depdt
+;
+
+-- fv_d_concat_x_dloss_dindepdt
+with
+cte_indepdt as 
+(
+            select fv_new_randn(0.0, 1.1, array[4,3    ]) as a_opr_01,fv_new_randn(0.0, 1.1, array[4,3    ]) as a_opr_02
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[1,1    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[1,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[4,1    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+),
+cte_depdt as 
+(
+  select 
+    a_opr_01
+  , fv_concat_x(a_opr_01,a_opr_02) as a_depdt
+  from cte_indepdt
+)
+select 
+  fv_d_concat_x_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 2), '[]')
+  ) is not null
+, fv_d_concat_x_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 2), '[]')
+  , (select array_agg(array_length(a_opr_01, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_opr_01)) tb_a(a_dim_no))
+  ) is not null
+from cte_depdt
+;
+
+-- fv_d_concat_x3_dloss_dindepdt
+with
+cte_indepdt as 
+(
+            select fv_new_randn(0.0, 1.1, array[4,3,5  ]) as a_opr_01,fv_new_randn(0.0, 1.1, array[4,3,5  ]) as a_opr_02
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+),
+cte_depdt as 
+(
+  select 
+    a_opr_01
+  , fv_concat_x3(a_opr_01,a_opr_02) as a_depdt
+  from cte_indepdt
+)
+select 
+  fv_d_concat_x3_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 3), '[]')
+  ) is not null
+, fv_d_concat_x3_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 3), '[]')
+  , (select array_agg(array_length(a_opr_01, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_opr_01)) tb_a(a_dim_no))
+  ) is not null
+from cte_depdt
+;
+
+-- fv_d_concat_x4_dloss_dindepdt
+with
+cte_indepdt as 
+(
+            select fv_new_randn(0.0, 1.1, array[4,3,5,2]) as a_opr_01,fv_new_randn(0.0, 1.1, array[4,3,5,2]) as a_opr_02
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+),
+cte_depdt as 
+(
+  select 
+    a_opr_01
+  , fv_concat_x4(a_opr_01,a_opr_02) as a_depdt
+  from cte_indepdt
+)
+select 
+  fv_d_concat_x4_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 4), '[]')
+  ) is not null
+, fv_d_concat_x4_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 4), '[]')
+  , (select array_agg(array_length(a_opr_01, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_opr_01)) tb_a(a_dim_no))
+  ) is not null
+from cte_depdt
+;
+
+-- fv_d_concat_y_dloss_dindepdt
+with
+cte_indepdt as 
+(
+            select fv_new_randn(0.0, 1.1, array[4      ]) as a_opr_01,fv_new_randn(0.0, 1.1, array[4      ]) as a_opr_02
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1      ])            ,fv_new_randn(0.0, 1.1, array[4      ])
+  union all select fv_new_randn(0.0, 1.1, array[1,1    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1    ])            ,fv_new_randn(0.0, 1.1, array[4,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1  ])            ,fv_new_randn(0.0, 1.1, array[4,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,1,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,1,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,5,1])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,3,1,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[1,1,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4      ])            ,fv_new_randn(0.0, 1.1, array[1      ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[1,1    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[1,3    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3    ])            ,fv_new_randn(0.0, 1.1, array[4,1    ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,1,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,3,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,1,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,3,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,1,5  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[1,3,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5  ])            ,fv_new_randn(0.0, 1.1, array[4,1,1  ])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,3,1,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[4,1,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,5,1])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,3,1,2])
+  union all select fv_new_randn(0.0, 1.1, array[4,3,5,2])            ,fv_new_randn(0.0, 1.1, array[1,1,5,2])
+),
+cte_depdt as 
+(
+  select 
+    a_opr_01
+  , fv_concat_y(a_opr_01,a_opr_02) as a_depdt
+  from cte_indepdt
+)
+select 
+  fv_d_concat_y_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 1), '[]')
+  ) is not null
+, fv_d_concat_y_dloss_dindepdt
+  (
+    fv_new_randn(0.0, 1.1, (select array_agg(array_length(a_depdt, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_depdt)) tb_a(a_dim_no)))
+  , int4range(1, array_length(a_opr_01, 1), '[]')
+  , (select array_agg(array_length(a_opr_01, a_dim_no) order by a_dim_no) from generate_series(1, array_ndims(a_opr_01)) tb_a(a_dim_no))
+  ) is not null
+from cte_depdt
+;
+
+-- fv_d_mirror_dloss_dindepdt
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4      ]),1) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3    ]),1) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5  ]),1) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5,2]),1) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3    ]),2) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5  ]),2) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5,2]),2) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5  ]),3) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5,2]),3) is not null;
+select fv_d_mirror_dloss_dindepdt(fv_new_randn(0.0, 1.1, array[4,3,5,2]),4) is not null;
+
+-- fv_d_prod_mx_1
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[1,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,1,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[  1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,1,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[1,1,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  1,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7]),array[1,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[1,1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  1,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7]),array[  1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  1,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[  1,5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_1(fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+
+-- fv_d_prod_mx_2
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,1,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[1,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  1,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,5,6]),array[1,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[1,1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[  1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,1,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[1,1,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,5,6]),array[  1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  1,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[  1,6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  1,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_2(fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+
+-- fv_d_prod_mx_dloss_dindepdt_1
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[1,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[  1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7]),array[1,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[4,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[1,3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[4,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[1,1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7]),array[  1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[  3,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[  1,5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[   ]::int[],array[   ]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7]),array[    5,6]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_1(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[   ]::int[],array[   ]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    6,7])) is not null;
+
+-- fv_d_prod_mx_dloss_dindepdt_2
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[1,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6]),array[1,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[4,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[1,3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[4,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[1,1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[  1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6]),array[  1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[  3,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[  1,6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[   ]::int[],array[   ]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6]),array[    6,7]) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,1]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,3]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[4,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[0,0]::int[],array[1,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,3]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[4,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[4,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[1,1]::int[],array[0,0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[1,1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  3]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  0]::int[],array[  1]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  3]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  3,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[  1]::int[],array[  0]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[  1,5,6])) is not null;
+select fv_d_prod_mx_dloss_dindepdt_2(fv_new_randn(0.0, 1.1, fv_opr_greatest(array[   ]::int[],array[   ]::int[])||array[5,7]),fv_new_randn(0.0, 1.1, array[    5,6])) is not null;
+
+-- fv_d_transpose_3d_dloss_dindepdt
+select fv_d_transpose_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2]) is not null,fv_d_transpose_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1]) is not null;
+select fv_d_transpose_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3]) is not null,fv_d_transpose_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1]) is not null;
+select fv_d_transpose_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3]) is not null,fv_d_transpose_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2]) is not null;
+
+-- fv_d_transpose_dloss_dindepdt
+select fv_d_transpose_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_transpose_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_transpose_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_transpose_i_dloss_dindepdt
+select fv_d_transpose_i_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_transpose_i_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_transpose_i_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_turn_90_dloss_dindepdt
+with 
+cte_indepdt as 
+(
+            select array[4,3    ] as a_indepdt_len,array[1,2] as a_dim_from_to
+  union all select array[4,3    ] as a_indepdt_len,array[2,1] as a_dim_from_to
+  union all select array[4,3,5  ] as a_indepdt_len,array[1,2] as a_dim_from_to
+  union all select array[4,3,5  ] as a_indepdt_len,array[2,1] as a_dim_from_to
+  union all select array[4,3,5  ] as a_indepdt_len,array[1,3] as a_dim_from_to
+  union all select array[4,3,5  ] as a_indepdt_len,array[3,1] as a_dim_from_to
+  union all select array[4,3,5  ] as a_indepdt_len,array[2,3] as a_dim_from_to
+  union all select array[4,3,5  ] as a_indepdt_len,array[3,2] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[1,2] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[1,3] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[1,4] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[2,1] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[2,3] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[2,4] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[3,1] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[3,2] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[3,4] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[4,1] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[4,2] as a_dim_from_to
+  union all select array[4,3,5,2] as a_indepdt_len,array[4,3] as a_dim_from_to
+),
+cte_depdt as 
+(
+  select 
+    a_indepdt_len
+  , a_dim_from_to
+  , fv_opr_turn_90(fv_new_randn(0.0, 1.1,a_indepdt_len),a_dim_from_to) as a_depdt
+  from 
+    cte_indepdt
+)
+select 
+  fv_d_turn_90_dloss_dindepdt
+  (
+    fv_new_randn
+    (
+      0.0
+    , 1.1
+    , (
+        select 
+          array_agg(array_length(a_depdt, a_dim_no))
+        from 
+          generate_series
+          (
+            1
+          , array_ndims(a_depdt)
+          ) tb_a_dim_no(a_dim_no)
+      )
+    )
+  , a_dim_from_to
+  ) is not null
+from cte_depdt;
+
+-- fv_d_turn_180_dloss_dindepdt
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ]),array[1,2]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ]),array[2,1]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,2]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,1]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,3]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,1]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[1,4]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,1]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,3]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,2]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[2,4]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,2]) is not null;
+select fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[3,4]) is not null,fv_d_turn_180_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]),array[4,3]) is not null;
+
+-- ft_rand_slice_x
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3    ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5,2]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3    ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5,2]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3    ]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5,2]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3    ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5  ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4);
+
+-- ft_rand_slice_x_pick
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),3);
+-- select o_ord_nos,o_slices from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),4);
+-- select o_ord_nos,o_slices from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),4);
+-- select o_ord_nos,o_slices from ft_rand_slice_x_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4);
+
+-- ft_rand_slice_x3
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5,2]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5  ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5  ]),5);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5,2]),5);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5  ]),6);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,5,2]),6);
+
+-- ft_rand_slice_x3_pick
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),5);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),5);
+-- select o_ord_nos,o_slices from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),6);
+-- select o_ord_nos,o_slices from ft_rand_slice_x3_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),6);
+
+-- ft_rand_slice_x4
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4(fv_new_randn(0.0, 1.1,array[4,3,5,6]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4(fv_new_randn(0.0, 1.1,array[4,3,5,6]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4(fv_new_randn(0.0, 1.1,array[4,3,5,6]),6);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4(fv_new_randn(0.0, 1.1,array[4,3,5,6]),7);
+
+-- ft_rand_slice_x4_pick
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4_pick(fv_new_randn(0.0, 1.1,array[4,3,5,6]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4_pick(fv_new_randn(0.0, 1.1,array[4,3,5,6]),3);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_x4_pick(fv_new_randn(0.0, 1.1,array[4,3,5,6]),6);
+-- select o_ord_nos,o_slices from ft_rand_slice_x4_pick(fv_new_randn(0.0, 1.1,array[4,3,5,6]),7);
+
+-- ft_rand_slice_y
+-- select o_ord_nos,o_slices from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4      ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3    ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5,2]),1);
+-- select o_ord_nos,o_slices from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4      ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3    ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5,2]),2);
+-- select o_ord_nos,o_slices from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4      ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3    ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5  ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4);
+-- select o_ord_nos,o_slices from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4      ]),5);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3    ]),5);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5  ]),5);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y(fv_new_randn(0.0, 1.1,array[4,3,5,2]),5);
+
+-- ft_rand_slice_y_pick
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4      ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),1);
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4      ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),2);
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4      ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),4);
+select o_ord_nos is not null,o_slices is not null from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4);
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4      ]),5);
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3    ]),5);
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5  ]),5);
+-- select o_ord_nos,o_slices from ft_rand_slice_y_pick(fv_new_randn(0.0, 1.1,array[4,3,5,2]),5);
+
+-- fv_amask
+select fv_amask(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(4.0,array[1,3    ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_amask(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(3.0,array[4,1,5  ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_amask(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(5.0,array[4,3,1,2]))::decimal[]~=`0)::int[],0.0::float) is not null;
+
+-- fv_apad
+select fv_apad(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,3    ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,6,5  ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,6,2])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,3    ]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,6,5  ]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,6,2]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,1    ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,6,1  ])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,6,1])) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,1    ]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,6,1  ]),3) is not null;
+select fv_apad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,6,1]),3) is not null;
+
+-- fv_area_replace
+select fv_area_replace(fv_new_randn(0.0, 1.1,array[4      ]),array[1      ],fv_new_randn(0.0, 1.1,array[2      ])) is not null;
+select fv_area_replace(fv_new_randn(0.0, 1.1,array[4,3    ]),array[2,3    ],fv_new_randn(0.0, 1.1,array[2,1    ])) is not null;
+select fv_area_replace(fv_new_randn(0.0, 1.1,array[4,3,6  ]),array[3,2,4  ],fv_new_randn(0.0, 1.1,array[2,1,3  ])) is not null;
+select fv_area_replace(fv_new_randn(0.0, 1.1,array[4,3,6,5]),array[1,1,1,2],fv_new_randn(0.0, 1.1,array[2,1,3,4])) is not null;
+
+-- fv_array_1d_set_ele
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]), round(random()*8.0)::int,random()) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]),-round(random()*8.0)::int,random()) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]), round(random()*8.0)::int,fv_new_randn(0.0, 1.1,array[3])) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]),-round(random()*8.0)::int,fv_new_randn(0.0, 1.1,array[3])) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]),int4range( 1, 4,'[]'),fv_new_randn(0.0, 1.1,array[3])) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]),int4range(-4,-1,'[]'),fv_new_randn(0.0, 1.1,array[3])) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]),int4range( 0, 4,'[]'),fv_new_randn(0.0, 1.1,array[3])) is not null;
+select fv_array_1d_set_ele(fv_new_randn(0.0, 1.1,array[8]),int4range(-4, 0,'[]'),fv_new_randn(0.0, 1.1,array[3])) is not null;
+
+-- fv_atrim
+select fv_atrim(((fv_new_rand(3.0,array[4      ])::decimal[])~=`0)::int[],1) is not null;
+select fv_atrim(((fv_new_rand(3.0,array[4,3    ])::decimal[])~=`0)::int[],1) is not null;
+select fv_atrim(((fv_new_rand(3.0,array[4,3,6  ])::decimal[])~=`0)::int[],1) is not null;
+select fv_atrim(((fv_new_rand(3.0,array[4,3,6,5])::decimal[])~=`0)::int[],1) is not null;
+
+-- fv_augmented
+-- �Ӽ�
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, 2], array[4, 4], 0) is not null;
+-- ����
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, -1], array[8, 8], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, -1], array[4, 4], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, 2], array[8, 8], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, 2], array[4, 4], 0) is not null;
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, -1], array[4, 8], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, 2], array[8, 4], 0) is not null;
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, -1], array[8, 8], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, -1], array[4, 4], 0) is not null;
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, 2], array[8, 8], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, 2], array[4, 8], 0) is not null;
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, -1], array[8, 8], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[2, -1], array[8, 4], 0) is not null;
+-- �����ཻ
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, 2], array[4, 8], 0) is not null;
+-- ��������
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, -1], array[0, 0], 0) is not null;
+-- ��������
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[8, 8], array[10, 10], 0) is not null;
+-- ��������
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[8, -1], array[10, 2], 0) is not null;
+-- ��������
+select fv_augmented(array[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]], array[-1, 8], array[2, 10], 0) is not null;
+-- �����ཻ 3d ����
+select fv_augmented(array[[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
+                               ,[[-1, -2, -3, -4, -5], [-6, -7, -8, -9, -10], [-11, -12, -13, -14, -15], [-16, -17, -18, -19, -20], [-21, -22, -23, -24, -25]]]
+                         ,array[-1, -1], array[4, 4], 0) is not null;
+-- �����ཻ 4d ����
+select fv_augmented(array[[[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
+                                    ,[[-1, -2, -3, -4, -5], [-6, -7, -8, -9, -10], [-11, -12, -13, -14, -15], [-16, -17, -18, -19, -20], [-21, -22, -23, -24, -25]]]
+                                   ,[[[31, 32, 33, 34, 35], [36, 37, 38, 39, 40], [41, 42, 43, 44, 45], [46, 47, 48, 49, 50], [51, 52, 53, 54, 55]]
+                                    ,[[-31, -32, -33, -34, -35], [-36, -37, -38, -39, -40], [-41, -42, -43, -44, -45], [-46, -47, -48, -49, -50], [-51, -52, -53, -54, -55]]]]
+                            ,array[-1, -1]
+                            ,array[4, 4], 0) is not null;
+-- fv_bmask
+select fv_bmask(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(4.0,array[1,3    ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_bmask(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(3.0,array[4,1,5  ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_bmask(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(5.0,array[4,3,1,2]))::decimal[]~=`0)::int[],0.0::float) is not null;
+
+-- fv_bpad
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,3    ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,6,5  ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,6,2])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,3    ]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,6,5  ]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,6,2]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,1    ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,6,1  ])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,6,1])) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[6,1    ]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,6,1  ]),3) is not null;
+select fv_bpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,6,1]),3) is not null;
+
+-- fv_btrim
+select fv_btrim(((fv_new_rand(3.0,array[4      ])::decimal[])~=`0)::int[],1) is not null;
+select fv_btrim(((fv_new_rand(3.0,array[4,3    ])::decimal[])~=`0)::int[],1) is not null;
+select fv_btrim(((fv_new_rand(3.0,array[4,3,6  ])::decimal[])~=`0)::int[],1) is not null;
+select fv_btrim(((fv_new_rand(3.0,array[4,3,6,5])::decimal[])~=`0)::int[],1) is not null;
+
+-- fv_coalesce
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,1    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,1,1  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,1  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,1,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3,1  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1,1  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,1,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1,1,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3,1,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,1,5,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,1,1,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,1,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1,5,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,1,1,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3,5,1])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,3,1,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[1,1,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,1    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,1,1  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,1  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,1,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3,1  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1,1  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,1,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,5,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1,1,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3,1,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,1,5,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,1,1,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,3,1,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1,5,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[4,1,1,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3,5,1])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,3,1,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),fv_nullif((fv_new_rand(2.0,array[1,1,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(3,fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(3,fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(3,fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(3,fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0),3) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),3) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),3) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),3) is not null;
+select fv_coalesce(null::int,fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(null::int,fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(null::int,fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0)) is not null;
+select fv_coalesce(null::int,fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0)) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0),null::int) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0),null::int) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ])::decimal[])::int[],0),null::int) is not null;
+select fv_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,2])::decimal[])::int[],0),null::int) is not null;
+
+-- fv_coalesce_variadic
+select fv_coalesce_variadic(variadic fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_coalesce_variadic(variadic fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_coalesce_variadic(variadic fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_coalesce_variadic(variadic array[fv_new_randn(0.0, 1.1,array[4,3,5,2])]
+                                   ||array[fv_new_randn(0.0, 1.1,array[4,3,5,2])]
+                                   ||array[fv_new_randn(0.0, 1.1,array[4,3,5,2])]) is not null;
+-- fv_ele_replace
+select fv_ele_replace((fv_new_rand(3.0,array[4      ])::decimal[])::int[],array[1,2],-1) is not null;
+select fv_ele_replace((fv_new_rand(3.0,array[4,3    ])::decimal[])::int[],array[1,2],-1) is not null;
+select fv_ele_replace((fv_new_rand(3.0,array[4,3,5  ])::decimal[])::int[],array[1,2],-1) is not null;
+select fv_ele_replace((fv_new_rand(3.0,array[4,3,5,2])::decimal[])::int[],array[1,2],-1) is not null;
+
+-- fv_eye
+select fv_eye(0.0 :: float, 2, variadic array[1,2,3,4,5] :: float[]) is not null;
+select fv_eye(0.0 :: float, 3, variadic array[1,2,3,4,5] :: float[]) is not null;
+select fv_eye(0.0 :: float, 4, variadic array[1,2,3,4,5] :: float[]) is not null;
+
+-- fv_eye_arr_dense
+with 
+cte_input as 
+(
+  select 
+    array_agg(fv_new_rand(array[ceil(random()*7.0)::int,ceil(random()*7.0)::int])::__typ_array_ex) as a_input
+  from generate_series(1,5) tb_a(a_no)
+)
+select 
+  fv_eye_arr_dense(0.0, variadic a_input) is not null
+, fv_eye_arr_dense(variadic a_input) is not null
+from cte_input
+;
+
+-- fv_eye_arr_sparse
+with 
+cte_input as 
+(
+  select 
+    array_agg(fv_new_rand(array[ceil(random()*7.0)::int,ceil(random()*7.0)::int])::__typ_array_ex) as a_input
+  from generate_series(1,5) tb_a(a_no)
+)
+select 
+  fv_eye_arr_sparse(0.0, variadic a_input) is not null
+, fv_eye_arr_sparse(variadic a_input) is not null
+from cte_input
+;
+
+-- fv_eye_unit
+select fv_eye_unit(5,random()) is not null;
+select fv_eye_unit(5,random(),array[3]) is not null;
+select fv_eye_unit(5,random(),array[6]) is not null;
+select fv_eye_unit(5,random(),array[3,4]) is not null;
+select fv_eye_unit(5,random(),array[3,6]) is not null;
+select fv_eye_unit(5,random(),array[6,4]) is not null;
+select fv_eye_unit(5,random(),array[6,7]) is not null;
+
+-- fv_lmask
+select fv_lmask(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(3.0,array[4,1    ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_lmask(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(5.0,array[4,3,1  ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_lmask(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(2.0,array[4,3,5,1]))::decimal[]~=`0)::int[],0.0::float) is not null;
+
+-- fv_lower_tri_mx
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3    ]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5  ]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5,2]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[3,4    ]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,5,3  ]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,2,5]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[6,6    ]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,6,6  ]),0.0::float) is not null;
+select fv_lower_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,6,6]),0.0::float) is not null;
+
+-- fv_lower_tri_mx_ex
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3    ]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5  ]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5,2]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[3,4    ]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,5,3  ]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,2,5]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[6,6    ]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,6,6  ]),0.0::float) is not null;
+select fv_lower_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,6,6]),0.0::float) is not null;
+
+-- fv_lpad
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[4,6    ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,3,6  ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[4,6    ]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,3,6  ]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,5,6]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[1,6    ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,1,6  ])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,1,6])) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[1,6    ]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,1,6  ]),3) is not null;
+select fv_lpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,1,6]),3) is not null;
+
+-- fv_ltrim
+select fv_ltrim(((fv_new_rand(3.0,array[4      ])::decimal[])~=`0)::int[],1) is not null;
+select fv_ltrim(((fv_new_rand(3.0,array[4,3    ])::decimal[])~=`0)::int[],1) is not null;
+select fv_ltrim(((fv_new_rand(3.0,array[4,3,6  ])::decimal[])~=`0)::int[],1) is not null;
+select fv_ltrim(((fv_new_rand(3.0,array[4,3,6,5])::decimal[])~=`0)::int[],1) is not null;
+
+-- fv_mx_ascend_dim
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4      ]),1) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4,3    ]),1) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4      ]),2) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_mx_ascend_dim(fv_new_randn(0.0, 1.1,array[4      ]),3) is not null;
+
+-- fv_mx_descend_dim
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3    ]),1) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5,6]),1) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5,6]),2) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2) is not null;
+select fv_mx_descend_dim(fv_new_randn(0.0, 1.1,array[4,3,5,6]),3) is not null;
+
+-- fv_mx_ele_1d_2_2d
+select fv_mx_ele_1d_2_2d(fv_new_randn(0.0, 1.1,array[5*ceil((random()*6))::int]),5) is not null;
+select fv_mx_ele_1d_2_2d(fv_new_randn(0.0, 1.1,array[1,5*ceil((random()*6))::int]),5) is not null;
+select fv_mx_ele_1d_2_2d(fv_new_randn(0.0, 1.1,array[5*ceil((random()*6))::int,1]),5) is not null;
+
+-- fv_mx_ele_2d_2_1d
+select fv_mx_ele_2d_2_1d(fv_new_randn(0.0, 1.1,array[4,3    ]),1) is not null;
+select fv_mx_ele_2d_2_1d(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+
+-- fv_mx_ele_2d_2_3d
+select fv_mx_ele_2d_2_3d(fv_new_randn(0.0, 1.1,array[(random()*9)::int,5*ceil((random()*6))::int]),5,1) is not null;
+select fv_mx_ele_2d_2_3d(fv_new_randn(0.0, 1.1,array[5*ceil((random()*6))::int,(random()*9)::int]),5,2) is not null;
+
+-- fv_mx_ele_3d_2_2d
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2],1) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1],2) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3],1) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1],3) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3],2) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2],3) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,2],2) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,1],1) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[1,3],3) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,1],1) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[2,3],3) is not null;
+select fv_mx_ele_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[3,2],2) is not null;
+
+-- fv_mx_slice_3d_2_2d
+select fv_mx_slice_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1,2) is not null;
+select fv_mx_slice_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2,2) is not null;
+select fv_mx_slice_3d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3,2) is not null;
+
+-- fv_mx_slice_4d_2_2d
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[1,2],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[1,3],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[1,4],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[2,3],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[2,4],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[3,4],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[2,1],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[3,1],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[4,1],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[3,2],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[4,2],array[3,2]) is not null;
+select fv_mx_slice_4d_2_2d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[4,3],array[3,2]) is not null;
+
+-- fv_mx_slice_4d_2_3d
+select fv_mx_slice_4d_2_3d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),1,2) is not null;
+select fv_mx_slice_4d_2_3d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),2,2) is not null;
+select fv_mx_slice_4d_2_3d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),3,2) is not null;
+select fv_mx_slice_4d_2_3d(fv_new_randn(0.0, 1.1,array[4,3,5,6]),4,2) is not null;
+
+-- fv_new
+select fv_new(random(),array[4      ]) is not null;
+select fv_new(random(),array[4,3    ]) is not null;
+select fv_new(random(),array[4,3,5  ]) is not null;
+select fv_new(random(),array[4,3,5,6]) is not null;
+select fv_new(fv_new_randn(0.0, 1.1,array[7      ]),array[4      ]) is not null;
+select fv_new(fv_new_randn(0.0, 1.1,array[7,7    ]),array[4,3    ]) is not null;
+select fv_new(fv_new_randn(0.0, 1.1,array[7,7,7  ]),array[4,3,5  ]) is not null;
+select fv_new(fv_new_randn(0.0, 1.1,array[7,7,7,7]),array[4,3,5,6]) is not null;
+
+-- fv_new_rand
+select fv_new_rand(array[4      ]) is not null;
+select fv_new_rand(array[4,3    ]) is not null;
+select fv_new_rand(array[4,3,5  ]) is not null;
+select fv_new_rand(array[4,3,5,6]) is not null;
+select fv_new_rand(8.1,array[4      ]) is not null;
+select fv_new_rand(8.1,array[4,3    ]) is not null;
+select fv_new_rand(8.1,array[4,3,5  ]) is not null;
+select fv_new_rand(8.1,array[4,3,5,6]) is not null;
+select fv_new_rand(numrange(3.2,8.1,'[]'),array[4      ]) is not null;
+select fv_new_rand(numrange(3.2,8.1,'[]'),array[4,3    ]) is not null;
+select fv_new_rand(numrange(3.2,8.1,'[]'),array[4,3,5  ]) is not null;
+select fv_new_rand(numrange(3.2,8.1,'[]'),array[4,3,5,6]) is not null;
+
+-- fv_new_randn
+select fv_new_randn(0.0, 1.1,array[4      ]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3    ]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5  ]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]) is not null;
+
+-- fv_nullif
+select fv_nullif(((fv_new_rand(array[4      ])::decimal[])~=`0),((fv_new_rand(array[4      ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3    ])::decimal[])~=`0),((fv_new_rand(array[4,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1      ])::decimal[])~=`0),((fv_new_rand(array[4      ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1      ])::decimal[])~=`0),((fv_new_rand(array[4,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,1    ])::decimal[])~=`0),((fv_new_rand(array[4,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3    ])::decimal[])~=`0),((fv_new_rand(array[4,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1    ])::decimal[])~=`0),((fv_new_rand(array[4,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1      ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,1,1  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3,5  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1,5  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,1  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,1,5  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3,1  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1,1  ])::decimal[])~=`0),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1      ])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,1,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1,1,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3,1,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,1,5,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,1,1,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,1,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1,5,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,1,1,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3,5,1])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,3,1,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[1,1,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4      ])::decimal[])~=`0),((fv_new_rand(array[1      ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3    ])::decimal[])~=`0),((fv_new_rand(array[1      ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3    ])::decimal[])~=`0),((fv_new_rand(array[1,1    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3    ])::decimal[])~=`0),((fv_new_rand(array[1,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3    ])::decimal[])~=`0),((fv_new_rand(array[4,1    ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[1      ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[1,1,1  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[1,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[4,1,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[4,3,1  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[1,1,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[1,3,1  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),((fv_new_rand(array[4,1,1  ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1      ])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,1,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,1,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,5,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,1,1,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,3,1,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,1,5,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,1,1,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,3,1,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,1,5,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[4,1,1,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,3,5,1])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,3,1,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),((fv_new_rand(array[1,1,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(round(random()::decimal),((fv_new_rand(array[4      ])::decimal[])~=`0)) is not null;
+select fv_nullif(round(random()::decimal),((fv_new_rand(array[4,3    ])::decimal[])~=`0)) is not null;
+select fv_nullif(round(random()::decimal),((fv_new_rand(array[4,3,5  ])::decimal[])~=`0)) is not null;
+select fv_nullif(round(random()::decimal),((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)) is not null;
+select fv_nullif(((fv_new_rand(array[4      ])::decimal[])~=`0),round(random()::decimal)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3    ])::decimal[])~=`0),round(random()::decimal)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5  ])::decimal[])~=`0),round(random()::decimal)) is not null;
+select fv_nullif(((fv_new_rand(array[4,3,5,2])::decimal[])~=`0),round(random()::decimal)) is not null;
+
+-- fv_pos_replaces
+select fv_pos_replaces(fv_new_rand(array[4      ]),((array[4      ]::decimal[]*`fv_new_rand(array[1  ])::decimal[])~>`0)::int[],0.0::float) is not null;
+select fv_pos_replaces(fv_new_rand(array[4,3    ]),((array[4,3    ]::decimal[]*`fv_new_rand(array[1,2])::decimal[])~>`0)::int[],0.0::float) is not null;
+select fv_pos_replaces(fv_new_rand(array[4,3,5  ]),((array[4,3,5  ]::decimal[]*`fv_new_rand(array[1,3])::decimal[])~>`0)::int[],0.0::float) is not null;
+select fv_pos_replaces(fv_new_rand(array[4,3,5,2]),((array[4,3,5,2]::decimal[]*`fv_new_rand(array[1,4])::decimal[])~>`0)::int[],0.0::float) is not null;
+
+-- fv_rand_1d_ele
+select fv_rand_1d_ele(8,5) is not null;
+select fv_rand_1d_ele(5,8) is not null;
+
+-- fv_rand_1d_ele_pick
+select fv_rand_1d_ele_pick(8,5) is not null;
+-- -- select fv_rand_1d_ele_pick(5,8);
+
+-- fv_rand_slice_x
+select fv_rand_slice_x(fv_new_rand(array[4,3    ]),6) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3,5  ]),6) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3,5,2]),6) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3    ]),3) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3,5  ]),3) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3,5,2]),3) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3    ]),2) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3,5  ]),2) is not null;
+select fv_rand_slice_x(fv_new_rand(array[4,3,5,2]),2) is not null;
+
+-- fv_rand_slice_x_pick
+select fv_rand_slice_x_pick(fv_new_rand(array[4,3    ]),3) is not null;
+select fv_rand_slice_x_pick(fv_new_rand(array[4,3,5  ]),3) is not null;
+select fv_rand_slice_x_pick(fv_new_rand(array[4,3,5,2]),3) is not null;
+select fv_rand_slice_x_pick(fv_new_rand(array[4,3    ]),2) is not null;
+select fv_rand_slice_x_pick(fv_new_rand(array[4,3,5  ]),2) is not null;
+select fv_rand_slice_x_pick(fv_new_rand(array[4,3,5,2]),2) is not null;
+
+-- fv_rand_slice_x3
+select fv_rand_slice_x3(fv_new_rand(array[4,3,5  ]),6) is not null;
+select fv_rand_slice_x3(fv_new_rand(array[4,3,5,2]),6) is not null;
+select fv_rand_slice_x3(fv_new_rand(array[4,3,5  ]),5) is not null;
+select fv_rand_slice_x3(fv_new_rand(array[4,3,5,2]),5) is not null;
+select fv_rand_slice_x3(fv_new_rand(array[4,3,5  ]),2) is not null;
+select fv_rand_slice_x3(fv_new_rand(array[4,3,5,2]),2) is not null;
+
+-- fv_rand_slice_x3_pick
+select fv_rand_slice_x3_pick(fv_new_rand(array[4,3,5  ]),5) is not null;
+select fv_rand_slice_x3_pick(fv_new_rand(array[4,3,5,2]),5) is not null;
+select fv_rand_slice_x3_pick(fv_new_rand(array[4,3,5  ]),2) is not null;
+select fv_rand_slice_x3_pick(fv_new_rand(array[4,3,5,2]),2) is not null;
+
+-- fv_rand_slice_x4
+select fv_rand_slice_x4(fv_new_rand(array[4,3,5,2]),6) is not null;
+select fv_rand_slice_x4(fv_new_rand(array[4,3,5,2]),2) is not null;
+select fv_rand_slice_x4(fv_new_rand(array[4,3,5,2]),1) is not null;
+
+-- fv_rand_slice_x4_pick
+select fv_rand_slice_x4_pick(fv_new_rand(array[4,3,5,2]),2) is not null;
+select fv_rand_slice_x4_pick(fv_new_rand(array[4,3,5,2]),1) is not null;
+
+-- fv_rand_slice_y
+select fv_rand_slice_y(fv_new_rand(array[4,3    ]),6) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3,5  ]),6) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3,5,2]),6) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3    ]),4) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3,5  ]),4) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3,5,2]),4) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3    ]),2) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3,5  ]),2) is not null;
+select fv_rand_slice_y(fv_new_rand(array[4,3,5,2]),2) is not null;
+
+-- fv_rand_slice_y_pick
+select fv_rand_slice_y_pick(fv_new_rand(array[4,3    ]),4) is not null;
+select fv_rand_slice_y_pick(fv_new_rand(array[4,3,5  ]),4) is not null;
+select fv_rand_slice_y_pick(fv_new_rand(array[4,3,5,2]),4) is not null;
+select fv_rand_slice_y_pick(fv_new_rand(array[4,3    ]),2) is not null;
+select fv_rand_slice_y_pick(fv_new_rand(array[4,3,5  ]),2) is not null;
+select fv_rand_slice_y_pick(fv_new_rand(array[4,3,5,2]),2) is not null;
+
+-- fv_regexp_matches
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[]) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text) is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'g') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'') is not null;
+select fv_regexp_matches(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'') is not null;
+
+
+-- fv_regexp_replace
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','g') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,3,1,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[4,1,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,5,1])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,3,1,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],((fv_new_rand(4.0,array[1,1,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4      ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(floor((random()*16))::int::bit(4)::text,((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(2)[]::text[],'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5  ])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','') is not null;
+select fv_regexp_replace(((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::text[],floor((random()*4))::int::bit(2)::text,'22','') is not null;
+
+-- fv_rmask
+select fv_rmask(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(3.0,array[4,1    ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_rmask(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(5.0,array[4,3,1  ]))::decimal[]~=`0)::int[],0.0::float) is not null;
+select fv_rmask(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(2.0,array[4,3,5,1]))::decimal[]~=`0)::int[],0.0::float) is not null;
+
+-- fv_rpad
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[4,6    ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,3,6  ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[4,6    ]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,3,6  ]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[4,3,5,6]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[1,6    ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,1,6  ])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,1,6])) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[6      ]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[1,6    ]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[1,1,6  ]),3) is not null;
+select fv_rpad(fv_new_randn(0.0, 1.1,array[4,3,5,2]),fv_new_randn(0.0, 1.1,array[1,1,1,6]),3) is not null;
+
+-- fv_rtrim
+select fv_rtrim(((fv_new_rand(3.0,array[4      ])::decimal[])~=`0)::int[],1) is not null;
+select fv_rtrim(((fv_new_rand(3.0,array[4,3    ])::decimal[])~=`0)::int[],1) is not null;
+select fv_rtrim(((fv_new_rand(3.0,array[4,3,6  ])::decimal[])~=`0)::int[],1) is not null;
+select fv_rtrim(((fv_new_rand(3.0,array[4,3,6,5])::decimal[])~=`0)::int[],1) is not null;
+
+-- fv_sample_x
+select fv_sample_x(fv_new_randn(0.0, 1.1,array[4,30    ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[4,1    ])) is not null;
+select fv_sample_x(fv_new_randn(0.0, 1.1,array[4,30,5  ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[4,1,5  ])) is not null;
+select fv_sample_x(fv_new_randn(0.0, 1.1,array[4,30,5,2]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[4,1,5,2])) is not null;
+select fv_sample_x(fv_new_randn(0.0, 1.1,array[4,30    ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_sample_x(fv_new_randn(0.0, 1.1,array[4,30,5  ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_sample_x(fv_new_randn(0.0, 1.1,array[4,30,5,2]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_sample_x3
+select fv_sample_x3(fv_new_randn(0.0, 1.1,array[4,3,50  ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[4,3,1  ])) is not null;
+select fv_sample_x3(fv_new_randn(0.0, 1.1,array[4,3,50,2]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[4,3,1,2])) is not null;
+select fv_sample_x3(fv_new_randn(0.0, 1.1,array[4,3,50  ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_sample_x3(fv_new_randn(0.0, 1.1,array[4,3,50,2]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_sample_x4
+select fv_sample_x4(fv_new_randn(0.0, 1.1,array[4,3,5,20]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[4,3,5,1])) is not null;
+select fv_sample_x4(fv_new_randn(0.0, 1.1,array[4,3,5,20]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_sample_y
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40      ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[1      ])) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40,3    ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[1,3    ])) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40,3,5  ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[1,3,5  ])) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40,3,5,2]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')],array_fill(0.0::float,array[1,3,5,2])) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40      ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40,3    ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40,3,5  ]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_sample_y(fv_new_randn(0.0, 1.1,array[40,3,5,2]),6,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_chunk
+select fv_chunk(fv_new_randn(0.0, 1.1,array[4      ]),array[[2      ],[3      ]]) is not null;
+select fv_chunk(fv_new_randn(0.0, 1.1,array[4,3    ]),array[[2,1    ],[3,3    ]]) is not null;
+select fv_chunk(fv_new_randn(0.0, 1.1,array[4,3,5  ]),array[[2,1,2  ],[3,3,4  ]]) is not null;
+select fv_chunk(fv_new_randn(0.0, 1.1,array[4,3,5,6]),array[[2,1,2,1],[3,3,4,4]]) is not null;
+
+-- fv_slice_x
+select fv_slice_x(fv_new_randn(0.0, 1.1,array[4,30    ]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_slice_x(fv_new_randn(0.0, 1.1,array[4,30,5  ]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_slice_x(fv_new_randn(0.0, 1.1,array[4,30,5,2]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_slice_x3
+select fv_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,50  ]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_slice_x3(fv_new_randn(0.0, 1.1,array[4,3,50,2]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_slice_x4
+select fv_slice_x4(fv_new_randn(0.0, 1.1,array[4,3,5,20]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_slice_y
+select fv_slice_y(fv_new_randn(0.0, 1.1,array[40      ]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_slice_y(fv_new_randn(0.0, 1.1,array[40,3    ]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_slice_y(fv_new_randn(0.0, 1.1,array[40,3,5  ]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_slice_y(fv_new_randn(0.0, 1.1,array[40,3,5,2]),array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_trim
+select fv_trim(((fv_new_rand(3.0,array[4      ])::decimal[])~=`0)::int[],1) is not null;
+select fv_trim(((fv_new_rand(3.0,array[4,3    ])::decimal[])~=`0)::int[],1) is not null;
+select fv_trim(((fv_new_rand(3.0,array[4,3,6  ])::decimal[])~=`0)::int[],1) is not null;
+select fv_trim(((fv_new_rand(3.0,array[4,3,6,5])::decimal[])~=`0)::int[],1) is not null;
+
+-- fv_upper_tri_mx
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3    ]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5  ]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,5,2]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[3,4    ]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,5,3  ]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,2,5]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[6,6    ]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,6,6  ]),0.0::float) is not null;
+select fv_upper_tri_mx(fv_new_randn(0.0, 1.1,array[4,3,6,6]),0.0::float) is not null;
+
+-- fv_upper_tri_mx_ex
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3    ]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5  ]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,5,2]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[3,4    ]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,5,3  ]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,2,5]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[6,6    ]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,6,6  ]),0.0::float) is not null;
+select fv_upper_tri_mx_ex(fv_new_randn(0.0, 1.1,array[4,3,6,6]),0.0::float) is not null;
+
+-- fv_d_amask_dloss_dindepdt_1
+select fv_d_amask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(4.0,array[1,3    ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_amask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(3.0,array[4,1,5  ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_amask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(5.0,array[4,3,1,2]))::decimal[]~=`0)::int[]) is not null;
+
+-- fv_d_apad_dloss_dindepdt_1
+select fv_d_apad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),3) is not null;
+select fv_d_apad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2) is not null;
+select fv_d_apad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4) is not null;
+
+-- fv_d_apad_dloss_dindepdt_2
+select fv_d_apad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3    ]),3) is not null;
+select fv_d_apad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2) is not null;
+select fv_d_apad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4) is not null;
+select fv_d_apad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[40,3    ]),3,2) is not null;
+select fv_d_apad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,30,5  ]),2,2) is not null;
+select fv_d_apad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,50,2]),4,2) is not null;
+
+-- fv_d_bmask_dloss_dindepdt_1
+select fv_d_bmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(4.0,array[1,3    ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_bmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(3.0,array[4,1,5  ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_bmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(5.0,array[4,3,1,2]))::decimal[]~=`0)::int[]) is not null;
+
+-- fv_d_bpad_dloss_dindepdt_1
+select fv_d_bpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),3) is not null;
+select fv_d_bpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2) is not null;
+select fv_d_bpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4) is not null;
+
+-- fv_d_bpad_dloss_dindepdt_2
+select fv_d_bpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3    ]),3) is not null;
+select fv_d_bpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2) is not null;
+select fv_d_bpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5,2]),4) is not null;
+select fv_d_bpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[40,3    ]),3,2) is not null;
+select fv_d_bpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,30,5  ]),2,2) is not null;
+select fv_d_bpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,50,2]),4,2) is not null;
+
+-- fv_d_lmask_dloss_dindepdt_1
+select fv_d_lmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(3.0,array[4,1    ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_lmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(5.0,array[4,3,1  ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_lmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(2.0,array[4,3,5,1]))::decimal[]~=`0)::int[]) is not null;
+
+-- fv_d_lower_tri_mx_dloss_dindepdt
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_d_lower_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+
+-- fv_d_lower_tri_mx_ex_dloss_dindepdt
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_d_lower_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+
+-- fv_d_lpad_dloss_dindepdt_1
+select fv_d_lpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_d_lpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3) is not null;
+select fv_d_lpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,7]),6) is not null;
+
+-- fv_d_lpad_dloss_dindepdt_2
+select fv_d_lpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_d_lpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3) is not null;
+select fv_d_lpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5,7]),6) is not null;
+select fv_d_lpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,30    ]),2,2) is not null;
+select fv_d_lpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,50  ]),3,2) is not null;
+select fv_d_lpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5,70]),6,2) is not null;
+
+-- fv_d_mx_ascend_dim_dloss_dindepdt
+select fv_d_mx_ascend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3    ]),1) is not null;
+select fv_d_mx_ascend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,5  ]),1) is not null;
+select fv_d_mx_ascend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,1,5  ]),2) is not null;
+select fv_d_mx_ascend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,5,2]),1) is not null;
+select fv_d_mx_ascend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,1,5,2]),2) is not null;
+select fv_d_mx_ascend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,1,1,2]),3) is not null;
+
+-- fv_d_mx_descend_dim_dloss_dindepdt
+select fv_d_mx_descend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4      ]),1) is not null;
+select fv_d_mx_descend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ]),1) is not null;
+select fv_d_mx_descend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1) is not null;
+select fv_d_mx_descend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4      ]),2) is not null;
+select fv_d_mx_descend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_d_mx_descend_dim_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4      ]),3) is not null;
+
+-- fv_d_mx_ele_2d_2_3d_dloss_dindepdt
+select fv_d_mx_ele_2d_2_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),1) is not null;
+select fv_d_mx_ele_2d_2_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]),2) is not null;
+
+-- fv_d_mx_ele_3d_2_2d_dloss_dindepdt
+with cte_arr as
+(
+  select fv_new_randn(0.0, 1.1,array[4,3,5  ]) as a_arr
+)
+select 
+  sm_sc.fv_mx_ele_3d_2_2d(a_arr, array[a_dims_from, a_dims_to], (array[a_dims_from, a_dims_to])[a_dim_pin_no]) is not null
+-- , array_length(a_arr, (array[a_dims_from, a_dims_to])[a_dim_pin_no]) 
+-- , array[a_dims_from, a_dims_to]
+-- , (array[a_dims_from, a_dims_to])[a_dim_pin_no]
+, sm_sc.fv_d_mx_ele_3d_2_2d_dloss_dindepdt
+  (
+    sm_sc.fv_mx_ele_3d_2_2d(a_arr, array[a_dims_from, a_dims_to], (array[a_dims_from, a_dims_to])[a_dim_pin_no]), 
+    array_length(a_arr, (array[a_dims_from, a_dims_to])[a_dim_pin_no]), 
+    array[a_dims_from, a_dims_to],
+    (array[a_dims_from, a_dims_to])[a_dim_pin_no]
+  ) is not null as a_out
+from cte_arr
+  , (select 1, 2 union all select 1, 3 union all select 2, 3 union all select 3, 1) tb_a_dims_from_to(a_dims_from, a_dims_to)
+  , generate_series(1, 2) tb_a_dim_pin_no(a_dim_pin_no)
+order by a_dims_from, a_dims_to, a_dim_pin_no
+;
+
+-- fv_d_mx_slice_3d_2_2d_dloss_dindepdt
+select fv_d_mx_slice_3d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,5  ]),array[4,3,5  ],1,2) is not null;
+select fv_d_mx_slice_3d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,1,5  ]),array[4,3,5  ],2,2) is not null;
+select fv_d_mx_slice_3d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,1  ]),array[4,3,5  ],3,2) is not null;
+
+-- fv_d_mx_slice_4d_2_2d_dloss_dindepdt
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,1,5,6]),array[4,3,5,6],array[1,2],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,1,6]),array[4,3,5,6],array[1,3],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,5,1]),array[4,3,5,6],array[1,4],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,1,1,6]),array[4,3,5,6],array[2,3],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,1,5,1]),array[4,3,5,6],array[2,4],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,1,1]),array[4,3,5,6],array[3,4],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,1,5,6]),array[4,3,5,6],array[2,1],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,1,6]),array[4,3,5,6],array[3,1],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,5,1]),array[4,3,5,6],array[4,1],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,1,1,6]),array[4,3,5,6],array[3,2],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,1,5,1]),array[4,3,5,6],array[4,2],array[3,2]) is not null;
+select fv_d_mx_slice_4d_2_2d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,1,1]),array[4,3,5,6],array[4,3],array[3,2]) is not null;
+
+-- fv_d_mx_slice_4d_2_3d_dloss_dindepdt
+select fv_d_mx_slice_4d_2_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[1,3,5,6]),array[4,3,5,6],1,2) is not null;
+select fv_d_mx_slice_4d_2_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,1,5,6]),array[4,3,5,6],2,2) is not null;
+select fv_d_mx_slice_4d_2_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,1,6]),array[4,3,5,6],3,2) is not null;
+select fv_d_mx_slice_4d_2_3d_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,1]),array[4,3,5,6],4,2) is not null;
+
+-- fv_d_new_dloss_dindepdt
+select fv_d_new_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_d_new_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_d_new_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_d_new_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_d_rmask_dloss_dindepdt_1
+select fv_d_rmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),((fv_new_rand(3.0,array[4,1    ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_rmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),((fv_new_rand(5.0,array[4,3,1  ]))::decimal[]~=`0)::int[]) is not null;
+select fv_d_rmask_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,2]),((fv_new_rand(2.0,array[4,3,5,1]))::decimal[]~=`0)::int[]) is not null;
+
+-- fv_d_rpad_dloss_dindepdt_1
+select fv_d_rpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_d_rpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3) is not null;
+select fv_d_rpad_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,7]),6) is not null;
+
+-- fv_d_rpad_dloss_dindepdt_2
+select fv_d_rpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_d_rpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5  ]),3) is not null;
+select fv_d_rpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5,7]),6) is not null;
+select fv_d_rpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,30    ]),2,2) is not null;
+select fv_d_rpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,50  ]),3,2) is not null;
+select fv_d_rpad_dloss_dindepdt_2(fv_new_randn(0.0, 1.1,array[4,3,5,70]),6,2) is not null;
+
+-- fv_d_sample_x_dloss_dindepdt_1
+select fv_d_sample_x_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,40    ]),30,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_sample_x_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,40,5  ]),30,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_sample_x_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,40,5,2]),30,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_sample_x3_dloss_dindepdt_1
+select fv_d_sample_x3_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,72  ]),50,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_sample_x3_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,72,2]),50,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_sample_x4_dloss_dindepdt_1
+select fv_d_sample_x4_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[4,3,5,32]),20,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_sample_y_dloss_dindepdt_1
+select fv_d_sample_y_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[56      ]),40,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_sample_y_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[56,3    ]),40,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_sample_y_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[56,3,5  ]),40,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_sample_y_dloss_dindepdt_1(fv_new_randn(0.0, 1.1,array[56,3,5,2]),40,4,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_chunk_dloss_dindepdt
+select fv_d_chunk_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[2      ]),array[4      ],array[2      ]) is not null;
+select fv_d_chunk_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[2,3    ]),array[4,3    ],array[2,1    ]) is not null;
+select fv_d_chunk_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[2,3,1  ]),array[4,3,2  ],array[2,1,2  ]) is not null;
+select fv_d_chunk_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[2,3,1,4]),array[4,3,2,6],array[2,1,2,1]) is not null;
+
+-- fv_d_slice_x_dloss_dindepdt
+select fv_d_slice_x_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,8    ]),30,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_slice_x_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,8,5  ]),30,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_slice_x_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,8,5,2]),30,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_slice_x3_dloss_dindepdt
+select fv_d_slice_x3_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,8  ]),50,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_slice_x3_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,8,2]),50,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_slice_x4_dloss_dindepdt
+select fv_d_slice_x4_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,8]),20,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_slice_y_dloss_dindepdt
+select fv_d_slice_y_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[8      ]),40,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_slice_y_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[8,3    ]),40,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_slice_y_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[8,3,5  ]),40,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+select fv_d_slice_y_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[8,3,5,2]),40,array[int4range(2,4,'[]'),int4range(3,7,'[]')]) is not null;
+
+-- fv_d_upper_tri_mx_dloss_dindepdt
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_d_upper_tri_mx_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+
+-- fv_d_lower_tri_mx_ex_dloss_dindepdt
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[3,4    ])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,5,3  ])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,2,5])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[6,6    ])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,6,6  ])) is not null;
+select fv_d_upper_tri_mx_ex_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,6,6])) is not null;
+
+-- fv_sin
+select fv_sin(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_sin(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_sin(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_sin(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_cos
+select fv_cos(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_cos(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_cos(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_cos(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_tan
+select fv_tan(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_tan(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_tan(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_tan(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_cot
+select fv_cot(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_cot(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_cot(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_cot(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_csc
+select fv_csc(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_csc(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_csc(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_csc(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_sec
+select fv_sec(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_sec(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_sec(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_sec(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_sind
+select fv_sind(fv_new_randn(0.0,360.0*2.0,array[4      ])) is not null;
+select fv_sind(fv_new_randn(0.0,360.0*2.0,array[4,3    ])) is not null;
+select fv_sind(fv_new_randn(0.0,360.0*2.0,array[4,3,5  ])) is not null;
+select fv_sind(fv_new_randn(0.0,360.0*2.0,array[4,3,5,2])) is not null;
+
+-- fv_cosd
+select fv_cosd(fv_new_randn(0.0,360.0*2.0,array[4      ])) is not null;
+select fv_cosd(fv_new_randn(0.0,360.0*2.0,array[4,3    ])) is not null;
+select fv_cosd(fv_new_randn(0.0,360.0*2.0,array[4,3,5  ])) is not null;
+select fv_cosd(fv_new_randn(0.0,360.0*2.0,array[4,3,5,2])) is not null;
+
+-- fv_tand
+select fv_tand(fv_new_randn(0.0,360.0*2.0,array[4      ])) is not null;
+select fv_tand(fv_new_randn(0.0,360.0*2.0,array[4,3    ])) is not null;
+select fv_tand(fv_new_randn(0.0,360.0*2.0,array[4,3,5  ])) is not null;
+select fv_tand(fv_new_randn(0.0,360.0*2.0,array[4,3,5,2])) is not null;
+
+-- fv_cotd
+select fv_cotd(fv_new_randn(0.0,360.0*2.0,array[4      ])) is not null;
+select fv_cotd(fv_new_randn(0.0,360.0*2.0,array[4,3    ])) is not null;
+select fv_cotd(fv_new_randn(0.0,360.0*2.0,array[4,3,5  ])) is not null;
+select fv_cotd(fv_new_randn(0.0,360.0*2.0,array[4,3,5,2])) is not null;
+
+-- fv_asin
+select fv_asin(fv_new_rand(array[4      ])) is not null;
+select fv_asin(fv_new_rand(array[4,3    ])) is not null;
+select fv_asin(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_asin(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_acos
+select fv_acos(fv_new_rand(array[4      ])) is not null;
+select fv_acos(fv_new_rand(array[4,3    ])) is not null;
+select fv_acos(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_acos(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_atan
+select fv_atan(fv_new_rand(numrange(-100.0,100.0),array[4      ])) is not null;
+select fv_atan(fv_new_rand(numrange(-100.0,100.0),array[4,3    ])) is not null;
+select fv_atan(fv_new_rand(numrange(-100.0,100.0),array[4,3,5  ])) is not null;
+select fv_atan(fv_new_rand(numrange(-100.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_asind
+select fv_asind(fv_new_rand(array[4      ])) is not null;
+select fv_asind(fv_new_rand(array[4,3    ])) is not null;
+select fv_asind(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_asind(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_acosd
+select fv_acosd(fv_new_rand(array[4      ])) is not null;
+select fv_acosd(fv_new_rand(array[4,3    ])) is not null;
+select fv_acosd(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_acosd(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_atand
+select fv_atand(fv_new_rand(numrange(-100.0,100.0),array[4      ])) is not null;
+select fv_atand(fv_new_rand(numrange(-100.0,100.0),array[4,3    ])) is not null;
+select fv_atand(fv_new_rand(numrange(-100.0,100.0),array[4,3,5  ])) is not null;
+select fv_atand(fv_new_rand(numrange(-100.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_sinh
+select fv_sinh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_sinh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_sinh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_sinh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_cosh
+select fv_cosh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_cosh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_cosh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_cosh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_tanh
+select fv_tanh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_tanh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_tanh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_tanh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_asinh
+select fv_asinh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_asinh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_asinh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_asinh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_acosh
+select fv_acosh(fv_new_rand(numrange(1.0,100.0),array[4      ])) is not null;
+select fv_acosh(fv_new_rand(numrange(1.0,100.0),array[4,3    ])) is not null;
+select fv_acosh(fv_new_rand(numrange(1.0,100.0),array[4,3,5  ])) is not null;
+select fv_acosh(fv_new_rand(numrange(1.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_atanh
+select fv_atanh(fv_new_rand(numrange(-1.0,1.0),array[4      ])) is not null;
+select fv_atanh(fv_new_rand(numrange(-1.0,1.0),array[4,3    ])) is not null;
+select fv_atanh(fv_new_rand(numrange(-1.0,1.0),array[4,3,5  ])) is not null;
+select fv_atanh(fv_new_rand(numrange(-1.0,1.0),array[4,3,5,2])) is not null;
+
+-- fv_degrees
+select fv_degrees(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_degrees(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_degrees(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_degrees(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_radians
+select fv_radians(fv_new_randn(0.0,360.0*2.0,array[4      ])) is not null;
+select fv_radians(fv_new_randn(0.0,360.0*2.0,array[4,3    ])) is not null;
+select fv_radians(fv_new_randn(0.0,360.0*2.0,array[4,3,5  ])) is not null;
+select fv_radians(fv_new_randn(0.0,360.0*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_sin
+select fv_d_sin(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_d_sin(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_d_sin(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_d_sin(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_cos
+select fv_d_cos(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_d_cos(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_d_cos(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_d_cos(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_tan
+select fv_d_tan(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_d_tan(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_d_tan(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_d_tan(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_cot
+select fv_d_cot(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_d_cot(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_d_cot(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_d_cot(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_csc
+select fv_d_csc(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_d_csc(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_d_csc(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_d_csc(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_sec
+select fv_d_sec(fv_new_randn(0.0,pi()*2.0,array[4      ])) is not null;
+select fv_d_sec(fv_new_randn(0.0,pi()*2.0,array[4,3    ])) is not null;
+select fv_d_sec(fv_new_randn(0.0,pi()*2.0,array[4,3,5  ])) is not null;
+select fv_d_sec(fv_new_randn(0.0,pi()*2.0,array[4,3,5,2])) is not null;
+
+-- fv_d_asin
+select fv_d_asin(fv_new_rand(array[4      ])) is not null;
+select fv_d_asin(fv_new_rand(array[4,3    ])) is not null;
+select fv_d_asin(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_d_asin(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_d_acos
+select fv_d_acos(fv_new_rand(array[4      ])) is not null;
+select fv_d_acos(fv_new_rand(array[4,3    ])) is not null;
+select fv_d_acos(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_d_acos(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_d_atan
+select fv_d_atan(fv_new_rand(numrange(-100.0,100.0),array[4      ])) is not null;
+select fv_d_atan(fv_new_rand(numrange(-100.0,100.0),array[4,3    ])) is not null;
+select fv_d_atan(fv_new_rand(numrange(-100.0,100.0),array[4,3,5  ])) is not null;
+select fv_d_atan(fv_new_rand(numrange(-100.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_d_acot
+select fv_d_acot(fv_new_rand(numrange(-100.0,100.0),array[4      ])) is not null;
+select fv_d_acot(fv_new_rand(numrange(-100.0,100.0),array[4,3    ])) is not null;
+select fv_d_acot(fv_new_rand(numrange(-100.0,100.0),array[4,3,5  ])) is not null;
+select fv_d_acot(fv_new_rand(numrange(-100.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_d_acsc
+select fv_d_acsc(fv_new_rand(numrange(-100.0,-1.0),array[4      ])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(-100.0,-1.0),array[4,3    ])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(-100.0,-1.0),array[4,3,5  ])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(-100.0,-1.0),array[4,3,5,2])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(1.0,100.0),array[4      ])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(1.0,100.0),array[4,3    ])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(1.0,100.0),array[4,3,5  ])) is not null;
+select fv_d_acsc(fv_new_rand(numrange(1.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_d_asec
+select fv_d_asec(fv_new_rand(numrange(-100.0,-1.0),array[4      ])) is not null;
+select fv_d_asec(fv_new_rand(numrange(-100.0,-1.0),array[4,3    ])) is not null;
+select fv_d_asec(fv_new_rand(numrange(-100.0,-1.0),array[4,3,5  ])) is not null;
+select fv_d_asec(fv_new_rand(numrange(-100.0,-1.0),array[4,3,5,2])) is not null;
+select fv_d_asec(fv_new_rand(numrange(1.0,100.0),array[4      ])) is not null;
+select fv_d_asec(fv_new_rand(numrange(1.0,100.0),array[4,3    ])) is not null;
+select fv_d_asec(fv_new_rand(numrange(1.0,100.0),array[4,3,5  ])) is not null;
+select fv_d_asec(fv_new_rand(numrange(1.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_d_sinh
+select fv_d_sinh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_sinh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_sinh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_sinh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_cosh
+select fv_d_cosh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_cosh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_cosh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_cosh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_tanh
+select fv_d_tanh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_tanh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_tanh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_tanh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_asinh
+select fv_d_asinh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_asinh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_asinh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_asinh(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_acosh
+select fv_d_acosh(fv_new_rand(numrange(1.0,100.0),array[4      ])) is not null;
+select fv_d_acosh(fv_new_rand(numrange(1.0,100.0),array[4,3    ])) is not null;
+select fv_d_acosh(fv_new_rand(numrange(1.0,100.0),array[4,3,5  ])) is not null;
+select fv_d_acosh(fv_new_rand(numrange(1.0,100.0),array[4,3,5,2])) is not null;
+
+-- fv_d_atanh
+select fv_d_atanh(fv_new_rand(numrange(-1.0,1.0),array[4      ])) is not null;
+select fv_d_atanh(fv_new_rand(numrange(-1.0,1.0),array[4,3    ])) is not null;
+select fv_d_atanh(fv_new_rand(numrange(-1.0,1.0),array[4,3,5  ])) is not null;
+select fv_d_atanh(fv_new_rand(numrange(-1.0,1.0),array[4,3,5,2])) is not null;
+
+-- fv_grad_heigh_1st
+select fv_grad_heigh_1st(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_grad_heigh_1st(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_grad_heigh_1st(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_grad_heigh_1st(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_grad_heigh_2nd
+select fv_grad_heigh_2nd(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_grad_heigh_2nd(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_grad_heigh_2nd(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_grad_heigh_2nd(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_grad_width_1st
+select fv_grad_width_1st(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_grad_width_1st(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_grad_width_1st(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_grad_width_1st(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_grad_width_2nd
+select fv_grad_width_2nd(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_grad_width_2nd(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_grad_width_2nd(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_grad_width_2nd(fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+
+-- fv_sgn_fft
+select fv_sgn_fft((select array_agg(sin(a_no::decimal)) from generate_series(1, 32) tb_a(a_no))) is not null;
+
+-- fv_sgn_fft2
+with 
+cte_wave as 
+(
+  select 
+    a_no_1
+  , array_agg(sin(a_no_1::decimal + a_no_2::decimal)) as a_wave
+  from generate_series(1, 32) tb_a_1(a_no_1)
+    , generate_series(1, 32) tb_a_2(a_no_2)
+  group by a_no_1
+)
+select fv_sgn_fft2((select array_agg(a_wave order by a_no_1) from cte_wave)) is not null
+;
+
+-- fv_sgn_ifft
+select fv_sgn_ifft((select array_agg(sin(a_no::decimal)) from generate_series(1, 32) tb_a(a_no))) is not null;
+
+-- fv_sgn_ifft2
+with 
+cte_wave as 
+(
+  select 
+    a_no_1
+  , array_agg(sin(a_no_1::decimal + a_no_2::decimal)) as a_wave
+  from generate_series(1, 32) tb_a_1(a_no_1)
+    , generate_series(1, 32) tb_a_2(a_no_2)
+  group by a_no_1
+)
+select fv_sgn_ifft2((select array_agg(a_wave order by a_no_1) from cte_wave)) is not null
+;
+
+-- fv_sgn_kalman
+with 
+cte_ods as
+(
+  select 
+    row_number() over() as row_no,
+    a_x,
+    10 * sin(a_x) :: float as ods_ele
+  from generate_series(0.0, pi() :: decimal, (pi() / 100) :: decimal) tb_a(a_x)
+)
+,
+cte_test as
+(
+  select
+    row_no,
+    ods_ele + normal_rand(1, 0.0 :: float, 0.5 :: float) :: float as test_ele  
+  from cte_ods
+)
+,
+cte_predict as
+(
+  select 
+    fv_sgn_kalman
+    (
+      array_agg(test_ele order by row_no),              
+      0.4 * 0.4                          ,
+      0.5 * 0.5                          ,
+      0.5 * 0.5
+    ) as predict_arr
+  from cte_test
+)
+select 
+  a_x is not null
+, a_ods_ele is not null
+, a_test_ele is not null
+, a_predict_ele is not null
+, (abs(a_test_ele - a_ods_ele) - abs(a_predict_ele - a_ods_ele)) is not null
+  -- sum(abs(a_test_ele - a_ods_ele) - abs(a_predict_ele - a_ods_ele))
+from unnest
+(
+  (select array_agg(a_x) from cte_ods),
+  (select array_agg(ods_ele) from cte_ods),
+  (select array_agg(test_ele) from cte_test),
+  (select predict_arr from cte_predict)
+) tb_a(a_x, a_ods_ele, a_test_ele, a_predict_ele)
+;
+
+-- fv_aggr_chunk_avg
+select fv_aggr_chunk_avg(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_chunk_avg(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_chunk_avg(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_chunk_avg(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_aggr_chunk_max
+select fv_aggr_chunk_max(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_chunk_max(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_chunk_max(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_chunk_max(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_aggr_chunk_min
+select fv_aggr_chunk_min(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_chunk_min(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_chunk_min(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_chunk_min(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_aggr_chunk_prod
+select fv_aggr_chunk_prod(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_chunk_prod(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_chunk_prod(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_chunk_prod(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_aggr_chunk_sum
+select fv_aggr_chunk_sum(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_chunk_sum(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_chunk_sum(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_chunk_sum(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_aggr_slice_and
+select fv_aggr_slice_and(fv_new_rand(array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::int[]::boolean[],array[4      ]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::int[]::boolean[],array[4,3    ]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::int[]::boolean[],array[4,3,5  ]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[],array[4,3,5,6]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_and(fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4      ]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4,3    ]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4,3,5  ]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4,3,5,6]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+select fv_aggr_slice_and(((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+
+-- fv_aggr_slice_avg
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_avg(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_coalesce
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4      ]) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4,3    ]) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4,3,5  ]) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4,3,5,6]) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+select fv_aggr_slice_coalesce(fv_nullif((fv_new_rand(2.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+
+-- fv_aggr_slice_concat
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],array[4      ]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],array[4,3    ]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],array[4,3,5  ]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4,3,5,2]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[],array[4,3,5,2]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+select fv_aggr_slice_concat(((fv_new_rand(16.0,array[4,3,5,2]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]::varbit[]) is not null;
+
+-- fv_aggr_slice_is_exists_null
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4      ]) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4,3    ]) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4,3,5  ]) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])::int[],0),array[4,3,5,6]) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+select fv_aggr_slice_is_exists_null(fv_nullif((fv_new_rand(6.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])::int[],0)) is not null;
+
+-- fv_aggr_slice_max
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_max(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_median
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_median(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_min
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_min(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_mode
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_mode(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_or
+select fv_aggr_slice_or(fv_new_rand(array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::int[]::boolean[],array[4      ]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::int[]::boolean[],array[4,3    ]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::int[]::boolean[],array[4,3,5  ]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[],array[4,3,5,6]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_or(fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4      ]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4,3    ]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4,3,5  ]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[],array[4,3,5,6]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+select fv_aggr_slice_or(((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[]) is not null;
+
+-- fv_aggr_slice_prod
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4      ]*`(fv_new_rand(0.9,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4,3    ]*`(fv_new_rand(0.9,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4,3,5  ]*`(fv_new_rand(0.9,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4,3,5,6]*`(fv_new_rand(0.9,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4      ]*`(fv_new_rand(0.9,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4,3    ]*`(fv_new_rand(0.9,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4,3,5  ]*`(fv_new_rand(0.9,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_prod(fv_new_randn(0.0, 0.9,array[4,3,5,6]*`(fv_new_rand(0.9,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_ptp
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_ptp(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_stddev_pop
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_stddev_pop(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_stddev_samp
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_stddev_samp(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_sum
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_sum(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_var_pop
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_var_pop(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_aggr_slice_var_samp
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[])) is not null;
+select fv_aggr_slice_var_samp(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])) is not null;
+
+-- fv_idx_1d_max
+select fv_idx_1d_max(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_idx_1d_max(fv_new_randn(0.0, 1.1,array[4,1    ])) is not null;
+select fv_idx_1d_max(fv_new_randn(0.0, 1.1,array[1,4    ])) is not null;
+
+-- fv_idx_1d_min
+select fv_idx_1d_min(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_idx_1d_min(fv_new_randn(0.0, 1.1,array[4,1    ])) is not null;
+select fv_idx_1d_min(fv_new_randn(0.0, 1.1,array[1,4    ])) is not null;
+
+-- fv_idx_mx_max
+select fv_idx_mx_max(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+
+-- fv_idx_mx_min
+select fv_idx_mx_min(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+
+-- fv_idx_x_max
+select fv_idx_x_max(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+
+-- fv_idx_x_min
+select fv_idx_x_min(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+
+-- fv_idx_y_max
+select fv_idx_y_max(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+
+-- fv_idx_y_min
+select fv_idx_y_min(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+
+-- fv_ord_by_col
+select fv_ord_by_col(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_ord_by_col(fv_new_randn(0.0, 1.1,array[4,3    ]),2,true) is not null;
+
+-- fv_ord_by_row
+select fv_ord_by_row(fv_new_randn(0.0, 1.1,array[4,3    ]),2) is not null;
+select fv_ord_by_row(fv_new_randn(0.0, 1.1,array[4,3    ]),2,true) is not null;
+
+-- fv_d_aggr_chunk_avg_dloss_dindepdt
+select fv_d_aggr_chunk_avg_dloss_dindepdt(array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_d_aggr_chunk_avg_dloss_dindepdt(array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_aggr_chunk_avg_dloss_dindepdt(array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_aggr_chunk_avg_dloss_dindepdt(array[4,3,5,2]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_aggr_chunk_max_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_chunk_max_dloss_dindepdt(a_indepdt, fv_aggr_chunk_max(a_indepdt,a_cnt_per_grp), fv_new_randn(0.0, 1.1,a_cnt_per_grp)) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fv_d_aggr_chunk_min_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_chunk_min_dloss_dindepdt(a_indepdt, fv_aggr_chunk_min(a_indepdt,a_cnt_per_grp), fv_new_randn(0.0, 1.1,a_cnt_per_grp)) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fv_d_aggr_chunk_prod_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_chunk_prod_dloss_dindepdt(a_indepdt, fv_aggr_chunk_prod(a_indepdt,a_cnt_per_grp), fv_new_randn(0.0, 1.1,a_cnt_per_grp)) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fv_d_aggr_chunk_sum_dloss_dindepdt
+select fv_d_aggr_chunk_sum_dloss_dindepdt(array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_d_aggr_chunk_sum_dloss_dindepdt(array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_aggr_chunk_sum_dloss_dindepdt(array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_aggr_chunk_sum_dloss_dindepdt(array[4,3,5,2]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[],fv_new_randn(0.0, 1.1,array[4,3,5,2])) is not null;
+
+-- fv_d_aggr_slice_avg_dloss_dindepdt
+select fv_d_aggr_slice_avg_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_d_aggr_slice_avg_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_d_aggr_slice_avg_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_d_aggr_slice_avg_dloss_dindepdt(fv_new_randn(0.0, 1.1,array[4,3,5,2]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,2]) is not null;
+
+-- fv_d_aggr_slice_max_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_slice_max_dloss_dindepdt(a_indepdt, fv_aggr_slice_max(a_indepdt,a_cnt_per_grp), fv_new_randn(0.0, 1.1,a_grp),a_cnt_per_grp) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fv_d_aggr_slice_min_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_slice_min_dloss_dindepdt(a_indepdt, fv_aggr_slice_min(a_indepdt,a_cnt_per_grp), fv_new_randn(0.0, 1.1,a_grp),a_cnt_per_grp) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fv_d_aggr_slice_prod_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_slice_prod_dloss_dindepdt(a_indepdt, fv_aggr_slice_prod(a_indepdt,a_cnt_per_grp), fv_new_randn(0.0, 1.1,a_grp),a_cnt_per_grp) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fv_d_aggr_slice_sum_dloss_dindepdt
+with 
+cte_grp as 
+(
+            select 1 as a_no,(fv_new_rand(3,array[1])::decimal[]~>`0)::int[] as a_grp
+  union all select 2 as a_no,(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]
+  union all select 3 as a_no,(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]
+  union all select 4 as a_no,(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]
+  
+),
+cte_indepdt as 
+(
+            select 1 as a_no,fv_new_randn(0.0, 1.1,array[4      ]*`(select a_grp from cte_grp where a_no = 1)) as a_indepdt, array[4      ] as a_cnt_per_grp
+  union all select 2 as a_no,fv_new_randn(0.0, 1.1,array[4,3    ]*`(select a_grp from cte_grp where a_no = 2))             , array[4,3    ]
+  union all select 3 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(select a_grp from cte_grp where a_no = 3))             , array[4,3,5  ]
+  union all select 4 as a_no,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(select a_grp from cte_grp where a_no = 4))             , array[4,3,5,6]
+)
+select 
+  fv_d_aggr_slice_sum_dloss_dindepdt(a_cnt_per_grp*`a_grp, fv_new_randn(0.0, 1.1,a_grp),a_cnt_per_grp) is not null
+from cte_indepdt tb_a_indepdt
+inner join cte_grp tb_a_grp
+on tb_a_indepdt.a_no = tb_a_grp.a_no
+;
+
+-- fa_mx_sum
+-- fa_mx_prod
+-- fa_mx_avg
+-- fa_mx_inner_prod
+-- fa_mx_max
+-- fa_mx_min
+with 
+cte_indepdt as 
+(
+  select 
+    fv_new_randn(0.0, 1.1,array[4      ]) as a_indepdt_1d
+  , fv_new_randn(0.0, 1.1,array[4,3    ]) as a_indepdt_2d
+  , fv_new_randn(0.0, 1.1,array[4,3,5  ]) as a_indepdt_3d
+  , fv_new_randn(0.0, 1.1,array[4,3,5,6]) as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_sum        (a_indepdt_1d) is not null
+, fa_mx_prod       (a_indepdt_1d) is not null
+, fa_mx_avg        (a_indepdt_1d) is not null
+, fa_mx_inner_prod (a_indepdt_1d) is not null
+, fa_mx_max        (a_indepdt_1d) is not null
+, fa_mx_min        (a_indepdt_1d) is not null
+, fa_mx_sum        (a_indepdt_2d) is not null
+, fa_mx_prod       (a_indepdt_2d) is not null
+, fa_mx_avg        (a_indepdt_2d) is not null
+, fa_mx_inner_prod (a_indepdt_2d) is not null
+, fa_mx_max        (a_indepdt_2d) is not null
+, fa_mx_min        (a_indepdt_2d) is not null
+, fa_mx_sum        (a_indepdt_3d) is not null
+, fa_mx_prod       (a_indepdt_3d) is not null
+, fa_mx_avg        (a_indepdt_3d) is not null
+, fa_mx_inner_prod (a_indepdt_3d) is not null
+, fa_mx_max        (a_indepdt_3d) is not null
+, fa_mx_min        (a_indepdt_3d) is not null
+, fa_mx_sum        (a_indepdt_4d) is not null
+, fa_mx_prod       (a_indepdt_4d) is not null
+, fa_mx_avg        (a_indepdt_4d) is not null
+, fa_mx_inner_prod (a_indepdt_4d) is not null
+, fa_mx_max        (a_indepdt_4d) is not null
+, fa_mx_min        (a_indepdt_4d) is not null
+from cte_indepdt
+;
+
+-- fa_mx_sum        (sm_sc.typ_l_complex[])
+-- fa_mx_prod       (sm_sc.typ_l_complex[])
+-- fa_mx_avg        (sm_sc.typ_l_complex[])
+-- fa_mx_inner_prod (sm_sc.typ_l_complex[])
+with 
+cte_indepdt as 
+(
+  select 
+    fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4      ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex) as a_indepdt_1d
+  , fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3    ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex) as a_indepdt_2d
+  , fv_new_randn(0.0, 1.1,array[4,3,2  ])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,2  ])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex) as a_indepdt_3d
+  , fv_new_randn(0.0, 1.1,array[4,3,2,6])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,2,6])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex) as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_sum          (a_indepdt_1d) is not null
+, fa_mx_prod         (a_indepdt_1d) is not null
+, fa_mx_avg          (a_indepdt_1d) is not null
+, fa_mx_inner_prod   (a_indepdt_1d) is not null
+from cte_indepdt
+;
+
+-- fa_array_concat ([])
+with 
+cte_indepdt as 
+(
+  select 
+    fv_new_randn(0.0, 1.1,(fv_new_rand(4,array[1])::decimal[]~>`0)::int[]) as a_indepdt_1d
+  from generate_series(1, 5)
+)
+select 
+  fa_array_concat        (a_indepdt_1d) is not null
+from cte_indepdt
+;
+
+-- fa_mx_concat_y
+-- fa_mx_concat_x 
+-- fa_mx_concat_x3
+-- fa_mx_concat_x4
+with 
+cte_indepdt as 
+(
+  select 
+    fv_new_randn(0.0, 1.1,array[4      ]) as a_indepdt_1d
+  , fv_new_randn(0.0, 1.1,array[4,3    ]) as a_indepdt_2d
+  , fv_new_randn(0.0, 1.1,array[4,3,2  ]) as a_indepdt_3d
+  , fv_new_randn(0.0, 1.1,array[4,3,2,6]) as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_concat_y        (a_indepdt_1d) is not null
+, fa_mx_concat_x        (a_indepdt_2d) is not null
+, fa_mx_concat_x3       (a_indepdt_3d) is not null
+, fa_mx_concat_x4       (a_indepdt_4d) is not null
+from cte_indepdt
+;
+
+-- fa_mx_concat_per_ele  (text[])
+with 
+cte_indepdt as 
+(
+  select 
+    (<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[] as a_indepdt_1d
+  , (<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[] as a_indepdt_2d
+  , (<>`fv_new_randn(0.0, 1.1, array[4,3,2  ]))::text[] as a_indepdt_3d
+  , (<>`fv_new_randn(0.0, 1.1, array[4,3,2,6]))::text[] as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_concat_per_ele        (a_indepdt_1d) is not null
+from cte_indepdt
+;
+-- fa_mx_concat_per_ele  (varbit[])
+with 
+cte_indepdt as 
+(
+  select 
+    ((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_1d
+  , ((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_2d
+  , ((fv_new_rand(16.0,array[4,3,2  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_3d
+  , ((fv_new_rand(16.0,array[4,3,2,6])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_concat_per_ele        (a_indepdt_1d) is not null
+from cte_indepdt
+;
+
+-- fa_mx_or  (varbit[])
+-- fa_mx_and (varbit[])
+with 
+cte_indepdt as 
+(
+  select 
+    ((fv_new_rand(16.0,array[4      ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_1d
+  , ((fv_new_rand(16.0,array[4,3    ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_2d
+  , ((fv_new_rand(16.0,array[4,3,2  ])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_3d
+  , ((fv_new_rand(16.0,array[4,3,2,6])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_or         (a_indepdt_1d) is not null
+, fa_mx_and        (a_indepdt_1d) is not null
+from cte_indepdt
+;
+
+-- fa_mx_or  (boolean[])
+-- fa_mx_and (boolean[])
+with 
+cte_indepdt as 
+(
+  select 
+    ((fv_new_rand(array[4      ])::decimal[])~=`0)::int[]::boolean[] as a_indepdt_1d
+  , ((fv_new_rand(array[4,3    ])::decimal[])~=`0)::int[]::boolean[] as a_indepdt_2d
+  , ((fv_new_rand(array[4,3,2  ])::decimal[])~=`0)::int[]::boolean[] as a_indepdt_3d
+  , ((fv_new_rand(array[4,3,2,6])::decimal[])~=`0)::int[]::boolean[] as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_or         (a_indepdt_1d) is not null
+, fa_mx_and        (a_indepdt_1d) is not null
+from cte_indepdt
+;
+
+-- fa_mx_coalesce
+with 
+cte_indepdt as 
+(
+  select 
+    fv_nullif((fv_new_rand(2.0,array[4      ])::decimal[])::int[],0) as a_indepdt_1d
+  , fv_nullif((fv_new_rand(2.0,array[4,3    ])::decimal[])::int[],0) as a_indepdt_2d
+  , fv_nullif((fv_new_rand(2.0,array[4,3,2  ])::decimal[])::int[],0) as a_indepdt_3d
+  , fv_nullif((fv_new_rand(2.0,array[4,3,2,6])::decimal[])::int[],0) as a_indepdt_4d
+  from generate_series(1, 5)
+)
+select 
+  fa_mx_coalesce         (a_indepdt_1d) is not null
+from cte_indepdt
+;
+
+-- fv_d_mx_avg
+select fv_d_mx_avg(5,array[4      ]) is not null;
+select fv_d_mx_avg(5,array[4,3    ]) is not null;
+select fv_d_mx_avg(5,array[4,3,2  ]) is not null;
+select fv_d_mx_avg(5,array[4,3,2,6]) is not null;
+
+-- fv_d_mx_max
+with 
+cte_indepdt as 
+(
+  select 
+    a_no
+  , fv_new_randn(0.0, 1.1,array[4      ]) as a_indepdt_1d
+  , fv_new_randn(0.0, 1.1,array[4,3    ]) as a_indepdt_2d
+  , fv_new_randn(0.0, 1.1,array[4,3,5  ]) as a_indepdt_3d
+  , fv_new_randn(0.0, 1.1,array[4,3,5,6]) as a_indepdt_4d
+  from generate_series(1, 5) tb_a_no(a_no)
+),
+cte_depdt as 
+(
+  select 
+    fa_mx_max        (a_indepdt_1d) as a_depdt_1d
+  , fa_mx_max        (a_indepdt_2d) as a_depdt_2d
+  , fa_mx_max        (a_indepdt_3d) as a_depdt_3d
+  , fa_mx_max        (a_indepdt_4d) as a_depdt_4d
+  from cte_indepdt
+)
+select 
+  tb_a_indepdt.a_no                        is not null
+, fv_d_mx_max(a_indepdt_1d,a_depdt_1d)     is not null
+, fv_d_mx_max(a_indepdt_2d,a_depdt_2d)     is not null
+, fv_d_mx_max(a_indepdt_3d,a_depdt_3d)     is not null
+, fv_d_mx_max(a_indepdt_4d,a_depdt_4d)     is not null
+from cte_indepdt tb_a_indepdt
+cross join cte_depdt tb_a_depdt
+;
+
+-- fv_d_mx_min
+with 
+cte_indepdt as 
+(
+  select 
+    a_no
+  , fv_new_randn(0.0, 1.1,array[4      ]) as a_indepdt_1d
+  , fv_new_randn(0.0, 1.1,array[4,3    ]) as a_indepdt_2d
+  , fv_new_randn(0.0, 1.1,array[4,3,5  ]) as a_indepdt_3d
+  , fv_new_randn(0.0, 1.1,array[4,3,5,6]) as a_indepdt_4d
+  from generate_series(1, 5) tb_a_no(a_no)
+),
+cte_depdt as 
+(
+  select 
+    fa_mx_min        (a_indepdt_1d) as a_depdt_1d
+  , fa_mx_min        (a_indepdt_2d) as a_depdt_2d
+  , fa_mx_min        (a_indepdt_3d) as a_depdt_3d
+  , fa_mx_min        (a_indepdt_4d) as a_depdt_4d
+  from cte_indepdt
+)
+select 
+  tb_a_indepdt.a_no                        is not null
+, fv_d_mx_min(a_indepdt_1d,a_depdt_1d)     is not null
+, fv_d_mx_min(a_indepdt_2d,a_depdt_2d)     is not null
+, fv_d_mx_min(a_indepdt_3d,a_depdt_3d)     is not null
+, fv_d_mx_min(a_indepdt_4d,a_depdt_4d)     is not null
+from cte_indepdt tb_a_indepdt
+cross join cte_depdt tb_a_depdt
+;
+
+-- fv_d_mx_prod
+with 
+cte_indepdt as 
+(
+  select 
+    a_no
+  , fv_new_randn(0.0, 1.1,array[4      ]) as a_indepdt_1d
+  , fv_new_randn(0.0, 1.1,array[4,3    ]) as a_indepdt_2d
+  , fv_new_randn(0.0, 1.1,array[4,3,5  ]) as a_indepdt_3d
+  , fv_new_randn(0.0, 1.1,array[4,3,5,6]) as a_indepdt_4d
+  from generate_series(1, 5) tb_a_no(a_no)
+),
+cte_depdt as 
+(
+  select 
+    fa_mx_prod        (a_indepdt_1d) as a_depdt_1d
+  , fa_mx_prod        (a_indepdt_2d) as a_depdt_2d
+  , fa_mx_prod        (a_indepdt_3d) as a_depdt_3d
+  , fa_mx_prod        (a_indepdt_4d) as a_depdt_4d
+  from cte_indepdt
+)
+select 
+  tb_a_indepdt.a_no                        is not null
+, fv_d_mx_prod(a_indepdt_1d,a_depdt_1d)    is not null
+, fv_d_mx_prod(a_indepdt_2d,a_depdt_2d)    is not null
+, fv_d_mx_prod(a_indepdt_3d,a_depdt_3d)    is not null
+, fv_d_mx_prod(a_indepdt_4d,a_depdt_4d)    is not null
+from cte_indepdt tb_a_indepdt
+cross join cte_depdt tb_a_depdt
+;
+
+-- fv_d_mx_sum
+select fv_d_mx_sum(array[4      ]) is not null;
+select fv_d_mx_sum(array[4,3    ]) is not null;
+select fv_d_mx_sum(array[4,3,5  ]) is not null;
+select fv_d_mx_sum(array[4,3,5,6]) is not null;
+
+-- fv_elu
+select fv_elu(random()+1.0,0.1*random()) is not null;
+select fv_elu(1.0,0.1*random()) is not null;
+select fv_elu(random(),0.1*random()) is not null;
+select fv_elu(0.0,0.1*random()) is not null;
+select fv_elu(-random(),0.1*random()) is not null;
+select fv_elu(-1.0,0.1*random()) is not null;
+select fv_elu(-random()-1.0,0.1*random()) is not null;
+
+-- fv_gelu
+select fv_gelu(random()+1.0) is not null;
+select fv_gelu(1.0) is not null;
+select fv_gelu(random()) is not null;
+select fv_gelu(0.0) is not null;
+select fv_gelu(-random()) is not null;
+select fv_gelu(-1.0) is not null;
+select fv_gelu(-random()-1.0) is not null;
+
+-- fv_leaky_relu
+select fv_leaky_relu(random()+1.0,0.1*random()) is not null;
+select fv_leaky_relu(1.0,0.1*random()) is not null;
+select fv_leaky_relu(random(),0.1*random()) is not null;
+select fv_leaky_relu(0.0,0.1*random()) is not null;
+select fv_leaky_relu(-random(),0.1*random()) is not null;
+select fv_leaky_relu(-1.0,0.1*random()) is not null;
+select fv_leaky_relu(-random()-1.0,0.1*random()) is not null;
+
+-- fv_relu
+select fv_relu(random()+1.0) is not null;
+select fv_relu(1.0) is not null;
+select fv_relu(random()) is not null;
+select fv_relu(0.0) is not null;
+select fv_relu(-random()) is not null;
+select fv_relu(-1.0) is not null;
+select fv_relu(-random()-1.0) is not null;
+
+-- fv_selu
+select fv_selu(random()+1.0) is not null;
+select fv_selu(1.0) is not null;
+select fv_selu(random()) is not null;
+select fv_selu(0.0) is not null;
+select fv_selu(-random()) is not null;
+select fv_selu(-1.0) is not null;
+select fv_selu(-random()-1.0) is not null;
+
+-- fv_sigmoid
+select fv_sigmoid(random()+1.0) is not null;
+select fv_sigmoid(1.0) is not null;
+select fv_sigmoid(random()) is not null;
+select fv_sigmoid(0.0) is not null;
+select fv_sigmoid(-random()) is not null;
+select fv_sigmoid(-1.0) is not null;
+select fv_sigmoid(-random()-1.0) is not null;
+
+-- fv_softplus
+select fv_softplus(random()+1.0) is not null;
+select fv_softplus(1.0) is not null;
+select fv_softplus(random()) is not null;
+select fv_softplus(0.0) is not null;
+select fv_softplus(-random()) is not null;
+select fv_softplus(-1.0) is not null;
+select fv_softplus(-random()-1.0) is not null;
+
+-- fv_swish
+select fv_swish(random()+1.0) is not null;
+select fv_swish(1.0) is not null;
+select fv_swish(random()) is not null;
+select fv_swish(0.0) is not null;
+select fv_swish(-random()) is not null;
+select fv_swish(-1.0) is not null;
+select fv_swish(-random()-1.0) is not null;
+
+-- fv_redistr_0_1
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_redistr_0_1       (fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_redistr_centralize
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_redistr_centralize(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_redistr_l1l2ln
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4      ]),ceil(random()*4)::int) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4,3    ]),ceil(random()*4)::int) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4,3,5  ]),ceil(random()*4)::int) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4,3,5,6]),ceil(random()*4)::int) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),ceil(random()*4)::int,array[4      ]) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),ceil(random()*4)::int,array[4,3    ]) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),ceil(random()*4)::int,array[4,3,5  ]) is not null;
+select fv_redistr_l1l2ln    (fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),ceil(random()*4)::int,array[4,3,5,6]) is not null;
+
+-- fv_redistr_log
+select fv_redistr_log       (fv_new_rand(3.0,array[4      ])) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4,3    ])) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4,3,5  ])) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4,3,5,6])) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_redistr_log       (fv_new_rand(3.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_redistr_ne1_1
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_redistr_ne1_1     (fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_redistr_softmax
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_redistr_softmax   (fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- fv_redistr_zscore
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4      ]*`(fv_new_rand(3,array[1])::decimal[]~>`0)::int[]),array[4      ]) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4,3    ]*`(fv_new_rand(3,array[2])::decimal[]~>`0)::int[]),array[4,3    ]) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(fv_new_rand(3,array[3])::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null;
+select fv_redistr_zscore    (fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null;
+
+-- __fv_d_redistr_softmax_1d_dloss_dindepdt
+select __fv_d_redistr_softmax_1d_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4      ])),fv_new_randn(0.0, 1.1,array[4      ]),null) is not null;
+select __fv_d_redistr_softmax_1d_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,1    ])),fv_new_randn(0.0, 1.1,array[4,1    ]),null) is not null;
+select __fv_d_redistr_softmax_1d_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[1,4    ])),fv_new_randn(0.0, 1.1,array[1,4    ]),null) is not null;
+select __fv_d_redistr_softmax_1d_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select __fv_d_redistr_softmax_1d_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,1    ]),fv_new_randn(0.0, 1.1,array[4,1    ])) is not null;
+select __fv_d_redistr_softmax_1d_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[1,4    ]),fv_new_randn(0.0, 1.1,array[1,4    ])) is not null;
+
+-- fv_d_redistr_softmax_dloss_dindepdt
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4      ])),fv_new_randn(0.0, 1.1,array[4      ]),null) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,3    ])),fv_new_randn(0.0, 1.1,array[4,3    ]),null) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,3,5  ])),fv_new_randn(0.0, 1.1,array[4,3,5  ]),null) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,3,5,6])),fv_new_randn(0.0, 1.1,array[4,3,5,6]),null) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4      ]),fv_new_randn(0.0, 1.1,array[4      ])) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,3    ]),fv_new_randn(0.0, 1.1,array[4,3    ])) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,3,5  ])) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,3,5,6]),fv_new_randn(0.0, 1.1,array[4,3,5,6])) is not null;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4      ]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4      ]),fv_new_randn(0.0, 1.1,array[4      ]*`(a_cnt_grp::decimal[]~>`0)::int[]),null,array[4      ]) is not null from fv_new_rand(3,array[1]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,3    ]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4,3    ]),fv_new_randn(0.0, 1.1,array[4,3    ]*`(a_cnt_grp::decimal[]~>`0)::int[]),null,array[4,3    ]) is not null from fv_new_rand(3,array[2]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4,3,5  ]),fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(a_cnt_grp::decimal[]~>`0)::int[]),null,array[4,3,5  ]) is not null from fv_new_rand(3,array[3]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(fv_redistr_softmax(fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4,3,5,6]),fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(a_cnt_grp::decimal[]~>`0)::int[]),null,array[4,3,5,6]) is not null from fv_new_rand(3,array[4]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4      ]*`(a_cnt_grp::decimal[]~>`0)::int[]),fv_new_randn(0.0, 1.1,array[4      ]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4      ]) is not null from fv_new_rand(3,array[1]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,3    ]*`(a_cnt_grp::decimal[]~>`0)::int[]),fv_new_randn(0.0, 1.1,array[4,3    ]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4,3    ]) is not null from fv_new_rand(3,array[2]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(a_cnt_grp::decimal[]~>`0)::int[]),fv_new_randn(0.0, 1.1,array[4,3,5  ]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4,3,5  ]) is not null from fv_new_rand(3,array[3]) a_cnt_grp;
+select fv_d_redistr_softmax_dloss_dindepdt(null,fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(a_cnt_grp::decimal[]~>`0)::int[]),fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(a_cnt_grp::decimal[]~>`0)::int[]),array[4,3,5,6]) is not null from fv_new_rand(3,array[4]) a_cnt_grp;
+
+-- ft_gradient
+select 
+  o_indepdt_vars_name is not null
+, o_grad              is not null
+from 
+  ft_gradient
+  (
+    array['v_x_in', 'v_y_in']
+  , '
+    {
+      "out_param": "v_z_in",
+      "opr": "sm_sc.fv_opr_add",
+      "in_params": 
+      [
+        {
+          "opr": "sm_sc.fv_opr_mul",
+          "in_params": 
+          [
+            {
+              "out_param": "v_x_in",
+              "out_value": 1.5
+            },
+            {
+              "out_param": "v_y_in",
+              "out_value": 1.5
+            }
+          ]
+        },
+        {
+          "opr": "sm_sc.fv_opr_exp",
+          "in_params": 
+          [
+            {
+              "opr": "sm_sc.fv_opr_mul",
+              "in_params": 
+              [
+                {
+                  "out_param": "v_x_in",
+                  "out_value": 1.5
+                },
+                {
+                  "out_param": "v_y_in",
+                  "out_value": 1.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "opr": "sm_sc.fv_opr_pow",
+          "in_params": 
+          [
+            {
+              "out_param": "v_x_in",
+              "out_value": 1.5
+            },
+            {
+              "out_value": 2
+            }
+          ]
+        }
+      ]
+    }
+    '::jsonb
+  );
+
+-- ft_gradient_graph
+select
+  o_out_param_x    is not null
+, o_in_param_x     is not null
+, o_in_value_x     is not null
+, o_param_loc_x    is not null
+, o_out_opr_x      is not null
+from 
+  ft_gradient_graph
+  (
+    'v_x_in'
+  , '(v_x_in * v_y) + exp(v_x_in * v_y) + power(v_x_in, 2)'::text
+  );
+  
+select
+  o_out_param_x         is not null
+, o_in_param_x          is not null
+, o_in_value_x          is not null
+, o_param_loc_x         is not null
+, o_out_opr_x           is not null
+from 
+  ft_gradient_graph
+  (
+    'v_x_in'
+  , '
+    {
+      "out_param": "v_z_in",
+      "opr": "sm_sc.fv_opr_add",
+      "in_params": 
+      [
+        {
+          "opr": "sm_sc.fv_opr_mul",
+          "in_params": 
+          [
+            {
+              "out_param": "v_x_in"
+            },
+            {
+              "out_param": "v_y_in"
+            }
+          ]
+        },
+        {
+          "opr": "sm_sc.fv_opr_exp",
+          "in_params": 
+          [
+            {
+              "opr": "sm_sc.fv_opr_mul",
+              "in_params": 
+              [
+                {
+                  "out_param": "v_x_in"
+                },
+                {
+                  "out_param": "v_y_in"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "opr": "sm_sc.fv_opr_pow",
+          "in_params": 
+          [
+            {
+              "out_param": "v_x_in"
+            },
+            {
+              "out_value": 2
+            }
+          ]
+        }
+      ]
+    }
+    '::jsonb
+  );
+  
+-- ft_gradient_opr_graph
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  ''
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  ''                      ,
+  1                       ,
+  'C'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  ''                      ,
+  1                       ,
+  null                    ,
+  12
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'    ,
+  1
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'    ,
+  2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  2                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  'a'                     ,
+  null::float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_sub'    ,
+  1
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_sub'    ,
+  2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_div'    ,
+  1                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_div'    ,
+  1                       ,
+  'a'                     ,
+  null :: float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_div'    ,
+  2                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_div'    ,
+  2                       ,
+  'a'                     ,
+  null :: float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_pow'    ,
+  1                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_pow'    ,
+  1                       ,
+  'a'                     ,
+  null :: float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_pow'    ,
+  2                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_pow'    ,
+  2                       ,
+  'a'                     ,
+  null :: float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_exp' 
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_log'    ,
+  1                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_log'    ,
+  1                       ,
+  'a'                     ,
+  null :: float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_log'    ,
+  2                       ,
+  null                    ,
+  1.2
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_log'    ,
+  2                       ,
+  'a'                     ,
+  null :: float
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_ln'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_sin'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_cos'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_tan'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_cot'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_sec'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_csc'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_asin'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_acos'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_atan'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_acot'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_asec'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_acsc'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_sinh'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_cosh'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_tanh'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_asinh'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_acosh'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_atanh'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  ''      ,
+  null      ,
+  null      ,
+  null ::float     ,
+  'dydx_xxx'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_atanh'      ,
+  null                    ,
+  null                    ,
+  null     :: float       ,
+  'dydx_xxx'
+);
+
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'    ,
+  2                       ,
+  null                    ,
+  array[1.2]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'    ,
+  1                       ,
+  array['a']                     ,
+  null
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'    ,
+  1                       ,
+  array['a', 'b']                     ,
+  array[1.2, 1.1]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  2                       ,
+  null                    ,
+  array[1.2]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  2                       ,
+  null                    ,
+  array[1.2, 1.1]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a']                     ,
+  null
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a', 'b']                     ,
+  null
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a']                     ,
+  array[1.2]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a']                     ,
+  array[1.2, 1.1]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a', 'b']                     ,
+  array[1.2]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a', 'b']                     ,
+  array[1.2, 1.1]
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_mul'    ,
+  1                       ,
+  array['a', 'b']         ,
+  array[1.2, 1.1]         ,
+  'dydx_balabala'
+);
+select 
+  o_out_param    is not null
+, o_in_param     is not null
+, o_in_value     is not null
+, o_param_loc    is not null
+, o_out_opr      is not null
+from ft_gradient_opr_graph
+(
+  'x'                     ,
+  'sm_sc.fv_opr_add'    ,
+  1                       ,
+  array['a', 'b']         ,
+  array[1.2, 1.1]         ,
+  'dydx_balabala'
+);
+
+-- fv_gradient
+select fv_gradient('v_x_in', '(v_x_in * v_y) + exp(v_x_in * v_y) + power(v_x_in, 2)'::text) is not null;
+select 
+  fv_gradient
+  (
+    'v_x_in'::text
+  , '
+    {
+      "out_param": "v_z_in",
+      "opr": "sm_sc.fv_opr_add",
+      "in_params": 
+      [
+        {
+          "opr": "sm_sc.fv_opr_mul",
+          "in_params": 
+          [
+            {
+              "out_param": "v_x_in"
+            },
+            {
+              "out_param": "v_y_in"
+            }
+          ]
+        },
+        {
+          "opr": "sm_sc.fv_opr_exp",
+          "in_params": 
+          [
+            {
+              "opr": "sm_sc.fv_opr_mul",
+              "in_params": 
+              [
+                {
+                  "out_param": "v_x_in"
+                },
+                {
+                  "out_param": "v_y_in"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "opr": "sm_sc.fv_opr_pow",
+          "in_params": 
+          [
+            {
+              "out_param": "v_x_in"
+            },
+            {
+              "out_value": 2
+            }
+          ]
+        }
+      ]
+    }
+    '::jsonb
+  ) is not null;
+
+-- fv_gradient_jacobi
+select fv_gradient_jacobi(array['r', 'a', 'b'], array['r*cos(a)*sin(b)', 'r*sin(a)*sin(b)', 'r*cos(b)']) is not null;
+
+-- fv_gradient_opr
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  null :: varchar(64)           ,
+  1               ,
+  null            ,
+  null :: float
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  ''              ,
+  1               ,
+  null            ,
+  null :: float
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  ''              ,
+  1               ,
+  null            ,
+  12
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_add'        -- ,
+  -- 0               ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_mul'        ,
+  0               ,
+  null            ,
+  2.3
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_sub'        ,
+  1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_sub'        ,
+  2               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_div'        ,
+  1               ,
+  null            ,
+  1.5
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_div'        ,
+  2               ,
+  null            ,
+  1.5
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_pow'        ,
+  1               ,
+  power(2.0 :: float, 3.0) :: float ,
+  3.0
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_pow'        ,
+  1               ,
+  null            ,
+  3.0
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_pow'        ,
+  2               ,
+  power(3.0, 2.0 :: float) :: float,
+  3.0
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_pow'        ,
+  2               ,
+  null            ,
+  3.0
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_exp'        -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_exp'        ,
+  1               ,
+  exp(2.0 :: float)::float  -- ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_log'        ,
+  1               ,
+  log(2.0, 8.0)::float   ,
+  8.0
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_log'        ,
+  1               ,
+  null            ,
+  8.0
+) is not null;
+select fv_gradient_opr
+(
+  8.0             ,
+  'sm_sc.fv_opr_log'        ,
+  2               ,
+  null            ,
+  2.0
+) is not null;
+select fv_gradient_opr
+(
+  5.0             ,
+  'sm_sc.fv_opr_ln'         -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  pi()::float / 2.0      ,
+  'sm_sc.fv_sin'        ,
+  1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  pi()::float / 2.0      ,
+  'sm_sc.fv_cos'        ,
+  1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -pi()::float / 3.0     ,
+  'sm_sc.fv_tan'        -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -pi()::float / 3.0     ,
+  'sm_sc.fv_cot'        -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -pi():: float / 6.0      ,
+  'sm_sc.fv_sec'        -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -pi():: float / 6.0      ,
+  'sm_sc.fv_sec'           ,
+  1                  ,
+  1.0 :: float/ cos(-pi() / 6.0) :: float  -- ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -pi() :: float / 3.0     ,
+  'sm_sc.fv_csc'        -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -pi() :: float / 3.0     ,
+  'sm_sc.fv_csc'        ,
+  1               ,
+  1.0 :: float/ sin(-pi() / 3.0) :: float  -- ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -0.5            ,
+  'sm_sc.fv_asin'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -0.5            ,
+  'sm_sc.fv_acos'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_atan'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -0.5            ,
+  'sm_sc.fv_acot'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.5             ,
+  'sm_sc.fv_asec'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  -1.5            ,
+  'sm_sc.fv_acsc'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_sinh'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_cosh'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_tanh'       -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_tanh'       ,
+  1               ,
+  tanh(1.0 :: float)::float  -- ,
+  -- null
+) is not null;
+-- select fv_gradient_opr
+-- (
+--   1.0 :: float            ,
+--   'sm_sc.fv_coth'       -- ,
+--   -- 1               -- ,
+--   -- null            ,
+--   -- null
+-- ) is not null;
+-- select fv_gradient_opr
+-- (
+--   1.0 :: float            ,
+--   'sm_sc.fv_sech'       -- ,
+--   -- 1               -- ,
+--   -- null            ,
+--   -- null
+-- ) is not null;
+-- select fv_gradient_opr
+-- (
+--   1.0 :: float            ,
+--   'sm_sc.fv_csch'       -- ,
+--   -- 1               -- ,
+--   -- null            ,
+--   -- null
+-- ) is not null;
+select fv_gradient_opr
+(
+  3.5             ,
+  'sm_sc.fv_asinh'      -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  3.5             ,
+  'sm_sc.fv_acosh'      -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  3.5             ,
+  'sm_sc.fv_atanh'      -- ,
+  -- 1               -- ,
+  -- null            ,
+  -- null
+) is not null;
+-- select fv_gradient_opr
+-- (
+--   1.0 :: float            ,
+--   'sm_sc.fv_acoth'      -- ,
+--   -- 1               -- ,
+--   -- null            ,
+--   -- null
+-- ) is not null;
+-- select fv_gradient_opr
+-- (
+--   1.0 :: float            ,
+--   'sm_sc.fv_asech'      -- ,
+--   -- 1               -- ,
+--   -- null            ,
+--   -- null
+-- ) is not null;
+-- select fv_gradient_opr
+-- (
+--   1.0 :: float            ,
+--   'sm_sc.fv_acsch'      ,
+--   1               -- ,
+--   -- null            ,
+--   -- null
+-- ) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_sigmoid'    -- ,
+  -- 1               ,
+  -- null            ,
+  -- null
+) is not null;
+select fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_sigmoid'    ,
+  1               ,
+  1.0 :: float/ (1.0 :: float+ exp(-2.0 :: float))::float -- ,
+  -- null
+) is not null;
+-- select sm_sc.fv_gradient_opr
+-- (
+--   2.0             ,
+--   'sm_sc.fv_softplus'    -- ,
+--   -- 1               ,
+--   -- null ,
+--   -- null
+-- ) is not null;
+-- select sm_sc.fv_gradient_opr
+-- (
+--   2.0             ,
+--   'sm_sc.fv_leaky_relu'    ,
+--   1               ,
+--   null ,
+--   0.3
+-- ) is not null;
+select sm_sc.fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_add'        ,
+  0               ,
+  null            ,
+  array[1.5, 2.5]
+) is not null;
+
+select sm_sc.fv_gradient_opr
+(
+  1.0 :: float            ,
+  'sm_sc.fv_opr_mul'        ,
+  0               ,
+  null            ,
+  array[1.5, 2.5]
+) is not null;
+
+select sm_sc.fv_gradient_opr
+(
+  2.0             ,
+  'sm_sc.fv_opr_div'    ,
+  1               ,
+  null ,
+  array[1.6]
+) is not null;
+
+-- fv_activate_boxcox
+select fv_activate_boxcox(fv_new_rand(5.0,array[4      ]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+select fv_activate_boxcox(fv_new_rand(5.0,array[4,3    ]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+select fv_activate_boxcox(fv_new_rand(5.0,array[4,3,5  ]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+select fv_activate_boxcox(fv_new_rand(5.0,array[4,3,5,6]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+
+-- fv_activate_elu
+select fv_activate_elu(fv_new_randn(0.0,1.1,array[4      ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_activate_elu(fv_new_randn(0.0,1.1,array[4,3    ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_activate_elu(fv_new_randn(0.0,1.1,array[4,3,5  ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_activate_elu(fv_new_randn(0.0,1.1,array[4,3,5,6]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+
+-- fv_activate_gelu
+select fv_activate_gelu(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_gelu(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_gelu(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_gelu(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_activate_leaky_relu
+select fv_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4      ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4,3    ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4,3,5  ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4,3,5,6]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+
+-- fv_activate_relu
+select fv_activate_relu(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_relu(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_relu(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_relu(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_activate_selu
+select fv_activate_selu(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_selu(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_selu(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_selu(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_activate_sigmoid
+select fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_activate_softplus
+select fv_activate_softplus(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_softplus(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_softplus(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_softplus(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_activate_swish
+select fv_activate_swish(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_swish(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_swish(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_swish(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_activate_tanh
+select fv_activate_tanh(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_activate_tanh(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_activate_tanh(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_activate_tanh(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_d_activate_boxcox
+select fv_d_activate_boxcox(fv_new_rand(5.0,array[4      ]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+select fv_d_activate_boxcox(fv_new_rand(5.0,array[4,3    ]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+select fv_d_activate_boxcox(fv_new_rand(5.0,array[4,3,5  ]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+select fv_d_activate_boxcox(fv_new_rand(5.0,array[4,3,5,6]),(fv_new_rand(numrange(-3.0, 3.0),array[1]))[1]) is not null;
+
+-- fv_d_activate_elu
+select fv_d_activate_elu(fv_new_randn(0.0,1.1,array[4      ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_d_activate_elu(fv_new_randn(0.0,1.1,array[4,3    ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_d_activate_elu(fv_new_randn(0.0,1.1,array[4,3,5  ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_d_activate_elu(fv_new_randn(0.0,1.1,array[4,3,5,6]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+
+-- fv_d_activate_gelu
+select fv_d_activate_gelu(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_activate_gelu(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_activate_gelu(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_activate_gelu(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_d_activate_leaky_relu
+select fv_d_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4      ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_d_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4,3    ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_d_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4,3,5  ]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+select fv_d_activate_leaky_relu(fv_new_randn(0.0,1.1,array[4,3,5,6]),(fv_new_rand(numrange(0.0, 0.2),array[1]))[1]) is not null;
+
+-- fv_d_activate_relu
+select fv_d_activate_relu(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_activate_relu(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_activate_relu(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_activate_relu(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_d_activate_selu
+select fv_d_activate_selu(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_activate_selu(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_activate_selu(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_activate_selu(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_d_activate_sigmoid
+select fv_d_activate_sigmoid(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+select fv_d_activate_sigmoid(null,fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4      ]))) is not null;
+select fv_d_activate_sigmoid(null,fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3    ]))) is not null;
+select fv_d_activate_sigmoid(null,fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3,5  ]))) is not null;
+select fv_d_activate_sigmoid(null,fv_activate_sigmoid(fv_new_randn(0.0,1.1,array[4,3,5,6]))) is not null;
+
+-- fv_d_activate_softplus
+select fv_d_activate_softplus(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_activate_softplus(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_activate_softplus(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_activate_softplus(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+
+-- fv_d_activate_swish
+select fv_d_activate_swish(fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_d_activate_swish(fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_d_activate_swish(fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_d_activate_swish(fv_new_randn(0.0,1.1,array[4,3,5,6])) is not null;
+select fv_d_activate_swish(null,fv_activate_swish(fv_new_randn(0.0,1.1,array[4      ]))) is not null;
+select fv_d_activate_swish(null,fv_activate_swish(fv_new_randn(0.0,1.1,array[4,3    ]))) is not null;
+select fv_d_activate_swish(null,fv_activate_swish(fv_new_randn(0.0,1.1,array[4,3,5  ]))) is not null;
+select fv_d_activate_swish(null,fv_activate_swish(fv_new_randn(0.0,1.1,array[4,3,5,6]))) is not null;
+
+-- ft_computational_graph_deserialize
+select
+  o_out_param        is not null
+, o_in_param         is not null
+, o_in_value         is not null
+, o_param_loc        is not null
+, o_out_opr          is not null
+from ft_computational_graph_deserialize('v_z_in = (v_x_in * v_y) + exp(v_x_in * v_y) + power(v_x_in, 2)');
+
+-- fv_conv_2d_grp_x
+select 
+  fv_conv_2d_grp_x
+  (
+    fv_new_randn(0.0,1.1,array[5,42*28])
+  , 28
+  , fv_new_randn(0.0,1.1,array[1,4*3])
+  , 3
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1
+  ) is not null;
+select 
+  fv_conv_2d_grp_x
+  (
+    fv_new_randn(0.0,1.1,array[5,42*28])
+  , 28
+  , fv_new_randn(0.0,1.1,array[1,4*3])
+  , 3
+  ) is not null;
+select 
+  fv_conv_2d_grp_x
+  (
+    fv_new_randn(0.0,1.1,array[5,42*28])
+  , 28
+  , fv_new_randn(0.0,1.1,array[1,4*3+1])
+  , 3
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1
+  ) is not null;
+select 
+  fv_conv_2d_grp_x
+  (
+    fv_new_randn(0.0,1.1,array[5,42*28])
+  , 28
+  , fv_new_randn(0.0,1.1,array[1,4*3+1])
+  , 3
+  ) is not null;
+  
+-- fv_conv_2d_v_im2col
+select 
+  fv_conv_2d_v_im2col
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[1,1])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1
+  ) is not null;
+select 
+  fv_conv_2d_v_im2col
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[1,1])
+  ) is not null;
+select 
+  fv_conv_2d_v_im2col
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[1,1])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1
+  ) is not null;
+select 
+  fv_conv_2d_v_im2col
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[1,1])
+  ) is not null;
+select 
+  fv_conv_2d_v_im2col
+  (
+    fv_new_randn(0.0,1.1,array[5,3,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[1,1])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1
+  ) is not null;
+select 
+  fv_conv_2d_v_im2col
+  (
+    fv_new_randn(0.0,1.1,array[5,3,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[1,1])
+  ) is not null;
+  
+-- fv_conv_add
+select 
+  fv_conv_add
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_add
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+select 
+  fv_conv_add
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_add
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+select 
+  fv_conv_add
+  (
+    fv_new_randn(0.0,1.1,array[2,5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_add
+  (
+    fv_new_randn(0.0,1.1,array[2,5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_conv_sub
+select 
+  fv_conv_sub
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_sub
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_conv_mul
+select 
+  fv_conv_mul
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_mul
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_conv_div
+select 
+  fv_conv_div
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_div
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_conv_pow
+select 
+  fv_conv_pow
+  (
+    fv_new_rand(2.0,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_pow
+  (
+    fv_new_rand(2.0,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_conv_log
+select 
+  fv_conv_log
+  (
+    fv_new_rand(2.0,array[18,10])
+  , fv_new_rand(2.0,array[4,3])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_log
+  (
+    fv_new_rand(2.0,array[18,10])
+  , fv_new_rand(2.0,array[4,3])
+  ) is not null;
+
+-- fv_conv_de_sub
+select 
+  fv_conv_de_sub
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_sub
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  ) is not null;
+
+-- fv_conv_de_div
+select 
+  fv_conv_de_div
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_div
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  ) is not null;
+  
+-- fv_conv_de_pow
+select 
+  fv_conv_de_pow
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_pow
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  ) is not null;
+  
+-- fv_conv_de_log
+select 
+  fv_conv_de_log
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[18,10])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_log
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[18,10])
+  ) is not null;
+select 
+  fv_conv_de_log
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[5,18,10])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_log
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[5,18,10])
+  ) is not null;
+select 
+  fv_conv_de_log
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[2,5,18,10])
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_log
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[2,5,18,10])
+  ) is not null;
+  
+-- fv_conv_prod_mx
+select 
+  fv_conv_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , 5
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , 5
+  ) is not null;
+select 
+  fv_conv_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , 5
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  , 5
+  ) is not null;
+  
+-- fv_conv_de_prod_mx
+select 
+  fv_conv_de_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  , 5
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  , 5
+  ) is not null;
+select 
+  fv_conv_de_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[5,2,18,10])
+  , 5
+  , array[1,1]
+  , array[0,0,0,0]
+  , 0.1::float
+  ) is not null;
+select 
+  fv_conv_de_prod_mx
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[5,2,18,10])
+  , 5
+  ) is not null;
+
+-- fv_opr_conv_2d_stride_1
+select 
+  fv_opr_conv_2d_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[3,5])
+  ) is not null;
+select 
+  fv_opr_conv_2d_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[3,5])
+  ) is not null;
+select 
+  fv_opr_conv_2d_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[2,5,18,10])
+  , fv_new_randn(0.0,1.1,array[3,5])
+  ) is not null;
+
+-- fv_opr_conv_add_stride_1
+select 
+  fv_opr_conv_add_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+select 
+  fv_opr_conv_add_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+select 
+  fv_opr_conv_add_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[2,5,18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_sub_stride_1
+select 
+  fv_opr_conv_sub_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_mul_stride_1
+select 
+  fv_opr_conv_mul_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_div_stride_1
+select 
+  fv_opr_conv_div_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_pow_stride_1
+select 
+  fv_opr_conv_pow_stride_1
+  (
+    fv_new_rand(2.0,array[18,10])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_log_stride_1
+select 
+  fv_opr_conv_log_stride_1
+  (
+    fv_new_rand(2.0,array[18,10])
+  , fv_new_rand(2.0,array[4,3])
+  ) is not null;
+
+-- fv_opr_conv_de_sub_stride_1
+select 
+  fv_opr_conv_de_sub_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  ) is not null;
+
+-- fv_opr_conv_de_div_stride_1
+select 
+  fv_opr_conv_de_div_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  ) is not null;
+  
+-- fv_opr_conv_de_pow_stride_1
+select 
+  fv_opr_conv_de_pow_stride_1
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_randn(0.0,1.1,array[18,10])
+  ) is not null;
+  
+-- fv_opr_conv_de_log_stride_1
+select 
+  fv_opr_conv_de_log_stride_1
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[18,10])
+  ) is not null;
+select 
+  fv_opr_conv_de_log_stride_1
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[5,18,10])
+  ) is not null;
+select 
+  fv_opr_conv_de_log_stride_1
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[2,5,18,10])
+  ) is not null;
+
+-- fv_opr_conv_2d_stride_window
+select 
+  fv_opr_conv_2d_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , fv_new_randn(0.0,1.1,array[3,5])
+  ) is not null;
+select 
+  fv_opr_conv_2d_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[5,40,30])
+  , fv_new_randn(0.0,1.1,array[3,5])
+  ) is not null;
+select 
+  fv_opr_conv_2d_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[2,5,40,30])
+  , fv_new_randn(0.0,1.1,array[3,5])
+  ) is not null;
+
+-- fv_opr_conv_add_stride_window
+select 
+  fv_opr_conv_add_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+select 
+  fv_opr_conv_add_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[5,40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+select 
+  fv_opr_conv_add_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[2,5,40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_sub_stride_window
+select 
+  fv_opr_conv_sub_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_mul_stride_window
+select 
+  fv_opr_conv_mul_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_div_stride_window
+select 
+  fv_opr_conv_div_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_pow_stride_window
+select 
+  fv_opr_conv_pow_stride_window
+  (
+    fv_new_rand(2.0,array[40,30])
+  , fv_new_randn(0.0,1.1,array[4,3])
+  ) is not null;
+  
+-- fv_opr_conv_log_stride_window
+select 
+  fv_opr_conv_log_stride_window
+  (
+    fv_new_rand(2.0,array[40,30])
+  , fv_new_rand(2.0,array[4,3])
+  ) is not null;
+
+-- fv_opr_conv_de_sub_stride_window
+select 
+  fv_opr_conv_de_sub_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[40,30])
+  ) is not null;
+
+-- fv_opr_conv_de_div_stride_window
+select 
+  fv_opr_conv_de_div_stride_window
+  (
+    fv_new_randn(0.0,1.1,array[4,3])
+  , fv_new_randn(0.0,1.1,array[40,30])
+  ) is not null;
+  
+-- fv_opr_conv_de_pow_stride_window
+select 
+  fv_opr_conv_de_pow_stride_window
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_randn(0.0,1.1,array[40,30])
+  ) is not null;
+  
+-- fv_opr_conv_de_log_stride_window
+select 
+  fv_opr_conv_de_log_stride_window
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[40,30])
+  ) is not null;
+select 
+  fv_opr_conv_de_log_stride_window
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[5,40,30])
+  ) is not null;
+select 
+  fv_opr_conv_de_log_stride_window
+  (
+    fv_new_rand(2.0,array[4,3])
+  , fv_new_rand(2.0,array[2,5,40,30])
+  ) is not null;
+  
+-- fv_opr_pool_avg_stride_1
+select 
+  fv_opr_pool_avg_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , array[4,3]
+  ) is not null;
+  
+-- fv_opr_pool_max_stride_1
+select 
+  fv_opr_pool_avg_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , array[4,3]
+  ) is not null;
+  
+-- fv_opr_pool_none_stride_1
+select 
+  fv_opr_pool_avg_stride_1
+  (
+    fv_new_randn(0.0,1.1,array[40,30])
+  , array[4,3]
+  ) is not null;
+  
+-- fv_pool_avg
+select 
+  fv_pool_avg
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+select 
+  fv_pool_avg
+  (
+    fv_new_randn(0.0,1.1,array[5,3,39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_max
+select 
+  fv_pool_max
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+select 
+  fv_pool_max
+  (
+    fv_new_randn(0.0,1.1,array[5,39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_median
+select 
+  fv_pool_median
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_min
+select 
+  fv_pool_min
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_mode
+select 
+  fv_pool_mode
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_none
+select 
+  fv_pool_none
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_prod
+select 
+  fv_pool_prod
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_ptp
+select 
+  fv_pool_ptp
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_sum
+select 
+  fv_pool_sum
+  (
+    fv_new_randn(0.0,1.1,array[39,28])
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+  
+-- fv_pool_coalesce
+select 
+  fv_pool_coalesce
+  (
+    fv_nullif((fv_new_rand(2.0,array[39,28])::decimal[])::int[],0)
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+
+-- fv_pool_avg_2d_grp_x
+select 
+  fv_pool_avg_2d_grp_x
+  (
+    fv_new_randn(0.0,1.1,array[3,39*28])
+  , 39
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+
+-- fv_pool_max_2d_grp_x
+select 
+  fv_pool_max_2d_grp_x
+  (
+    fv_new_randn(0.0,1.1,array[3,39*28])
+  , 39
+  , array[4,3]
+  , array[5,5]
+  , array[9,8,9,8]
+  ) is not null;
+
+-- fv_d_conv_2d_dloss_dindepdt_1_ex
+select 
+  fv_d_conv_2d_dloss_dindepdt_1_ex
+  (
+    fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , a_window
+  , a_stride
+  , a_padding
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_dloss_dindepdt_1_ex
+  (
+    fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , a_window
+  , a_stride
+  , a_padding
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_dloss_dindepdt_1_ex
+  (
+    fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , a_window
+  , a_stride
+  , a_padding
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+
+-- fv_d_conv_2d_dloss_dindepdt_2
+select 
+  fv_d_conv_2d_dloss_dindepdt_2
+  (
+    a_background
+  , fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , (select array_agg(array_length(a_window, a_no) order by a_no) from generate_series(1,array_ndims(a_window)) tb_a(a_no))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_dloss_dindepdt_2
+  (
+    a_background
+  , fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , (select array_agg(array_length(a_window, a_no) order by a_no) from generate_series(1,array_ndims(a_window)) tb_a(a_no))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_dloss_dindepdt_2
+  (
+    a_background
+  , fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , (select array_agg(array_length(a_window, a_no) order by a_no) from generate_series(1,array_ndims(a_window)) tb_a(a_no))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+
+-- fv_d_conv_2d_dloss_dindepdt_3
+select 
+  fv_d_conv_2d_dloss_dindepdt_3
+  (
+    fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , array[18,10]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_dloss_dindepdt_3
+  (
+    fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , array[18,10]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_dloss_dindepdt_3
+  (
+    fv_conv_2d_v_im2col
+    (
+      a_background
+    , a_window
+    , a_bias
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , array[18,10]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , fv_new_randn(0.0,1.1,array[1,1]) tb_a_bias(a_bias)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+
+-- fv_d_conv_2d_grp_x_dloss_dindepdt_1
+select 
+  fv_d_conv_2d_grp_x_dloss_dindepdt_1
+  (
+    28
+  , fv_conv_2d_grp_x
+    (
+      a_background
+    , 28
+    , a_window
+    , 3
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , a_window
+  , 3
+  , a_stride
+  , a_padding
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,42*28]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[1,4*3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_grp_x_dloss_dindepdt_1
+  (
+    28
+  , fv_conv_2d_grp_x
+    (
+      a_background
+    , 28
+    , a_window
+    , 3
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , a_window
+  , 3
+  , a_stride
+  , a_padding
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,42*28]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[1,4*3+1]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+
+-- fv_d_conv_2d_grp_x_dloss_dindepdt_2
+select 
+  fv_d_conv_2d_grp_x_dloss_dindepdt_2
+  (
+    a_background
+  , 28
+  , fv_conv_2d_grp_x
+    (
+      a_background
+    , 28
+    , a_window
+    , 3
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , array[4,3]
+  , false
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from  fv_new_randn(0.0,1.1,array[5,42*28]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[1,4*3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+select 
+  fv_d_conv_2d_grp_x_dloss_dindepdt_2
+  (
+    a_background
+  , 28
+  , fv_conv_2d_grp_x
+    (
+      a_background
+    , 28
+    , a_window
+    , 3
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) +` random()
+  , array[4,3]
+  , true
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from  fv_new_randn(0.0,1.1,array[5,42*28]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[1,4*3+1]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+;
+
+-- fv_d_conv_add_dloss_dindepdt_1
+select 
+  fv_d_conv_add_dloss_dindepdt_1
+  (
+  --   a_background
+  -- , 
+    array[18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_add
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_add_dloss_dindepdt_1
+  (
+  --   a_background
+  -- , 
+    array[3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_add
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_add_dloss_dindepdt_1
+  (
+  --   a_background
+  -- , 
+    array[5,3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_add
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_conv_add_dloss_dindepdt_2
+select 
+  fv_d_conv_add_dloss_dindepdt_2
+  (
+  --   a_background
+  -- , 
+    array[18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_add
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_add_dloss_dindepdt_2
+  (
+  --   a_background
+  -- , 
+    array[3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_add
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_add_dloss_dindepdt_2
+  (
+  --   a_background
+  -- , 
+    array[5,3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_add
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_conv_sub_dloss_dindepdt_1
+select 
+  fv_d_conv_sub_dloss_dindepdt_1
+  (
+  --   a_background
+  -- , 
+    array[18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_sub
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_sub_dloss_dindepdt_1
+  (
+  --   a_background
+  -- , 
+    array[3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_sub
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_sub_dloss_dindepdt_1
+  (
+  --   a_background
+  -- , 
+    array[5,3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_sub
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_conv_sub_dloss_dindepdt_2
+select 
+  fv_d_conv_sub_dloss_dindepdt_2
+  (
+  --   a_background
+  -- , 
+    array[18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_sub
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_sub_dloss_dindepdt_2
+  (
+  --   a_background
+  -- , 
+    array[3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_sub
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_sub_dloss_dindepdt_2
+  (
+  --   a_background
+  -- , 
+    array[5,3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_sub
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_mul_dloss_dindepdt_1
+select 
+  fv_d_conv_mul_dloss_dindepdt_1
+  (
+  --  a_background,
+    array[18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_mul
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_mul_dloss_dindepdt_1
+  (
+  --   a_background,
+    array[3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_mul
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_mul_dloss_dindepdt_1
+  (
+  --   a_background,
+    array[5,3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_mul
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_mul_dloss_dindepdt_2
+select 
+  fv_d_conv_mul_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_mul
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_mul_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_mul
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_mul_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[5,3,18,10]
+  -- , a_window
+  , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_mul
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_div_dloss_dindepdt_1
+select 
+  fv_d_conv_div_dloss_dindepdt_1
+  (
+  --   a_background,
+    array[18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_div
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_div_dloss_dindepdt_1
+  (
+  --   a_background,
+    array[3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_div
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_div_dloss_dindepdt_1
+  (
+  --   a_background,
+    array[5,3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_div
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_div_dloss_dindepdt_2
+select 
+  fv_d_conv_div_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_div
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_div_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_div
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_div_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[5,3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_div
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_pow_dloss_dindepdt_1
+select 
+  fv_d_conv_pow_dloss_dindepdt_1
+  (
+    a_background
+  -- , array[18,10]
+  , a_window
+  -- , array[4,3]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_pow
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_pow_dloss_dindepdt_1
+  (
+    a_background
+  -- , array[3,18,10]
+  , a_window
+  -- , array[4,3]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_pow
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_pow_dloss_dindepdt_1
+  (
+    a_background
+  -- , array[5,3,18,10]
+  , a_window
+  -- , array[4,3]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_pow
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_pow_dloss_dindepdt_2
+select 
+  fv_d_conv_pow_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[18,10]
+  , a_window
+  , array[4,3]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_pow
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_pow_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[3,18,10]
+  , a_window
+  , array[4,3]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_pow
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_pow_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[5,3,18,10]
+  , a_window
+  , array[4,3]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_pow
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_log_dloss_dindepdt_1
+select 
+  fv_d_conv_log_dloss_dindepdt_1
+  (
+    a_background
+  , array[18,10]
+  , a_window
+  , array[4,3]
+  , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_log
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_log_dloss_dindepdt_1
+  (
+    a_background
+  , array[3,18,10]
+  , a_window
+  , array[4,3]
+  , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_log
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_log_dloss_dindepdt_1
+  (
+    a_background
+  , array[5,3,18,10]
+  , a_window
+  , array[4,3]
+  , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_log
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_log_dloss_dindepdt_2
+select 
+  fv_d_conv_log_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_log
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_log_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_log
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_log_dloss_dindepdt_2
+  (
+    a_background
+  -- , array[5,3,18,10]
+  , a_window
+  -- , array[4,3]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_log
+    (
+      a_background
+    , a_window
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_de_sub_dloss_dindepdt_1
+select 
+  fv_d_conv_de_sub_dloss_dindepdt_1
+  (
+  --   a_window,
+    array[4,3]
+  -- , a_background
+  , array[18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_sub
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_sub_dloss_dindepdt_1
+  (
+  --   a_window.
+    array[4,3]
+  -- , a_background
+  , array[3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_sub
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_sub_dloss_dindepdt_1
+  (
+  --   a_window,
+    array[4,3]
+  -- , a_background
+  , array[5,3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_sub
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_de_sub_dloss_dindepdt_2
+select 
+  fv_d_conv_de_sub_dloss_dindepdt_2
+  (
+  --   a_window,
+    array[4,3]
+  -- , a_background
+  , array[18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_sub
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_sub_dloss_dindepdt_2
+  (
+  --   a_window,
+    array[4,3]
+  -- , a_background
+  , array[3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_sub
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_sub_dloss_dindepdt_2
+  (
+  --   a_window,
+    array[4,3]
+  -- , a_background
+  , array[5,3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_sub
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_de_div_dloss_dindepdt_1
+select 
+  fv_d_conv_de_div_dloss_dindepdt_1
+  (
+  --   a_window,
+    array[4,3]
+  , a_background
+  -- , array[18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_div
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_div_dloss_dindepdt_1
+  (
+  --   a_window,
+    array[4,3]
+  , a_background
+  -- , array[3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_div
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_div_dloss_dindepdt_1
+  (
+  --   a_window,
+    array[4,3]
+  , a_background
+  -- , array[5,3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_div
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_de_div_dloss_dindepdt_2
+select 
+  fv_d_conv_de_div_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_div
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_div_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_div
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_div_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[5,3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_randn(0.0,1.1,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_div
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_de_pow_dloss_dindepdt_1
+select 
+  fv_d_conv_de_pow_dloss_dindepdt_1
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[18,10]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_pow
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_pow_dloss_dindepdt_1
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[3,18,10]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_pow
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_pow_dloss_dindepdt_1
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[5,3,18,10]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_pow
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_de_pow_dloss_dindepdt_2
+select 
+  fv_d_conv_de_pow_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  , array[18,10]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_pow
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_pow_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  , array[3,18,10]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_pow
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_pow_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  , array[5,3,18,10]
+  , a_depdt
+  , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_pow
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+
+
+-- fv_d_conv_de_log_dloss_dindepdt_1
+select 
+  fv_d_conv_de_log_dloss_dindepdt_1
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[18,10]
+  , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_log
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_log_dloss_dindepdt_1
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[3,18,10]
+  , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_log
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_log_dloss_dindepdt_1
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[5,3,18,10]
+  , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_log
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- ---------------------------------------------------------------------------------------------------
+
+-- fv_d_conv_de_log_dloss_dindepdt_2
+select 
+  fv_d_conv_de_log_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_log
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_log_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_log
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_conv_de_log_dloss_dindepdt_2
+  (
+    a_window
+  -- , array[4,3]
+  , a_background
+  -- , array[5,3,18,10]
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_rand(2.0,array[5,3,18,10]) tb_a_background(a_background)
+  , fv_new_rand(2.0,array[4,3]) tb_a_window(a_window)
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_conv_de_log
+    (
+      a_window
+    , a_background
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_pool_avg_dloss_dindepdt
+select 
+  fv_d_pool_avg_dloss_dindepdt
+  (
+  --  a_background,
+    array[18,10]
+  , a_window_len
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_avg
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_pool_avg_dloss_dindepdt
+  (
+  --  a_background,
+    array[3,18,10]
+  , a_window_len
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_avg
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_pool_avg_dloss_dindepdt
+  (
+  --  a_background,
+    array[5,3,18,10]
+  , a_window_len
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_avg
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_pool_max_dloss_dindepdt
+select 
+  fv_d_pool_max_dloss_dindepdt
+  (
+    a_background
+  -- ,  array[18,10]
+  , a_window_len
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_depdt
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_max
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_pool_max_dloss_dindepdt
+  (
+    a_background
+  -- ,  array[3,18,10]
+  , a_window_len
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_depdt
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_max
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select 
+  fv_d_pool_max_dloss_dindepdt
+  (
+    a_background
+  -- ,  array[5,3,18,10]
+  , a_window_len
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_depdt
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_max
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_pool_avg_grp_x_dloss_dindepdt
+select 
+  fv_d_pool_avg_grp_x_dloss_dindepdt
+  (
+  --  a_background,
+    18*10
+  , 10
+  -- , a_depdt
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_window_len
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18*10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_avg_2d_grp_x
+    (
+      a_background
+    , 10
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_pool_max_grp_x_dloss_dindepdt
+select 
+  fv_d_pool_max_grp_x_dloss_dindepdt
+  (
+    a_background
+  -- , 18*10
+  , 10
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  , a_window_len
+  , a_depdt
+  , a_stride
+  , a_padding
+  , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18*10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_max_2d_grp_x
+    (
+      a_background
+    , 10
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_d_pool_none_dloss_dindepdtselect 
+select
+  fv_d_pool_none_dloss_dindepdt
+  (
+  --   a_background,
+     array[18,10]
+  , a_window_len
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  -- , a_depdt
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_none
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select
+  fv_d_pool_none_dloss_dindepdt
+  (
+  --   a_background,
+     array[3,18,10]
+  , a_window_len
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  -- , a_depdt
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[3,18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_none
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+select
+  fv_d_pool_none_dloss_dindepdt
+  (
+  --   a_background,
+     array[5,3,18,10]
+  , a_window_len
+  -- , (select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no))
+  , fv_new_randn(0.0,1.1,(select array_agg(array_length(a_depdt, a_no) order by a_no) from generate_series(1,array_ndims(a_depdt)) tb_a(a_no)))
+  -- , a_depdt
+  , a_stride
+  , a_padding
+  -- , a_padding_value[1]
+  ) is not null
+from fv_new_randn(0.0,1.1,array[5,3,18,10]) tb_a_background(a_background)
+  , (select array[4,3] as a_window_len) tb_a_window_len
+  , (select array[1,1] as a_stride) tb_a_stride
+  , (select array[0,0,0,0] as a_padding) tb_a_padding
+  , fv_new_randn(0.0,1.1,array[1]) tb_a_padding_value(a_padding_value)
+  , fv_pool_none
+    (
+      a_background
+    , a_window_len
+    , a_stride
+    , a_padding
+    , a_padding_value[1]
+    ) tb_a_depdt(a_depdt)
+;
+
+-- fv_algebra_execute
+select fv_algebra_execute('sm_sc.fv_opr_add'   , array[1.5, 2.0 :: float, 3.4])   is not null;
+select fv_algebra_execute('sm_sc.fv_opr_sub'   , array[1.5, 2.0])                 is not null;
+select fv_algebra_execute('sm_sc.fv_opr_mul'   , array[1.5, 2.0 :: float, 3.4])   is not null;
+select fv_algebra_execute('sm_sc.fv_opr_div'   , array[1.5, 2.0])                 is not null;
+select fv_algebra_execute('sm_sc.fv_opr_pow'   , array[1.5, 2.0])                 is not null;
+select fv_algebra_execute('sm_sc.fv_opr_exp'   , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_opr_log'   , array[1.5, 2.0])                 is not null;
+select fv_algebra_execute('sm_sc.fv_opr_ln'    , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_sin'       , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_cos'       , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_tan'       , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_cot'       , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_sec'       , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_csc'       , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_asin'      , array[0.5 :: float])             is not null;
+select fv_algebra_execute('sm_sc.fv_acos'      , array[0.5 :: float])             is not null;
+select fv_algebra_execute('sm_sc.fv_atan'      , array[0.5 :: float])             is not null;
+select fv_algebra_execute('sm_sc.fv_acot'      , array[0.5 :: float])             is not null;
+select fv_algebra_execute('sm_sc.fv_asec'      , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_acsc'      , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_sinh'      , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_cosh'      , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_tanh'      , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_asinh'     , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_acosh'     , array[1.5])                      is not null;
+select fv_algebra_execute('sm_sc.fv_atanh'     , array[0.5 :: float])             is not null;
+
+--fv_lambda_arr
+with 
+cte_input as 
+(
+  select 
+    fv_new_rand(array[3       ]) as i_param_1_1d
+  , fv_new_rand(array[3,12    ]) as i_param_1_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_1_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_1_4d
+  , fv_new_rand(array[3       ]) as i_param_2_1d
+  , fv_new_rand(array[3,12    ]) as i_param_2_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_2_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_2_4d
+  , fv_new_rand(array[3, 4,3  ]) as i_param_3_3d
+)
+select 
+-- -- -- 0_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '0_p'
+-- --   fv_lambda_arr(null,'00_const',null,null) is not null
+-- 1_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '1_p'
+  fv_lambda_arr(null,trim('00_none               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('01_0sub               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('01_1div               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('01_abs                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('01_exp                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('01_ln                 '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_acos               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_acosh              '),1.0::float/`i_param_1_3d,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_acot               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_asin               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_asinh              '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_atan               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_atanh              '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_cos                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_cosh               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_cot                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_csc                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_sec                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_sin                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_sinh               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_tan                '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('02_tanh               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_boxcox             '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_elu                '),i_param_1_3d            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr(null,trim('03_gelu               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_leaky_relu         '),i_param_1_3d            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr(null,trim('03_relu               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_selu               '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_sigmoid            '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_softmax            '),i_param_1_3d            ,null,array[1,4,3  ]                                  ) is not null
+, fv_lambda_arr(null,trim('03_softplus           '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_swish              '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('03_zscore             '),i_param_1_3d            ,null,array[1,4,3  ]                                  ) is not null
+, fv_lambda_arr(null,trim('04_lower_tri_mx       '),i_param_1_3d            ,null,array[0.0]                                      ) is not null
+, fv_lambda_arr(null,trim('04_lower_tri_mx_ex    '),i_param_1_3d            ,null,array[0.0]                                      ) is not null
+, fv_lambda_arr(null,trim('04_mirror             '),i_param_1_3d            ,null,array[1]                                        ) is not null
+, fv_lambda_arr(null,trim('04_mx_ascend_dim      '),i_param_1_3d            ,null,array[1]                                        ) is not null
+, fv_lambda_arr(null,trim('04_mx_descend_dim     '),i_param_1_3d            ,null,array[1]                                        ) is not null
+, fv_lambda_arr(null,trim('04_mx_ele_2d_2_3d     '),i_param_1_2d            ,null,array[3,1]                                      ) is not null
+, fv_lambda_arr(null,trim('04_mx_ele_3d_2_2d     '),i_param_1_3d            ,null,array[1,2]                                      ) is not null
+, fv_lambda_arr(null,trim('04_mx_slice_3d_2_2d   '),i_param_1_3d            ,null,array[3,2]                                      ) is not null
+, fv_lambda_arr(null,trim('04_mx_slice_4d_2_2d   '),i_param_1_4d            ,null,array[[3,2],[1,2]]                              ) is not null
+, fv_lambda_arr(null,trim('04_mx_slice_4d_2_3d   '),i_param_1_4d            ,null,array[3,2]                                      ) is not null
+, fv_lambda_arr(null,trim('04_new                '),i_param_1_3d            ,null,array[4,3,5  ]                                  ) is not null
+, fv_lambda_arr(null,trim('04_rand_pick_x        '),i_param_1_4d            ,null,array[2]                                        ) is not null
+, fv_lambda_arr(null,trim('04_rand_pick_x3       '),i_param_1_4d            ,null,array[2]                                        ) is not null
+, fv_lambda_arr(null,trim('04_rand_pick_x4       '),i_param_1_4d            ,null,array[2]                                        ) is not null
+, fv_lambda_arr(null,trim('04_rand_pick_y        '),i_param_1_4d            ,null,array[2]                                        ) is not null
+, fv_lambda_arr(null,trim('04_sample_x           '),i_param_1_4d            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr(null,trim('04_sample_x3          '),i_param_1_4d            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr(null,trim('04_sample_x4          '),i_param_1_4d            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr(null,trim('04_sample_y           '),i_param_1_4d            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr(null,trim('04_chunk              '),i_param_1_4d            ,null,array[[2,1,2,1],[3,3,4,4]]                      ) is not null
+, fv_lambda_arr(null,trim('04_slice_x            '),i_param_1_4d            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr(null,trim('04_slice_x3           '),i_param_1_4d            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr(null,trim('04_slice_x4           '),i_param_1_4d            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr(null,trim('04_slice_y            '),i_param_1_4d            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr(null,trim('04_transpose          '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('04_transpose_3d       '),i_param_1_3d            ,null,array[1,3]                                      ) is not null
+, fv_lambda_arr(null,trim('04_transpose_i        '),i_param_1_3d            ,null,null                                            ) is not null
+, fv_lambda_arr(null,trim('04_turn_180           '),i_param_1_3d            ,null,array[1,3]                                      ) is not null
+, fv_lambda_arr(null,trim('04_turn_90            '),i_param_1_3d            ,null,array[1,3]                                      ) is not null
+, fv_lambda_arr(null,trim('04_upper_tri_mx       '),i_param_1_3d            ,null,array[0]                                        ) is not null
+, fv_lambda_arr(null,trim('04_upper_tri_mx_ex    '),i_param_1_3d            ,null,array[0]                                        ) is not null
+, fv_lambda_arr(null,trim('05_pool_avg           '),i_param_1_3d            ,null,array[null,3,3,3,3,0,0,0,0,0]                   ) is not null
+, fv_lambda_arr(null,trim('05_pool_avg_2d_grp_x  '),i_param_1_2d            ,null,array[3,2,2,1,1,0,0,0,0,0.0,12]                 ) is not null
+, fv_lambda_arr(null,trim('05_pool_max           '),i_param_1_3d            ,null,array[null,3,3,3,3,0,0,0,0,0]                   ) is not null
+, fv_lambda_arr(null,trim('05_pool_max_2d_grp_x  '),i_param_1_2d            ,null,array[3,2,2,1,1,0,0,0,0,0.0]                    ) is not null
+, fv_lambda_arr(null,trim('05_pool_none          '),i_param_1_3d            ,null,array[null,3,3,3,3,0,0,0,0,0]                   ) is not null
+, fv_lambda_arr(null,trim('07_aggr_chunk_avg     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_chunk_max     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_chunk_min     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_chunk_prod    '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_chunk_sum     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_slice_avg     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_slice_max     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_slice_min     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_slice_prod    '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr(null,trim('07_aggr_slice_sum     '),i_param_1_3d            ,null,array[1,3,3]                                    ) is not null
+-- 2_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '2_p'
+-- -- -- 
+, fv_lambda_arr(null,trim('01_add             '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_mul             '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_sub             '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_div             '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_pow             '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_log             '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_prod_mx         '),i_param_1_3d            ,fv_new_rand(array[3,9,15  ])         ,null                                    ) is not null
+, fv_lambda_arr(null,trim('01_chunk_prod_mx   '),i_param_1_3d            ,fv_new_rand(array[3,9,15  ])         ,array[4,3,5]                            ) is not null
+, fv_lambda_arr(null,trim('04_apad            '),i_param_1_3d            ,fv_new_rand(array[3,1,9  ])          ,array[2]                                ) is not null
+, fv_lambda_arr(null,trim('04_bpad            '),i_param_1_3d            ,fv_new_rand(array[3,1,9  ])          ,array[2]                                ) is not null
+, fv_lambda_arr(null,trim('04_lpad            '),i_param_1_3d            ,fv_new_rand(array[3,12,1  ])         ,array[2]                                ) is not null
+, fv_lambda_arr(null,trim('04_rpad            '),i_param_1_3d            ,fv_new_rand(array[3,12,1  ])         ,array[2]                                ) is not null
+, fv_lambda_arr(null,trim('04_lmask           '),i_param_1_3d            ,array_fill(2,array[3,12,1])          ,array[0.5]                              ) is not null
+, fv_lambda_arr(null,trim('04_rmask           '),i_param_1_3d            ,array_fill(2,array[3,12,1])          ,array[0.5]                              ) is not null
+, fv_lambda_arr(null,trim('04_amask           '),i_param_1_3d            ,array_fill(2,array[3,1,9])           ,array[0.5]                              ) is not null
+, fv_lambda_arr(null,trim('04_bmask           '),i_param_1_3d            ,array_fill(2,array[3,1,9])           ,array[0.5]                              ) is not null
+, fv_lambda_arr(null,trim('05_conv_2d_grp_x   '),i_param_1_2d            ,fv_new_rand(array[1,5])              ,array[3,2,2,1,1,0,0,0,0]                ) is not null
+, fv_lambda_arr(null,trim('05_conv_add        '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_sub        '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_mul        '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_div        '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_pow        '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_log        '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_prod_mx    '),i_param_1_3d            ,fv_new_rand(array[3,3])              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_de_sub     '),fv_new_rand(array[3,3]) ,i_param_2_3d                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_de_div     '),fv_new_rand(array[3,3]) ,i_param_2_3d                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_de_pow     '),fv_new_rand(array[3,3]) ,i_param_2_3d                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_de_log     '),fv_new_rand(array[3,3]) ,i_param_2_3d                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr(null,trim('05_conv_de_prod_mx '),fv_new_rand(array[3,3]) ,i_param_2_3d                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+-- -- -- , fv_lambda_arr(null,trim('81_query_from_col  '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+-- -- -- , fv_lambda_arr(null,trim('81_query_from_row  '),i_param_1_3d            ,i_param_2_3d                         ,null                                    ) is not null
+-- 3_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '3_p'
+, fv_lambda_arr(null,'05_conv_2d',i_param_1_3d,fv_new_rand(array[3,3]),array[null,3,3,3,3,0,0,0,0,0]) is not null
+, fv_lambda_arr(null,'05_conv_2d',i_param_1_3d,fv_new_rand(array[3,3]),array[null,3,3,3,3,0,0,0,0,0],i_param_3_3d) is not null
+from cte_input
+;
+
+-- fv_lambda_arr_ddepdt_dindepdt
+-- 1_p ddepdt_dindepdt
+with 
+cte_input as 
+(
+  select 
+    fv_new_rand(array[3       ]) as i_param_1_1d
+  , fv_new_rand(array[3,12    ]) as i_param_1_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_1_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_1_4d
+  -- , fv_new_rand(array[3       ]) as i_param_2_1d
+  -- , fv_new_rand(array[3,12    ]) as i_param_2_2d
+  -- , fv_new_rand(array[3,12,9  ]) as i_param_2_3d
+  -- , fv_new_rand(array[3,12,9,6]) as i_param_2_4d
+)
+select 
+  fv_lambda_arr_ddepdt_dindepdt
+  (
+    null
+  , tb_a_delta_method.enum_key
+  , case substr(tb_a_delta_method.enum_value,1,1) when '1' then case tb_a_delta_method.enum_key when '02_acosh' then 1.0::float/`i_param_1_3d else i_param_1_3d end end
+  , 1
+  , null
+  , case tb_a_delta_method.enum_key
+      when '03_leaky_relu'
+        then array[1.0]
+      when '03_elu'
+        then array[1.0]
+      when '03_zscore'
+        then array[1,4,3  ]
+      else null
+    end
+  , case substr(tb_a_delta_method.enum_value,5,1) 
+      when '1' 
+        then fv_lambda_arr
+             (
+               null
+             , tb_a_delta_method.enum_key
+             , case tb_a_delta_method.enum_key when '02_acosh' then 1.0::float/`i_param_1_3d else i_param_1_3d end
+             , null
+             , case tb_a_delta_method.enum_key
+                 when '03_leaky_relu'
+                   then array[1.0]
+                 when '03_elu'
+                   then array[1.0]
+                 when '03_zscore'
+                   then array[1,4,3  ]
+                 else null
+               end
+             )
+      else null             
+    end
+  , case when substr(tb_a_delta_method.enum_value,7,1) = '1' then array[3,12,9  ] end
+  ) is not null
+from cte_input
+  ,sm_sc.tb_dic_enum tb_a_delta_method
+inner join sm_sc.tb_dic_enum tb_a_fn_type
+  on tb_a_fn_type.enum_key = tb_a_delta_method.enum_key
+where tb_a_delta_method.enum_name = 'node_fn_type_delta_method' and tb_a_delta_method.enum_group ='0'
+  and tb_a_fn_type.enum_name = 'node_fn_type' and tb_a_fn_type.enum_group = '1_p'
+;
+-- 2_p ddepdt_dindepdt of p1, p2
+with 
+cte_input as 
+(
+  select 
+    fv_new_rand(array[3       ]) as i_param_1_1d
+  , fv_new_rand(array[3,12    ]) as i_param_1_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_1_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_1_4d
+  , fv_new_rand(array[3       ]) as i_param_2_1d
+  , fv_new_rand(array[3,12    ]) as i_param_2_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_2_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_2_4d
+)
+select 
+  fv_lambda_arr_ddepdt_dindepdt
+  (
+    null
+  , tb_a_delta_method.enum_key
+  , case 
+      when a_indepdt_var_loc = 1 and substr(tb_a_delta_method.enum_value,1,1) = '1'
+        then i_param_1_3d 
+      when a_indepdt_var_loc = 2 and substr(tb_a_delta_method.enum_value,2,1) = '1'
+        then i_param_2_3d 
+    end 
+  , a_indepdt_var_loc
+  , case 
+      when a_indepdt_var_loc = 1 and substr(tb_a_delta_method.enum_value,3,1) = '1'
+        then i_param_2_3d 
+      when a_indepdt_var_loc = 2 and substr(tb_a_delta_method.enum_value,4,1) = '1'
+        then i_param_1_3d 
+    end 
+  , null
+  , case 
+      when a_indepdt_var_loc = 1 and substr(tb_a_delta_method.enum_value,5,1) = '1' 
+        or a_indepdt_var_loc = 2 and substr(tb_a_delta_method.enum_value,6,1) = '1' 
+        then fv_lambda_arr
+             (
+               null
+             , tb_a_delta_method.enum_key
+             , i_param_1_3d
+             , i_param_2_3d
+             , null
+             )
+      else null             
+    end
+  , case 
+      when a_indepdt_var_loc = 1 and substr(tb_a_delta_method.enum_value,7,1) = '1' 
+        or a_indepdt_var_loc = 2 and substr(tb_a_delta_method.enum_value,8,1) = '1' 
+        then array[3,12,9  ] 
+    end
+  ) is not null
+from cte_input,unnest(array[1,2]) tb_a(a_indepdt_var_loc)
+  ,sm_sc.tb_dic_enum tb_a_delta_method
+inner join sm_sc.tb_dic_enum tb_a_fn_type
+  on tb_a_fn_type.enum_key = tb_a_delta_method.enum_key
+where tb_a_delta_method.enum_name = 'node_fn_type_delta_method' and tb_a_delta_method.enum_group ='0'
+  and tb_a_fn_type.enum_name = 'node_fn_type' and tb_a_fn_type.enum_group = '2_p'
+;
+
+-- -- -- fv_lambda_arr_dloss_dindepdt
+-- 1_p dloss_dindepdt
+with 
+cte_input as 
+(
+  select 
+    fv_new_rand(array[3       ]) as i_param_1_1d
+  , fv_new_rand(array[3,12    ]) as i_param_1_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_1_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_1_4d
+)
+select 
+  fv_lambda_arr_dloss_dindepdt
+  (
+    null
+  , tb_a_delta_method.enum_key
+  , case substr(tb_a_delta_method.enum_value,1,1) 
+      when '1' 
+        then 
+          case tb_a_delta_method.enum_key 
+            when '04_mx_slice_4d_2_2d'   then i_param_1_4d
+            when '04_mx_slice_4d_2_3d'   then i_param_1_4d
+            when '04_sample_x4'          then i_param_1_4d
+            when '04_slice_x4'           then i_param_1_4d
+            when '04_mx_ele_2d_2_3d'     then i_param_1_2d
+            when '05_pool_max_2d_grp_x'  then i_param_1_2d
+            when '05_pool_avg_2d_grp_x'  then i_param_1_2d
+            else i_param_1_3d 
+          end      
+    end
+  , 1
+  , null
+  , case tb_a_delta_method.enum_key
+      when '03_softmax'
+        then array[1,4,3  ] 
+      when '04_new'
+        then array[4,3,5  ]
+      when '04_transpose_3d'
+        then array[1,3]
+      when '04_turn_90'
+        then array[1,3]
+      when '04_turn_180'
+        then array[1,3]
+      when '04_mirror'
+        then array[1]
+      when '04_mx_ele_3d_2_2d'
+        then array[1,2]
+      when '04_mx_ele_2d_2_3d'
+        then array[3,1]
+      when '04_mx_slice_3d_2_2d'
+        then array[3,2]
+      when '04_mx_slice_4d_2_2d'
+        then array[[3,2],[1,2]]
+      when '04_mx_slice_4d_2_3d'
+        then array[3,2]
+      when '04_mx_ascend_dim'
+        then array[1]
+      when '04_mx_descend_dim'
+        then array[1]
+      when '04_chunk'
+        then array[[2,1,2,1],[3,3,4,4]]
+      when '04_slice_x'
+        then array[[1,2],[3,4],[3,5]]
+      when '04_slice_x3'
+        then array[[1,2],[3,4],[3,5]]
+      when '04_slice_x4'
+        then array[[1,2],[3,4],[3,5]]
+      when '04_slice_y'
+        then array[[1,2],[3,4],[3,5]]
+      when '04_sample_x'
+        then array[[3,null],[3,null],[1,2],[3,4]]
+      when '04_sample_x3'
+        then array[[3,null],[3,null],[1,2],[3,4]]
+      when '04_sample_x4'
+        then array[[3,null],[3,null],[1,2],[3,4]]
+      when '04_sample_y'
+        then array[[3,null],[3,null],[1,2],[3,4]]
+      when '04_lower_tri_mx'
+        then array[0.0]
+      when '04_lower_tri_mx_ex'
+        then array[0.0]
+      when '04_upper_tri_mx'
+        then array[0.0]
+      when '04_upper_tri_mx_ex'
+        then array[0.0]
+      when '05_pool_max_2d_grp_x'
+        then array[3,2,2,1,1,0,0,0,0,0.0]
+      when '05_pool_avg_2d_grp_x'
+        then array[3,2,2,1,1,0,0,0,0,0.0,12]
+      when '05_pool_max'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_pool_avg'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_pool_none'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '07_aggr_slice_avg'
+        then array[1,3,3]
+      when '07_aggr_slice_max'
+        then array[1,3,3]
+      when '07_aggr_slice_min'
+        then array[1,3,3]
+      when '07_aggr_slice_prod'
+        then array[1,3,3]
+      when '07_aggr_slice_sum'
+        then array[1,3,3]
+      when '07_aggr_chunk_avg'
+        then array[1,3,3]
+      when '07_aggr_chunk_max'
+        then array[1,3,3]
+      when '07_aggr_chunk_min'
+        then array[1,3,3]
+      when '07_aggr_chunk_prod'
+        then array[1,3,3]
+      when '07_aggr_chunk_sum'
+        then array[1,3,3]
+      else null
+    end
+  , case substr(tb_a_delta_method.enum_value,5,1) 
+      when '1' 
+        then a_depdt
+      else null             
+    end
+  , a_depdt +`random()
+  , case 
+      when substr(tb_a_delta_method.enum_value,7,1) = '1' 
+        then case tb_a_delta_method.enum_key 
+               when '04_mx_slice_4d_2_2d'   then array[3,12,9,6]
+               when '04_mx_slice_4d_2_3d'   then array[3,12,9,6]
+               when '04_sample_x4'          then array[3,12,9,6]
+               when '04_slice_x4'           then array[3,12,9,6]
+               when '04_mx_ele_2d_2_3d'     then array[3,12]
+               when '05_pool_max_2d_grp_x'  then array[3,12]
+               when '05_pool_avg_2d_grp_x'  then array[3,12]
+               else array[3,12,9  ] 
+             end
+      else null
+    end
+  , null
+  ) is not null
+from cte_input
+  , sm_sc.tb_dic_enum tb_a_delta_method
+  , fv_lambda_arr
+    (
+      null
+    , tb_a_delta_method.enum_key
+    , case tb_a_delta_method.enum_key 
+        when '04_mx_slice_4d_2_2d'   then i_param_1_4d
+        when '04_mx_slice_4d_2_3d'   then i_param_1_4d
+        when '04_sample_x4'          then i_param_1_4d
+        when '04_slice_x4'           then i_param_1_4d
+        when '04_mx_ele_2d_2_3d'     then i_param_1_2d
+        when '05_pool_max_2d_grp_x'  then i_param_1_2d
+        when '05_pool_avg_2d_grp_x'  then i_param_1_2d
+        else i_param_1_3d 
+      end
+    , null
+    , case tb_a_delta_method.enum_key
+        when '03_softmax'
+          then array[1,4,3  ] 
+        when '04_new'
+          then array[4,3,5  ]
+        when '04_transpose_3d'
+          then array[1,3]
+        when '04_turn_90'
+          then array[1,3]
+        when '04_turn_180'
+          then array[1,3]
+        when '04_mirror'
+          then array[1]
+        when '04_mx_ele_3d_2_2d'
+          then array[1,2]
+        when '04_mx_ele_2d_2_3d'
+          then array[3,1]
+        when '04_mx_slice_3d_2_2d'
+          then array[3,2]
+        when '04_mx_slice_4d_2_2d'
+          then array[[3,2],[1,2]]
+        when '04_mx_slice_4d_2_3d'
+          then array[3,2]
+        when '04_mx_ascend_dim'
+          then array[1]
+        when '04_mx_descend_dim'
+          then array[1]
+        when '04_chunk'
+          then array[[2,1,2,1],[3,3,4,4]]
+        when '04_slice_x'
+          then array[[1,2],[3,4],[3,5]]
+        when '04_slice_x3'
+          then array[[1,2],[3,4],[3,5]]
+        when '04_slice_x4'
+          then array[[1,2],[3,4],[3,5]]
+        when '04_slice_y'
+          then array[[1,2],[3,4],[3,5]]
+        when '04_sample_x'
+          then array[[3,null],[3,null],[1,2],[3,4]]
+        when '04_sample_x3'
+          then array[[3,null],[3,null],[1,2],[3,4]]
+        when '04_sample_x4'
+          then array[[3,null],[3,null],[1,2],[3,4]]
+        when '04_sample_y'
+          then array[[3,null],[3,null],[1,2],[3,4]]
+        when '04_lower_tri_mx'
+          then array[0.0]
+        when '04_lower_tri_mx_ex'
+          then array[0.0]
+        when '04_upper_tri_mx'
+          then array[0.0]
+        when '04_upper_tri_mx_ex'
+          then array[0.0]
+        when '05_pool_max_2d_grp_x'
+          then array[3,2,2,1,1,0,0,0,0]
+        when '05_pool_avg_2d_grp_x'
+          then array[3,2,2,1,1,0,0,0,0]
+        when '05_pool_max'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_pool_avg'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_pool_none'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '07_aggr_slice_avg'
+          then array[1,3,3]
+        when '07_aggr_slice_max'
+          then array[1,3,3]
+        when '07_aggr_slice_min'
+          then array[1,3,3]
+        when '07_aggr_slice_prod'
+          then array[1,3,3]
+        when '07_aggr_slice_sum'
+          then array[1,3,3]
+        when '07_aggr_chunk_avg'
+          then array[1,3,3]
+        when '07_aggr_chunk_max'
+          then array[1,3,3]
+        when '07_aggr_chunk_min'
+          then array[1,3,3]
+        when '07_aggr_chunk_prod'
+          then array[1,3,3]
+        when '07_aggr_chunk_sum'
+          then array[1,3,3]
+        else null
+      end
+    ) tb_a_depdt(a_depdt)
+  , sm_sc.tb_dic_enum tb_a_fn_type
+where tb_a_fn_type.enum_key = tb_a_delta_method.enum_key
+and tb_a_delta_method.enum_name = 'node_fn_type_delta_method' and tb_a_delta_method.enum_group ='1'
+  and tb_a_fn_type.enum_name = 'node_fn_type' and tb_a_fn_type.enum_group = '1_p'
+;
+-- 2_p dloss_dindepdt of p_1, p_2
+with 
+cte_input as 
+(
+          select trim('01_prod_mx        ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,9,15  ]) as i_param_2
+union all select trim('01_chunk_prod_mx  ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,9,15  ]) as i_param_2
+union all select trim('04_apad           ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,1,1   ]) as i_param_2
+union all select trim('04_bpad           ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,1,1   ]) as i_param_2
+union all select trim('04_lpad           ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,1,1   ]) as i_param_2
+union all select trim('04_rpad           ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,1,1   ]) as i_param_2
+union all select trim('04_lmask          ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_opr_ceil(fv_new_rand(array[3,12,1  ])::decimal[]*` 9.0)::int[] as i_param_2
+union all select trim('04_rmask          ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_opr_ceil(fv_new_rand(array[3,12,1  ])::decimal[]*` 9.0)::int[] as i_param_2
+union all select trim('04_amask          ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_opr_ceil(fv_new_rand(array[3,1,9   ])::decimal[]*`12.0)::int[] as i_param_2
+union all select trim('04_bmask          ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_opr_ceil(fv_new_rand(array[3,1,9   ])::decimal[]*`12.0)::int[] as i_param_2
+union all select trim('05_conv_2d_grp_x  ') as a_fn_type, fv_new_rand(array[3,12    ]) as i_param_1, fv_new_rand(array[1,5  ]) as i_param_2
+union all select trim('05_conv_add       ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_sub       ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_mul       ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_div       ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_pow       ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_log       ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_prod_mx   ') as a_fn_type, fv_new_rand(array[3,12,9  ]) as i_param_1, fv_new_rand(array[3,3  ]) as i_param_2
+union all select trim('05_conv_de_sub    ') as a_fn_type, fv_new_rand(array[3,3  ]) as i_param_1, fv_new_rand(array[3,12,9  ]) as i_param_2
+union all select trim('05_conv_de_div    ') as a_fn_type, fv_new_rand(array[3,3  ]) as i_param_1, fv_new_rand(array[3,12,9  ]) as i_param_2
+union all select trim('05_conv_de_pow    ') as a_fn_type, fv_new_rand(array[3,3  ]) as i_param_1, fv_new_rand(array[3,12,9  ]) as i_param_2
+union all select trim('05_conv_de_log    ') as a_fn_type, fv_new_rand(array[3,3  ]) as i_param_1, fv_new_rand(array[3,12,9  ]) as i_param_2
+union all select trim('05_conv_de_prod_mx') as a_fn_type, fv_new_rand(array[3,3  ]) as i_param_1, fv_new_rand(array[3,12,9  ]) as i_param_2 
+)
+select 
+  fv_lambda_arr_dloss_dindepdt
+  (
+    null
+  , tb_a_delta_method.enum_key
+  , case 
+      when substr(tb_a_delta_method.enum_value,1,1) = '1' and a_indepdt_var_loc = 1
+        then i_param_1
+      when substr(tb_a_delta_method.enum_value,2,1) = '1' and a_indepdt_var_loc = 2
+        then i_param_2
+    end
+  , a_indepdt_var_loc
+  , case 
+      when substr(tb_a_delta_method.enum_value,3,1) = '1' and a_indepdt_var_loc = 1
+        then i_param_2
+      when substr(tb_a_delta_method.enum_value,4,1) = '1' and a_indepdt_var_loc = 2
+        then i_param_1
+    end
+  , case tb_a_delta_method.enum_key
+      when '01_prod_mx'
+        then array[12,9,15]
+      when '01_chunk_prod_mx'
+        then array[4,3,5]
+      when '04_apad'
+        then array[2]
+      when '04_bpad'
+        then array[2]
+      when '04_lpad'
+        then array[2]
+      when '04_rpad'
+        then array[2]
+      when '04_lmask'
+        then array[0.0]
+      when '04_rmask'
+        then array[0.0]
+      when '04_amask'
+        then array[0.0]
+      when '04_bmask'
+        then array[0.0]
+      when '05_conv_2d_grp_x'
+        then array[3,2,2,1,1,0,0,0,0]
+      when '05_conv_add'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_sub'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_mul'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_div'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_pow'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_log'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_prod_mx'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_de_sub'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_de_div'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_de_pow'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_de_log'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      when '05_conv_de_prod_mx'
+        then array[null,3,3,3,3,0,0,0,0,0]
+      else null
+    end
+  , case 
+      when substr(tb_a_delta_method.enum_value,5,1) = '1' and a_indepdt_var_loc = 1
+        or substr(tb_a_delta_method.enum_value,6,1) = '1' and a_indepdt_var_loc = 2
+        then a_depdt
+      else null             
+    end
+  , a_depdt +`random()
+  , case 
+      when substr(tb_a_delta_method.enum_value,7,1) = '1' and a_indepdt_var_loc = 1 
+        then (select array_agg(array_length(i_param_1,a_no) order by a_no) from generate_series(1,array_ndims(i_param_1)) tb_a(a_no))
+      when substr(tb_a_delta_method.enum_value,8,1) = '1' and a_indepdt_var_loc = 2 
+        then (select array_agg(array_length(i_param_2,a_no) order by a_no) from generate_series(1,array_ndims(i_param_2)) tb_a(a_no))
+      else null
+    end
+  , null
+  ) is not null
+from cte_input tb_a_input,unnest(array[1,2]) tb_a(a_indepdt_var_loc)
+  , sm_sc.tb_dic_enum tb_a_delta_method
+  , fv_lambda_arr
+    (
+      null
+    , tb_a_delta_method.enum_key
+    , tb_a_input.i_param_1
+    , tb_a_input.i_param_2
+    , case tb_a_delta_method.enum_key
+        when '01_prod_mx'
+          then array[12,9,15]
+        when '01_chunk_prod_mx'
+          then array[4,3,5]
+        when '04_apad'
+          then array[2]
+        when '04_bpad'
+          then array[2]
+        when '04_lpad'
+          then array[2]
+        when '04_rpad'
+          then array[2]
+        when '04_lmask'
+          then array[0.0]
+        when '04_rmask'
+          then array[0.0]
+        when '04_amask'
+          then array[0.0]
+        when '04_bmask'
+          then array[0.0]
+        when '05_conv_2d_grp_x'
+          then array[3,2,2,1,1,0,0,0,0]
+        when '05_conv_add'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_sub'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_mul'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_div'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_pow'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_log'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_prod_mx'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_de_sub'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_de_div'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_de_pow'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_de_log'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        when '05_conv_de_prod_mx'
+          then array[null,3,3,3,3,0,0,0,0,0]
+        else null
+      end
+    ) tb_a_depdt(a_depdt)
+  , sm_sc.tb_dic_enum tb_a_fn_type
+where tb_a_fn_type.enum_key = tb_a_delta_method.enum_key
+  and tb_a_input.a_fn_type = tb_a_delta_method.enum_key
+  and tb_a_delta_method.enum_name = 'node_fn_type_delta_method' and tb_a_delta_method.enum_group ='1'
+  and tb_a_fn_type.enum_name = 'node_fn_type' and tb_a_fn_type.enum_group = '2_p'
+  and not (tb_a_delta_method.enum_key in ('04_lmask','04_rmask','04_amask','04_bmask') and a_indepdt_var_loc = 2)
+;
+-- 3_p dloss_dindepdt of p_1, p_2, p_3
+select 
+  fv_lambda_arr_dloss_dindepdt
+  (
+    null
+  , '05_conv_2d'
+  , null
+  , 1
+  , fv_new_rand(array[3,3])
+  , array[null,3,3,3,3,0,0,0,0,0]
+  , null 
+  , fv_lambda_arr(null,'05_conv_2d',fv_new_rand(array[3,12,9  ]),fv_new_rand(array[3,3]),array[null,3,3,3,3,0,0,0,0,0])
+  , null
+  , null
+  ) is not null
+;
+select 
+  fv_lambda_arr_dloss_dindepdt
+  (
+    null
+  , '05_conv_2d'
+  , null
+  , 2
+  , fv_new_rand(array[3,12,9  ])
+  , array[null,3,3,3,3,0,0,0,0,0]
+  , null 
+  , fv_lambda_arr(null,'05_conv_2d',fv_new_rand(array[3,12,9  ]),fv_new_rand(array[3,3]),array[null,3,3,3,3,0,0,0,0,0])
+  , null
+  , null
+  ) is not null
+;
+select 
+  fv_lambda_arr_dloss_dindepdt
+  (
+    null
+  , '05_conv_2d'
+  , null
+  , 3
+  , null
+  , array[null,3,3,3,3,0,0,0,0,0]
+  , null  
+  , fv_lambda_arr(null,'05_conv_2d',fv_new_rand(array[3,12,9  ]),fv_new_rand(array[3,3]),array[null,3,3,3,3,0,0,0,0,0])
+  , array[3,12,9  ]
+  , null
+  ) is not null
+;
+
+-- fv_lambda_arr_len
+with 
+cte_input as 
+(
+  select 
+    fv_new_rand(array[3       ]) as i_param_1_1d
+  , fv_new_rand(array[3,12    ]) as i_param_1_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_1_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_1_4d
+  , fv_new_rand(array[3       ]) as i_param_2_1d
+  , fv_new_rand(array[3,12    ]) as i_param_2_2d
+  , fv_new_rand(array[3,12,9  ]) as i_param_2_3d
+  , fv_new_rand(array[3,12,9,6]) as i_param_2_4d
+  , fv_new_rand(array[3, 4,3  ]) as i_param_3_3d
+)
+select 
+-- 0_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '0_p'
+  fv_lambda_arr_len(null,'00_const',null,null,fv_new_rand(array[3,12,9  ]),null) is not null
+-- 1_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '1_p'
+, fv_lambda_arr_len(null,trim('00_none               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('01_0sub               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('01_1div               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('01_abs                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('01_exp                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('01_ln                 '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_acos               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_acosh              '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_acot               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_asin               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_asinh              '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_atan               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_atanh              '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_cos                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_cosh               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_cot                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_csc                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_sec                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_sin                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_sinh               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_tan                '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('02_tanh               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_boxcox             '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_elu                '),array[3,12,9  ]            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('03_gelu               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_leaky_relu         '),array[3,12,9  ]            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('03_relu               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_selu               '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_sigmoid            '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_softmax            '),array[3,12,9  ]            ,null,array[4,3,5  ]                                  ) is not null
+, fv_lambda_arr_len(null,trim('03_softplus           '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_swish              '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('03_zscore             '),array[3,12,9  ]            ,null,array[4,3,5  ]                                  ) is not null
+, fv_lambda_arr_len(null,trim('04_lower_tri_mx       '),array[3,12,9  ]            ,null,array[0.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_lower_tri_mx_ex    '),array[3,12,9  ]            ,null,array[0.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mirror             '),array[3,12,9  ]            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_ascend_dim      '),array[3,12,9  ]            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_descend_dim     '),array[3,12,9  ]            ,null,array[1.0]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_ele_2d_2_3d     '),array[3,12    ]            ,null,array[3,1]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_ele_3d_2_2d     '),array[3,12,9  ]            ,null,array[1,2]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_slice_3d_2_2d   '),array[3,12,9  ]            ,null,array[3,2]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_slice_4d_2_2d   '),array[3,12,9,6]            ,null,array[[3,2],[1,2]]                              ) is not null
+, fv_lambda_arr_len(null,trim('04_mx_slice_4d_2_3d   '),array[3,12,9,6]            ,null,array[3,2]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_new                '),array[3,12,9  ]            ,null,array[4,3,5  ]                                  ) is not null
+, fv_lambda_arr_len(null,trim('04_rand_pick_x        '),array[3,12,9,6]            ,null,array[2]                                        ) is not null
+, fv_lambda_arr_len(null,trim('04_rand_pick_x3       '),array[3,12,9,6]            ,null,array[2]                                        ) is not null
+, fv_lambda_arr_len(null,trim('04_rand_pick_x4       '),array[3,12,9,6]            ,null,array[2]                                        ) is not null
+, fv_lambda_arr_len(null,trim('04_rand_pick_y        '),array[3,12,9,6]            ,null,array[2]                                        ) is not null
+, fv_lambda_arr_len(null,trim('04_sample_x           '),array[3,12,9,6]            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr_len(null,trim('04_sample_x3          '),array[3,12,9,6]            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr_len(null,trim('04_sample_x4          '),array[3,12,9,6]            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr_len(null,trim('04_sample_y           '),array[3,12,9,6]            ,null,array[[3,null],[3,null],[1,2],[3,4]]            ) is not null
+, fv_lambda_arr_len(null,trim('04_chunk              '),array[3,12,9,6]            ,null,array[[2,1,2,1],[3,3,4,4]]                      ) is not null
+, fv_lambda_arr_len(null,trim('04_slice_x            '),array[3,12,9,6]            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr_len(null,trim('04_slice_x3           '),array[3,12,9,6]            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr_len(null,trim('04_slice_x4           '),array[3,12,9,6]            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr_len(null,trim('04_slice_y            '),array[3,12,9,6]            ,null,array[[1,2],[3,4],[3,5]]                        ) is not null
+, fv_lambda_arr_len(null,trim('04_transpose          '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('04_transpose_3d       '),array[3,12,9  ]            ,null,array[1,3]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_transpose_i        '),array[3,12,9  ]            ,null,null                                            ) is not null
+, fv_lambda_arr_len(null,trim('04_turn_180           '),array[3,12,9  ]            ,null,array[1,3]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_turn_90            '),array[3,12,9  ]            ,null,array[1,3]                                      ) is not null
+, fv_lambda_arr_len(null,trim('04_upper_tri_mx       '),array[3,12,9  ]            ,null,array[0]                                        ) is not null
+, fv_lambda_arr_len(null,trim('04_upper_tri_mx_ex    '),array[3,12,9  ]            ,null,array[0]                                        ) is not null
+, fv_lambda_arr_len(null,trim('05_pool_avg           '),array[3,12,9  ]            ,null,array[null,3,3,3,3,0,0,0,0,0]                   ) is not null
+, fv_lambda_arr_len(null,trim('05_pool_avg_2d_grp_x  '),array[3,12    ]            ,null,array[3,2,2,1,1,0,0,0,0]                        ) is not null
+, fv_lambda_arr_len(null,trim('05_pool_max           '),array[3,12,9  ]            ,null,array[null,3,3,3,3,0,0,0,0,0]                   ) is not null
+, fv_lambda_arr_len(null,trim('05_pool_max_2d_grp_x  '),array[3,12    ]            ,null,array[3,2,2,1,1,0,0,0,0]                        ) is not null
+, fv_lambda_arr_len(null,trim('05_pool_none          '),array[3,12,9  ]            ,null,array[null,3,3,3,3,0,0,0,0,0]                   ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_chunk_avg     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_chunk_max     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_chunk_min     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_chunk_prod    '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_chunk_sum     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_slice_avg     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_slice_max     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_slice_min     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_slice_prod    '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+, fv_lambda_arr_len(null,trim('07_aggr_slice_sum     '),array[3,12,9  ]            ,null,array[1,3,3]                                    ) is not null
+-- 2_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '2_p'
+-- -- -- 
+, fv_lambda_arr_len(null,trim('01_add             '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_mul             '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_sub             '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_div             '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_pow             '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_log             '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_prod_mx         '),array[3,12,9  ]            ,array[3,9,15  ]                         ,null                                    ) is not null
+, fv_lambda_arr_len(null,trim('01_chunk_prod_mx   '),array[3,12,9  ]            ,array[3,9,15  ]                         ,array[4,3,5]                            ) is not null
+, fv_lambda_arr_len(null,trim('04_apad            '),array[3,12,9  ]            ,array[3,1,9  ]                          ,array[2]                                ) is not null
+, fv_lambda_arr_len(null,trim('04_bpad            '),array[3,12,9  ]            ,array[3,1,9  ]                          ,array[2]                                ) is not null
+, fv_lambda_arr_len(null,trim('04_lpad            '),array[3,12,9  ]            ,array[3,12,1  ]                         ,array[2]                                ) is not null
+, fv_lambda_arr_len(null,trim('04_rpad            '),array[3,12,9  ]            ,array[3,12,1  ]                         ,array[2]                                ) is not null
+, fv_lambda_arr_len(null,trim('04_lmask           '),array[3,12,9  ]            ,array_fill(2,array[3,12,1])             ,array[0.5]                              ) is not null
+, fv_lambda_arr_len(null,trim('04_rmask           '),array[3,12,9  ]            ,array_fill(2,array[3,12,1])             ,array[0.5]                              ) is not null
+, fv_lambda_arr_len(null,trim('04_amask           '),array[3,12,9  ]            ,array_fill(2,array[3,1,9])              ,array[0.5]                              ) is not null
+, fv_lambda_arr_len(null,trim('04_bmask           '),array[3,12,9  ]            ,array_fill(2,array[3,1,9])              ,array[0.5]                              ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_2d_grp_x   '),array[3,12    ]            ,array[1,5]                              ,array[3,2,2,1,1,0,0,0,0]                ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_add        '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_sub        '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_mul        '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_div        '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_pow        '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_log        '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_prod_mx    '),array[3,12,9  ]            ,array[3,3]                              ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_de_sub     '),array[3,3]                 ,array[3,12,9  ]                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_de_div     '),array[3,3]                 ,array[3,12,9  ]                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_de_pow     '),array[3,3]                 ,array[3,12,9  ]                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_de_log     '),array[3,3]                 ,array[3,12,9  ]                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+, fv_lambda_arr_len(null,trim('05_conv_de_prod_mx '),array[3,3]                 ,array[3,12,9  ]                         ,array[null,3,3,3,3,0,0,0,0,0]           ) is not null
+-- -- -- , fv_lambda_arr_len(null,trim('81_query_from_col  '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+-- -- -- , fv_lambda_arr_len(null,trim('81_query_from_row  '),array[3,12,9  ]            ,array[3,12,9  ]                         ,null                                    ) is not null
+-- 3_p, select * from sm_sc.tb_dic_enum where enum_name = 'node_fn_type' and enum_group = '3_p'
+, fv_lambda_arr_len(null,'05_conv_2d',array[3,12,9  ],array[3,3],array[null,3,3,3,3,0,0,0,0,0]) is not null
+, fv_lambda_arr_len(null,'05_conv_2d',array[2,12,9  ],array[2,3,3],array[null,3,3,3,3,0,0,0,0,0],array[2, 1,1  ]) is not null
+from cte_input
+;
+
+--fv_lambda_dloss_dz
+select fv_lambda_dloss_dz('101',fv_new_randn(0.0,1.1,array[4      ]),fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_lambda_dloss_dz('101',fv_new_randn(0.0,1.1,array[4,3    ]),fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_lambda_dloss_dz('101',fv_new_randn(0.0,1.1,array[4,3,5  ]),fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_lambda_dloss_dz('101',fv_new_randn(0.0,1.1,array[4,3,5,2]),fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+select fv_lambda_dloss_dz('201',fv_new_rand(array[4      ]),fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_lambda_dloss_dz('201',fv_new_rand(array[4,3    ]),fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_lambda_dloss_dz('201',fv_new_rand(array[4,3,5  ]),fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_lambda_dloss_dz('201',fv_new_rand(array[4,3,5,2]),fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+select fv_lambda_dloss_dz('202',fv_new_rand(array[4      ]),fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_lambda_dloss_dz('202',fv_new_rand(array[4,3    ]),fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_lambda_dloss_dz('202',fv_new_rand(array[4,3,5  ]),fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_lambda_dloss_dz('202',fv_new_rand(array[4,3,5,2]),fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+select fv_lambda_dloss_dz('203',fv_new_rand(array[4      ]),fv_opr_ceil(fv_new_rand(array[1      ])::decimal[]*`4.0)::int[]) is not null;
+select fv_lambda_dloss_dz('203',fv_new_rand(array[4,3    ]),fv_opr_ceil(fv_new_rand(array[4,1    ])::decimal[]*`3.0)::int[]) is not null;
+select fv_lambda_dloss_dz('203',fv_new_rand(array[4,3,5  ]),fv_opr_ceil(fv_new_rand(array[4,3,1  ])::decimal[]*`5.0)::int[]) is not null;
+select fv_lambda_dloss_dz('203',fv_new_rand(array[4,3,5,2]),fv_opr_ceil(fv_new_rand(array[4,3,5,1])::decimal[]*`2.0)::int[]) is not null;
+
+--fv_lambda_loss
+select fv_lambda_loss('101',fv_new_randn(0.0,1.1,array[4      ]),fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_lambda_loss('101',fv_new_randn(0.0,1.1,array[4,3    ]),fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_lambda_loss('101',fv_new_randn(0.0,1.1,array[4,3,5  ]),fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_lambda_loss('101',fv_new_randn(0.0,1.1,array[4,3,5,2]),fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+select fv_lambda_loss('201',fv_new_rand(array[4      ]),fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_lambda_loss('201',fv_new_rand(array[4,3    ]),fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_lambda_loss('201',fv_new_rand(array[4,3,5  ]),fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_lambda_loss('201',fv_new_rand(array[4,3,5,2]),fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+select fv_lambda_loss('202',fv_new_rand(array[4      ]),fv_new_randn(0.0,1.1,array[4      ])) is not null;
+select fv_lambda_loss('202',fv_new_rand(array[4,3    ]),fv_new_randn(0.0,1.1,array[4,3    ])) is not null;
+select fv_lambda_loss('202',fv_new_rand(array[4,3,5  ]),fv_new_randn(0.0,1.1,array[4,3,5  ])) is not null;
+select fv_lambda_loss('202',fv_new_rand(array[4,3,5,2]),fv_new_randn(0.0,1.1,array[4,3,5,2])) is not null;
+select fv_lambda_loss('203',fv_new_rand(array[4      ]),fv_opr_ceil(fv_new_rand(array[1      ])::decimal[]*`4.0)::int[]) is not null;
+select fv_lambda_loss('203',fv_new_rand(array[4,3    ]),fv_opr_ceil(fv_new_rand(array[4,1    ])::decimal[]*`3.0)::int[]) is not null;
+select fv_lambda_loss('203',fv_new_rand(array[4,3,5  ]),fv_opr_ceil(fv_new_rand(array[4,3,1  ])::decimal[]*`5.0)::int[]) is not null;
+select fv_lambda_loss('203',fv_new_rand(array[4,3,5,2]),fv_opr_ceil(fv_new_rand(array[4,3,5,1])::decimal[]*`2.0)::int[]) is not null;
+
+-- -- -- ft_nn_buff_slice_rand
+
+
+-- -- -- ft_nn_buff_slice_rand_pick
+
+
+-- -- -- ft_nn_in_out
+
+
+-- -- -- ft_nn_node2node_path
+
+
+-- fv_idx_samp_by_samp
+select 
+  fv_idx_samp_by_samp
+  (
+    int4multirange
+    (
+      int4range(1, 3, '[]'),
+      int4range(8, 12, '[]'),
+      int4range(13, 15, '[]')
+    ),
+    null
+  ) is not null
+;
+select 
+  fv_idx_samp_by_samp
+  (
+    int4multirange
+    (
+      int4range(1, 15, '[]')
+    ),
+    int4multirange
+    (
+      int4range(3, 3, '[]'),
+      int4range(6, 6, '[]'),
+      int4range(8, 8, '[]'),
+      int4range(9, 9, '[]')  --,
+      -- int4range(19, 19, '[]')
+    )
+  ) is not null
+;
+select 
+  fv_idx_samp_by_samp
+  (
+    int4multirange      -- 1, 2, 3, 8, 9, 10, 11, 12, 13, 14, 15
+    (
+      int4range(1, 3, '[]'),
+      int4range(8, 12, '[]'),
+      int4range(13, 15, '[]')
+    ),
+    int4multirange      -- 1, 2, 3, (8, 9, 10), 11, (12, 13, 14, 15)
+    (
+      int4range(4, 6, '[]'),
+      int4range(8, 12, '[]') -- ,
+      -- int4range(13, 15, '[]')
+    )
+  ) is not null
+;
+select 
+  fv_idx_samp_by_samp
+  (
+    array    -- 1, 2, 3, 8, 9, 10, 11, 13, 14, 15, 4, 5, 6, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19
+    [
+      int4multirange
+      (
+        int4range(1, 3, '[]'),
+        int4range(8, 11, '[]'),
+        int4range(13, 15, '[]')
+      ),
+      int4multirange
+      (
+        int4range(4, 6, '[]'),
+        int4range(8, 12, '[]') -- ,
+        -- int4range(15, 19, '[]')
+      )
+    ]
+  , int4multirange     -- (1, 2), 3, (8, 9, 10), 11, (13, 14, 15, 4), 5, 6, 8, 9, (10, 11, 12), 15, 16, 17, 18, 19
+    (
+      int4range(1, 2, '[]'),
+      int4range(4, 6, '[]'),
+      int4range(8, 11, '[]'),
+      int4range(16, 18, '[]')
+    )
+  ) is not null
+;
+
+-- -- -- fv_nn_node2node_val
+
+
+-- -- -- fv_nn_node_pick_depdt_idx
+
+
+-- fv_nn_none
+select fv_nn_none(array[]::float[]) is not null;
+select fv_nn_none(fv_new_rand(array[4      ])) is not null;
+select fv_nn_none(fv_new_rand(array[4,3    ])) is not null;
+select fv_nn_none(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_nn_none(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- -- -- fv_nn_weight_len
+select 
+  fv_nn_weight_len
+  (
+    '01_prod_mx'
+  , 2
+  , array[2.0, 3.0, 5.0]
+  , array[8, 10, 2, 5]
+  ) is not null
+;
+
+-- fv_d_nn_none_dloss_dindepdt
+select fv_d_nn_none_dloss_dindepdt(array[]::float[]) is not null;
+select fv_d_nn_none_dloss_dindepdt(fv_new_rand(array[4      ])) is not null;
+select fv_d_nn_none_dloss_dindepdt(fv_new_rand(array[4,3    ])) is not null;
+select fv_d_nn_none_dloss_dindepdt(fv_new_rand(array[4,3,5  ])) is not null;
+select fv_d_nn_none_dloss_dindepdt(fv_new_rand(array[4,3,5,2])) is not null;
+
+-- ft_bpe
+select
+  o_ret_seq_code   is not null
+, o_ret_token_list is not null
+from  
+  ft_bpe
+  (
+    array['estern',  'widest',  'longest']
+  , 2
+  )
+;
+
+-- fv_huffman
+select fv_huffman(array[1, 3, 8, 2, 9, 13, 19]) is not null;
+
+-- fv_onehot
+select fv_onehot(array[1,2,3,1,4,3,5,6]) is not null;
+select fv_onehot(array[[1],[2],[3],[1],[4],[3],[5],[6]]) is not null;
+select fv_onehot(array[1,2,3,1,4,3,5,6],3.0) is not null;
+select fv_onehot(array[[1],[2],[3],[1],[4],[3],[5],[6]],-2.0) is not null;
+select fv_onehot(array[1,2,3,1,4,3,5,6],3.0,4.0) is not null;
+select fv_onehot(array[[1],[2],[3],[1],[4],[3],[5],[6]],-2.0,-5.0) is not null;
+
+-- ft_onehot_dic
+select o_ele is not null, o_onehot is not null from ft_onehot_dic(array[1,2,3,1,4,3,5,6]);
+select o_ele is not null, o_onehot is not null from ft_onehot_dic(array[[1],[2],[3],[1],[4],[3],[5],[6]]);
+select o_ele is not null, o_onehot is not null from ft_onehot_dic(array[1,2,3,1,4,3,5,6],3.0);
+select o_ele is not null, o_onehot is not null from ft_onehot_dic(array[[1],[2],[3],[1],[4],[3],[5],[6]],-2.0);
+select o_ele is not null, o_onehot is not null from ft_onehot_dic(array[1,2,3,1,4,3,5,6],3.0,4.0);
+select o_ele is not null, o_onehot is not null from ft_onehot_dic(array[[1],[2],[3],[1],[4],[3],[5],[6]],-2.0,-5.0);
+
+-- fv_loss_cross_entropy
+select fv_loss_cross_entropy(fv_new_rand(array[4      ]),fv_new_rand(array[4      ])) is not null;
+select fv_loss_cross_entropy(fv_new_rand(array[4,3    ]),fv_new_rand(array[4,3    ])) is not null;
+select fv_loss_cross_entropy(fv_new_rand(array[4,3,5  ]),fv_new_rand(array[4,3,5  ])) is not null;
+select fv_loss_cross_entropy(fv_new_rand(array[4,3,5,2]),fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_loss_cross_entropy_true_onehot_idx
+select fv_loss_cross_entropy_true_onehot_idx(fv_new_rand(array[4      ]),fv_new_rand(array[4      ])) is not null;
+select fv_loss_cross_entropy_true_onehot_idx(fv_new_rand(array[4,3    ]),fv_new_rand(array[4,3    ])) is not null;
+select fv_loss_cross_entropy_true_onehot_idx(fv_new_rand(array[4,3,5  ]),fv_new_rand(array[4,3,5  ])) is not null;
+select fv_loss_cross_entropy_true_onehot_idx(fv_new_rand(array[4,3,5,2]),fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_loss_least_square
+select fv_loss_least_square(fv_new_rand(array[4      ]),fv_new_rand(array[4      ])) is not null;
+select fv_loss_least_square(fv_new_rand(array[4,3    ]),fv_new_rand(array[4,3    ])) is not null;
+select fv_loss_least_square(fv_new_rand(array[4,3,5  ]),fv_new_rand(array[4,3,5  ])) is not null;
+select fv_loss_least_square(fv_new_rand(array[4,3,5,2]),fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_dloss_dz_cross_entropy
+select fv_dloss_dz_cross_entropy(fv_new_rand(array[4      ]),fv_new_rand(array[4      ])) is not null;
+select fv_dloss_dz_cross_entropy(fv_new_rand(array[4,3    ]),fv_new_rand(array[4,3    ])) is not null;
+select fv_dloss_dz_cross_entropy(fv_new_rand(array[4,3,5  ]),fv_new_rand(array[4,3,5  ])) is not null;
+select fv_dloss_dz_cross_entropy(fv_new_rand(array[4,3,5,2]),fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_dloss_dz_cross_entropy_true_onehot_idx
+select fv_dloss_dz_cross_entropy_true_onehot_idx(fv_new_rand(array[4      ]),(fv_new_rand(array[1      ])*`4.0::float)::decimal[]~>`0) is not null;
+select fv_dloss_dz_cross_entropy_true_onehot_idx(fv_new_rand(array[4,3    ]),(fv_new_rand(array[4,1    ])*`3.0::float)::decimal[]~>`0) is not null;
+select fv_dloss_dz_cross_entropy_true_onehot_idx(fv_new_rand(array[4,3,5  ]),(fv_new_rand(array[4,3,1  ])*`5.0::float)::decimal[]~>`0) is not null;
+select fv_dloss_dz_cross_entropy_true_onehot_idx(fv_new_rand(array[4,3,5,2]),(fv_new_rand(array[4,3,5,1])*`2.0::float)::decimal[]~>`0) is not null;
+
+-- fv_dloss_dz_least_square
+select fv_dloss_dz_least_square(fv_new_rand(array[4      ]),fv_new_rand(array[4      ])) is not null;
+select fv_dloss_dz_least_square(fv_new_rand(array[4,3    ]),fv_new_rand(array[4,3    ])) is not null;
+select fv_dloss_dz_least_square(fv_new_rand(array[4,3,5  ]),fv_new_rand(array[4,3,5  ])) is not null;
+select fv_dloss_dz_least_square(fv_new_rand(array[4,3,5,2]),fv_new_rand(array[4,3,5,2])) is not null;
+
+-- fv_cos
+select fv_cos((random(),random())) is not null;
+
+-- fv_opr_add
+select fv_opr_add((random(),random()),(random(),random())) is not null;
+
+-- fv_opr_ceil
+select fv_opr_ceil((random(),random())) is not null;
+
+-- fv_opr_conjugate
+select fv_opr_conjugate((random(),random())) is not null;
+
+-- fv_opr_conjugate_45
+select fv_opr_conjugate_45((random(),random())) is not null;
+
+-- fv_opr_div
+select fv_opr_div((random(),random())) is not null;
+
+-- fv_opr_div
+select fv_opr_div((random(),random()),(random(),random())) is not null;
+
+-- fv_opr_exp
+select fv_opr_exp((random(),random())) is not null;
+
+-- fv_opr_floor
+select fv_opr_floor((random(),random())) is not null;
+
+-- fv_opr_imaginary
+select fv_opr_imaginary((random(),random())) is not null;
+
+-- fv_opr_ln
+select fv_opr_ln((random(),random())) is not null;
+
+-- fv_opr_log
+select fv_opr_log((random(),random()),(random(),random())) is not null;
+
+-- fv_opr_mul
+select fv_opr_mul((random(),random()),(random(),random())) is not null;
+
+-- fv_opr_norm
+select fv_opr_norm((random(),random())) is not null;
+
+-- fv_opr_pow
+select fv_opr_pow((random(),random()),(random(),random())) is not null;
+
+-- fv_opr_real
+select fv_opr_real((random(),random())) is not null;
+
+-- fv_opr_round
+select fv_opr_round((random(),random())) is not null;
+
+-- fv_opr_sub
+select fv_opr_sub((random(),random())) is not null;
+
+-- fv_opr_sub
+select fv_opr_sub((random(),random()),(random(),random())) is not null;
+
+-- fv_opr_trunc
+select fv_opr_trunc((random(),random())) is not null;
+
+-- fv_sin
+select fv_sin((random(),random())) is not null;
+
+-- abs
+select abs((random(),random())) is not null;
+
+-- ceil
+select ceil((random(),random())) is not null;
+select ceil((random(),random()),3) is not null;
+
+-- floor
+select floor((random(),random())) is not null;
+select floor((random(),random()),3) is not null;
+
+-- round
+select round((random(),random())) is not null;
+select round((random(),random()),3) is not null;
+
+-- trunc
+select trunc((random(),random())) is not null;
+select trunc((random(),random()),3) is not null;
+
+-- fa_coalesce
+select fa_coalesce(a_val) is not null
+from (select null as a_val union all select 'abc' union all select 'cde') tb_a(a_val);
+
+-- fa_concat
+select fa_concat(a_val) is not null
+from 
+(
+  select B'1010' as a_val
+  union all select B'1110'
+  union all select B'1011'
+  union all select B'0010'
+  union all select B'1000'
+) t;
+select fa_concat(a_val order by a_val) is not null
+from 
+(
+  select B'1010' as a_val
+  union all select B'1110'
+  union all select B'1011'
+  union all select B'0010'
+  union all select B'1000'
+) t;
+select fa_concat(a_val) is not null
+from 
+(
+  select 'abc' as a_val
+  union all select 'faera'
+  union all select '4564'
+  union all select 'kuk7'
+  union all select '66yy'
+) t;
+select fa_concat(a_val order by a_val) is not null
+from 
+(
+  select 'abc' as a_val
+  union all select 'faera'
+  union all select '4564'
+  union all select 'kuk7'
+  union all select '66yy'
+) t;
+select fa_concat(a_val order by a_val) is not null
+from 
+(
+  select '[{"node_no" : 101, "node_type" : "weight", "node_fn_type" : "00_const", "node_desc" : "w_q"}]'::jsonb  as a_val
+  union all select '[{"node_no" : 105, "node_type" : null, "node_fn_type" : "01_prod_mx", "node_desc" : "|**| w_k"}]'::jsonb
+  union all select '[{"node_no" : 107, "node_type" : null, "node_fn_type" : "04_transpose", "node_desc" : "transpose(k)"}]'::jsonb
+) t;
+
+-- fa_prod
+select fa_prod(random()) is not null
+from generate_series(1, 8);
+select fa_prod(random() order by a_no desc) is not null
+from generate_series(1, 8) tb_a(a_no);
+
+-- fa_range_and
+select fa_range_and(a_val) is not null
+from 
+(
+  select int8range(1, 10, '[]') :: int8multirange as a_val
+  union all select int8range(5, 9, '[]') :: int8multirange
+  union all select int8range(3, 8, '[]') :: int8multirange
+  union all select int8range(4, 7, '[]') :: int8multirange
+  union all select int8range(2, 9, '[]') :: int8multirange
+  union all select null
+) t;
+select fa_range_and(a_val) is not null
+from 
+(
+  select int8range(1, 10, '[]') as a_val
+  union all select int8range(5, 9, '[]')
+  union all select int8range(3, 8, '[]')
+  union all select int8range(4, 7, '[]')
+  union all select int8range(2, 9, '[]')
+  union all select null
+) t;
+select fa_range_and(a_val) is not null
+from 
+(
+  select array[int8range(1, 20, '[]') :: int8multirange, int8range(-20, -1, '[]') :: int8multirange] as a_val
+  union all select array[int8range(5, 60, '[]') :: int8multirange, int8range(-60, -5, '[]') :: int8multirange]
+  union all select array[int8range(3, 70, '[]') :: int8multirange, int8range(-70, -3, '[]') :: int8multirange]
+  union all select array[int8range(7, 10, '[]') :: int8multirange, int8range(-10, -7, '[]') :: int8multirange]
+  union all select array[int8range(5, 10, '[]') :: int8multirange, int8range(-10, -5, '[]') :: int8multirange]
+  union all select null
+) t;
+
+-- fa_range_or
+select fa_range_or(a_val) is not null
+from 
+(
+  select int8range(1, 2, '[]') :: int8multirange as a_val
+  union all select int8range(5, 6, '[]') :: int8multirange
+  union all select int8range(3, 7, '[]') :: int8multirange
+  union all select int8range(9, 13, '[]') :: int8multirange
+  union all select int8range(11, 17, '[]') :: int8multirange
+  union all select null
+) t;
+select fa_range_or(a_val) is not null
+from 
+(
+  select array[int8range(1, 2, '[]') :: int8multirange, int8range(-2, -1, '[]') :: int8multirange] as a_val
+  union all select array[int8range(5, 6, '[]') :: int8multirange, int8range(-6, -5, '[]') :: int8multirange]
+  union all select array[int8range(3, 7, '[]') :: int8multirange, int8range(-7, -3, '[]') :: int8multirange]
+  union all select array[int8range(9, 13, '[]') :: int8multirange, int8range(-13, -9, '[]') :: int8multirange]
+  union all select array[int8range(11, 17, '[]') :: int8multirange, int8range(-17, -11, '[]') :: int8multirange]
+  union all select null
+) t;
+
+-- ft_regexp_matches
+select a_ret is not null
+from ft_regexp_matches('aaaaabbbaaa', 'a.a') tb_a(a_ret);
+select a_ret is not null
+from ft_regexp_matches('aaaaabbbaaa', 'A.A', 'gi') tb_a(a_ret);
+
+-- -- -- fv_enum_rand
+-- -- create type typ_enum_day as enum('SUN','MON','TUE','WED','THU','FRI','SAT');
+-- -- select fv_enum_rand('sm_sc.typ_enum_day', 3);
+-- -- -- -- select fv_enum_rand('typ_enum_day', 3);
+
+-- -- -- fv_enum_rand_pick
+-- -- create type typ_enum_day as enum('SUN','MON','TUE','WED','THU','FRI','SAT');
+-- -- select fv_enum_rand_pick('sm_sc.typ_enum_day', 3);
+-- -- -- -- select fv_enum_rand_pick('typ_enum_day', 3);
+
+-- fv_get_global_seq
+select fv_get_global_seq() is not null;
+select fv_get_global_seq(3) is not null;
+
+-- fv_multirange_len
+select fv_multirange_len(int8multirange(int8range(1, 3, '[]'), int8range(9, 10, '[]'))) is not null;
+select fv_multirange_len(nummultirange(numrange(1.6, 3.9, '[]'), numrange(9.1, 10.8, '[]'))) is not null;
+
+-- fv_multirange_move
+select fv_multirange_move(int8multirange(int8range(1, 3, '[]'), int8range(9, 10, '[]')), 10 :: bigint) is not null;
+select fv_multirange_move(nummultirange(numrange(1.6, 3.9, '[]'), numrange(9.1, 10.8, '[]')), 12.1) is not null;
+
+-- fv_o_distance
+select fv_o_distance(array[array[22.2, 77.7], array[55.5, 33.3]], 2) is not null;
+select fv_o_distance(array[array[22.2, 77.7], array[55.5, 33.3]]) is not null;
+select fv_o_distance(array[22.2, 77.7], array[55.5, 33.3], 2) is not null;
+select fv_o_distance(array[22.2, 77.7], array[55.5, 33.3]) is not null;
+
+-- fv_range_move
+select fv_range_move(int8range(1, 3, '[]'), 6 :: bigint) is not null;
+select fv_range_move(numrange(1.6, 3.9, '[]'), -2.9) is not null;
+
+-- fv_regexp_matches_strs_once
+select fv_regexp_matches_strs_once('aaaaabbbaaa', 'a.a') is not null;
+select fv_regexp_matches_strs_once('aaaaabbbaaa', 'A.A', 'i') is not null;
+
+-- ft_mx_evd
+select 
+  o_eigen_value  is not null
+, o_eigen_array  is not null
+from ft_mx_evd(array[[-1,1,0],[-4,3,0],[1,0,2]]);
+
+-- ft_mx_lu
+select 
+  o_mx_l    is not null
+, o_mx_u    is not null
+from ft_mx_lu(array[[1,2,3],[0,8,9],[4,5,6]]);
+
+-- ft_mx_qr
+select 
+  o_mx_q    is not null
+, o_mx_r    is not null
+from ft_mx_qr(array[[1,2,3,4],[0,8,9,10],[4,5,6,7],[5,7,2,10]]);
+
+-- ft_mx_svd
+select 
+  o_singular_values   is not null
+, o_singular_matrix_u is not null
+, o_singular_matrix_v is not null
+from ft_mx_svd(array[[1,1,1],[1,2,3],[1,10,100],[1,0,0]]);
+
+-- fv_arr_norm_1
+select fv_arr_norm_1(array[1,2,3]) is not null;
+
+-- fv_arr_norm_2
+select fv_arr_norm_2(array[1,2,3]) is not null;
+
+-- fv_arr_norm_nega_inf
+select fv_arr_norm_nega_inf(array[1,2,3]) is not null;
+
+-- fv_arr_norm_p
+select fv_arr_norm_p(array[1,2,3],3) is not null;
+
+-- fv_arr_norm_posi_inf
+select fv_arr_norm_posi_inf(array[1,2,3]) is not null;
+
+-- fv_mx_col_mix
+select fv_mx_col_mix(array[[1.9, 34.5, 0.55, 45.7, 400.5],[45.9, 4.6, 34.5, 0.55, 45.7],[3.2, 7.7, 1.9, 34.5, 0.55],[4.7, 9.0, 4.6, 34.5, 0.55]], 2, 3, 4) is not null;
+
+-- fv_mx_determinant
+select fv_mx_determinant(array[[1,2,3,4],[0,8,9,10],[4,5,6,7],[8,2,6,4]]) is not null;
+
+-- fv_mx_evd_value
+select fv_mx_evd_value(array[[0,1,2],[1,1,4],[2,-1,0]]) is not null;
+
+-- fv_mx_inversion
+select fv_mx_inversion(array[[0,1,2],[1,1,4],[2,-1,0]]) is not null;
+
+-- fv_mx_is_symmetry
+select fv_mx_is_symmetry(array[[0,1,2],[1,1,4],[2,-1,0]]) is not null;
+
+-- fv_mx_max_abs_evd_value
+select fv_mx_max_abs_evd_value(array[[1,2,3,4],[0,8,9,10],[4,5,6,7],[5,7,2,10]]) is not null;
+
+-- fv_mx_min_abs_evd_value
+select fv_mx_min_abs_evd_value(array[[1,2],[3,4]]) is not null;
+
+-- fv_mx_norm_col
+select fv_mx_norm_col(array[[1,2],[0,7],[5,0],[3,4]]) is not null;
+
+-- fv_mx_norm_eigenvalue
+select fv_mx_norm_eigenvalue(array[[1,-2,0,7],[5,0,3,4],[0,0,0,0],[0,-2,0,-6]]) is not null;
+
+-- fv_mx_norm_inf
+select fv_mx_norm_inf(array[[1,2],[0,7],[5,0],[3,4]]) is not null;
+
+-- fv_mx_norm_l0
+select fv_mx_norm_l0(array[[1,-2,0,7],[5,0,3,4],[0,0,0,0],[0,-2,0,-6]]) is not null;
+
+-- fv_mx_norm_l1
+select fv_mx_norm_l1(array[[1,-2,0,7],[5,0,3,4],[0,0,0,0],[0,-2,0,-6]]) is not null;
+
+-- fv_mx_norm_l21
+select fv_mx_norm_l21(array[[1,-2,0,7],[5,0,3,4],[0,0,0,0],[0,-2,0,-6]]) is not null;
+
+-- fv_mx_norm_l2_f
+select fv_mx_norm_l2_f(array[[1,-2,0,7],[5,0,3,4],[0,0,0,0],[0,-2,0,-6]]) is not null;
+
+-- fv_mx_rank
+select fv_mx_rank(array[[1,2,3],[0,8,9],[4,5,6]]) is not null;
+
+-- fv_mx_reorder_col
+select fv_mx_reorder_col(array[[1,3,5,7],[3,4,6,8],[5,6,6,8],[7,8,8,8]], array[null,3,4,2]) is not null;
+
+-- fv_mx_reorder_row
+select fv_mx_reorder_row(array[[1,3,5,7],[3,4,6,8],[5,6,6,8],[7,8,8,8]], array[null,3,4,2]) is not null;
+
+-- fv_mx_rows_step_simple
+select fv_mx_rows_step_simple(array[[1,2,3],[0,8,9],[4,5,6]]) is not null;
+
+-- fv_mx_row_mix
+select fv_mx_row_mix(array[[1.9, 34.5, 0.55, 45.7, 400.5],[45.9, 4.6, 34.5, 0.55, 45.7],[3.2, 7.7, 1.9, 34.5, 0.55],[4.7, 9.0, 4.6, 34.5, 0.55]], 2, 3, 4) is not null;
+
+-- fv_mx_row_step
+select fv_mx_row_step(array[[1,2,3],[0,8,9],[4,5,6]]) is not null;
+
+-- fv_mx_times_col
+select fv_mx_times_col(array[[1.9, 34.5, 0.55, 45.7, 400.5],[45.9, 4.6, 34.5, 0.55, 45.7],[3.2, 7.7, 1.9, 34.5, 0.55],[4.7, 9.0, 4.6, 34.5, 0.55]], 2, 3.3) is not null;
+
+-- fv_mx_times_row
+select fv_mx_times_row(array[[1.9, 34.5, 0.55, 45.7, 400.5],[45.9, 4.6, 34.5, 0.55, 45.7],[3.2, 7.7, 1.9, 34.5, 0.55],[4.7, 9.0, 4.6, 34.5, 0.55]], 2, 3.3) is not null;
+
+-- + typ_l_complex
+select (random()*3.0,random()*3.0)::typ_l_complex + (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (0.0,random()*3.0)::typ_l_complex + (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,0.0)::typ_l_complex + (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex + (0.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex + (random()*3.0,0.0)::typ_l_complex is not null;
+select (random()*3.0) + (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex + (random()*3.0) is not null;
+select 0.0 + (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex + 0.0 is not null;
+
+-- - typ_l_complex
+select (random()*3.0,random()*3.0)::typ_l_complex - (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (0.0,random()*3.0)::typ_l_complex - (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,0.0)::typ_l_complex - (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex - (0.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex - (random()*3.0,0.0)::typ_l_complex is not null;
+select (random()*3.0) - (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex - (random()*3.0) is not null;
+select 0.0 - (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex - 0.0 is not null;
+select - (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select - (0.0,random()*3.0)::typ_l_complex is not null;
+select - (random()*3.0,0.0)::typ_l_complex is not null;
+select - 0.0::typ_l_complex is not null;
+
+-- * typ_l_complex
+select (random()*3.0,random()*3.0)::typ_l_complex * (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (0.0,random()*3.0)::typ_l_complex * (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,0.0)::typ_l_complex * (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex * (0.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex * (random()*3.0,0.0)::typ_l_complex is not null;
+select (random()*3.0) * (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex * (random()*3.0) is not null;
+select 0.0 * (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex * 0.0 is not null;
+
+-- / typ_l_complex
+select (random()*3.0,random()*3.0)::typ_l_complex / (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (0.0,random()*3.0)::typ_l_complex / (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,0.0)::typ_l_complex / (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex / (0.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex / (random()*3.0,0.0)::typ_l_complex is not null;
+select (random()*3.0) / (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex / (random()*3.0) is not null;
+select 0.0 / (random()*3.0,random()*3.0)::typ_l_complex is not null;
+-- select / (random()*3.0,random()*3.0)::typ_l_complex is not null;
+-- select / (0.0,random()*3.0)::typ_l_complex is not null;
+-- select / (random()*3.0,0.0)::typ_l_complex is not null;
+-- select / 0.0::typ_l_complex is not null;
+
+-- ^ typ_l_complex
+select (random()*3.0,random()*3.0)::typ_l_complex ^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (0.0,random()*3.0)::typ_l_complex ^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,0.0)::typ_l_complex ^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^ (0.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^ (random()*3.0,0.0)::typ_l_complex is not null;
+select (random()*3.0) ^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^ (random()*3.0) is not null;
+select 0.0 ^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^ 0.0 is not null;
+-- select ^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+-- select ^ (0.0,random()*3.0)::typ_l_complex is not null;
+-- select ^ (random()*3.0,0.0)::typ_l_complex is not null;
+-- select ^ 0.0::typ_l_complex is not null;
+
+-- ^! typ_l_complex
+select (random()*3.0,random()*3.0)::typ_l_complex ^! (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (0.0,random()*3.0)::typ_l_complex ^! (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,0.0)::typ_l_complex ^! (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^! (0.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^! (random()*3.0,0.0)::typ_l_complex is not null;
+select (random()*3.0) ^! (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^! (random()*3.0) is not null;
+select (random()*3.0,random()*3.0)::typ_l_complex ^ 1.0 is not null;
+select ^! (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ^! (0.0,random()*3.0)::typ_l_complex is not null;
+select ^! (random()*3.0,0.0)::typ_l_complex is not null;
+select ^! 1.0::typ_l_complex is not null;
+
+-- ~
+select ~ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ~ (0.0,random()*3.0)::typ_l_complex is not null;
+select ~ (random()*3.0,0.0)::typ_l_complex is not null;
+select ~ 0.0::typ_l_complex is not null;
+
+-- @
+select @ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select @ (0.0,random()*3.0)::typ_l_complex is not null;
+select @ (random()*3.0,0.0)::typ_l_complex is not null;
+select @ 0.0::typ_l_complex is not null;
+
+-- @~
+select @~ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select @~ (0.0,random()*3.0)::typ_l_complex is not null;
+select @~ (random()*3.0,0.0)::typ_l_complex is not null;
+select @~ 0.0::typ_l_complex is not null;
+
+-- ~@
+select ~@ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ~@ (0.0,random()*3.0)::typ_l_complex is not null;
+select ~@ (random()*3.0,0.0)::typ_l_complex is not null;
+select ~@ 0.0::typ_l_complex is not null;
+
+-- ~^
+select ~^ (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ~^ (0.0,random()*3.0)::typ_l_complex is not null;
+select ~^ (random()*3.0,0.0)::typ_l_complex is not null;
+select ~^ 0.0::typ_l_complex is not null;
+
+-- ~=
+select (random()*3.0,random()*3.0)::typ_l_complex ~= 3 is not null;
+select (0.0,random()*3.0)::typ_l_complex          ~= 3 is not null;
+select (random()*3.0,0.0)::typ_l_complex          ~= 3 is not null;
+select 0.0::typ_l_complex                         ~= 3 is not null;
+select ~= (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ~= (0.0,random()*3.0)::typ_l_complex is not null;
+select ~= (random()*3.0,0.0)::typ_l_complex is not null;
+select ~= 0.0::typ_l_complex is not null;
+
+-- ~<
+select (random()*3.0,random()*3.0)::typ_l_complex ~< 3 is not null;
+select (0.0,random()*3.0)::typ_l_complex          ~< 3 is not null;
+select (random()*3.0,0.0)::typ_l_complex          ~< 3 is not null;
+select 0.0::typ_l_complex                         ~< 3 is not null;
+select ~< (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ~< (0.0,random()*3.0)::typ_l_complex is not null;
+select ~< (random()*3.0,0.0)::typ_l_complex is not null;
+select ~< 0.0::typ_l_complex is not null;
+
+-- ~>
+select (random()*3.0,random()*3.0)::typ_l_complex ~> 3 is not null;
+select (0.0,random()*3.0)::typ_l_complex          ~> 3 is not null;
+select (random()*3.0,0.0)::typ_l_complex          ~> 3 is not null;
+select 0.0::typ_l_complex                         ~> 3 is not null;
+select ~> (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select ~> (0.0,random()*3.0)::typ_l_complex is not null;
+select ~> (random()*3.0,0.0)::typ_l_complex is not null;
+select ~> 0.0::typ_l_complex is not null;
+
+-- ><
+select (random()*3.0,random()*3.0)::typ_l_complex >< 3 is not null;
+select (0.0,random()*3.0)::typ_l_complex          >< 3 is not null;
+select (random()*3.0,0.0)::typ_l_complex          >< 3 is not null;
+select 0.0::typ_l_complex                         >< 3 is not null;
+select >< (random()*3.0,random()*3.0)::typ_l_complex is not null;
+select >< (0.0,random()*3.0)::typ_l_complex is not null;
+select >< (random()*3.0,0.0)::typ_l_complex is not null;
+select >< 0.0::typ_l_complex is not null;
+
+-- +`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) +` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() +` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) +` random() is not null;
+
+-- -`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) -` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() -` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) -` random() is not null;
+select -` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- *`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) *` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() *` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) *` random() is not null;
+
+-- /`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) /` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() /` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) /` random() is not null;
+select /` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- ^`
+select (fv_new_rand(array[4,3,5,2])*`2.0::float) ^` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() ^` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_rand(array[4,3,5,2]) ^` ((random()-0.5)*4.0) is not null;
+select ^` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- ^!`
+select (fv_new_rand(array[4,3,5,2])*`2.0::float) ^!` (fv_new_rand(array[4,3,5,2])*`2.0::float) is not null;
+select random() ^!` (fv_new_rand(array[4,3,5,2])*`2.0::float) is not null;
+select fv_new_rand(array[4,3,5,2]) ^!` random() is not null;
+select ^!` (fv_new_rand(array[4,3,5,2])*`2.0::float) is not null;
+
+-- %`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) :: decimal[] %` fv_new_randn(0.0, 1.1, array[4,3,5,2]) :: decimal[] is not null;
+select random() :: decimal %` fv_new_randn(0.0, 1.1, array[4,3,5,2]) :: decimal[] is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) :: decimal[] %` random() :: decimal is not null;
+
+-- |`
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] |` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select round(random())::int::boolean |` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] |` round(random())::int::boolean is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] |` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select floor((random()*16))::int::bit(4)::varbit |` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] |` floor((random()*16))::int::bit(4)::varbit is not null;
+
+-- &`
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] &` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select round(random())::int::boolean &` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] &` round(random())::int::boolean is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] &` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select floor((random()*16))::int::bit(4)::varbit &` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] &` floor((random()*16))::int::bit(4)::varbit is not null;
+
+-- ~`
+select ~` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select ~` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+
+-- ~`
+select (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[] ~` (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[] is not null;
+select sign(random()-0.5)::text ~` (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[] is not null;
+select (<>`fv_new_randn(0.0, 1.1, array[4      ]))::text[] ~` sign(random()-0.5)::text is not null;
+select (<>`fv_new_randn(0.0, 1.1, array[4,3    ]))::text[] ~` sign(random()-0.5)::text is not null;
+select (<>`fv_new_randn(0.0, 1.1, array[4,3,5  ]))::text[] ~` sign(random()-0.5)::text is not null;
+select (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2]))::text[] ~` sign(random()-0.5)::text is not null;
+
+-- @~`
+select @~` (fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- ~@`
+select ~@` (fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- ~^`
+select ~^` (fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]+`(fv_new_randn(0.0, 1.1,array[4,3,5,2])::typ_l_complex[]*`(0.0, 1.0)::typ_l_complex)) is not null;
+
+-- #`
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] #` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select round(random())::int::boolean #` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] #` round(random())::int::boolean is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] #` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select floor((random()*16))::int::bit(4)::varbit #` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] #` floor((random()*16))::int::bit(4)::varbit is not null;
+
+-- !#`
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] !#` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select round(random())::int::boolean !#` ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] is not null;
+select ((fv_new_rand(array[4,3,5,2])::decimal[])~=`0)::int[]::boolean[] !#` round(random())::int::boolean is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] !#` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select floor((random()*16))::int::bit(4)::varbit !#` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] !#` floor((random()*16))::int::bit(4)::varbit is not null;
+
+-- ||`
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] ||` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select floor((random()*16))::int::bit(4)::varbit ||` ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] ||` floor((random()*16))::int::bit(4)::varbit is not null;
+
+-- <<`
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] <<` ((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[] is not null;
+select floor((random()*16))::int::bit(4)::varbit <<` ((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] <<` ceil((random()*4.0))::int is not null;
+
+-- >>`
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] >>` ((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[] is not null;
+select floor((random()*16))::int::bit(4)::varbit >>` ((fv_new_rand(4.0,array[4,3,5,2])::decimal[])~>`0)::int[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,2])::decimal[])~<`0)::int[]::bit(4)[]::varbit[] >>` ceil((random()*4.0))::int is not null;
+
+-- ==`
+select (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) ==` (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select (sign(random()-0.5)::smallint) ==` (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) is not null;
+select (<>`fv_new_randn(0.0, 1.1, array[4,3,5,2])) ==` (sign(random()-0.5)::smallint) is not null;
+
+-- <`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) <` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() <` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) <` random() is not null;
+
+-- >`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) >` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() >` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) >` random() is not null;
+
+-- <=`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) <=` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() <=` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) <=` random() is not null;
+
+-- >=`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) >=` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() >=` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) >=` random() is not null;
+
+-- >=`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) >=` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() >=` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) >=` random() is not null;
+
+-- <>`
+select (<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) <>` (<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select (sign(random()-0.5)::smallint) <>` (<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) is not null;
+select (<>`(fv_new_rand(array[4,3,5,2])::decimal[]-`0.5)) <>` (sign(random()-0.5)::smallint) is not null;
+
+-- @<`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) @<` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() @<` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) @<` random() is not null;
+
+-- @>`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) @>` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select random() @>` fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) @>` random() is not null;
+
+-- @`
+select @` fv_new_randn(0.0, 1.1,array[4,3,5,2]) is not null;
+
+-- ~=`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[] ~=` floor(random()*5)::int is not null;
+
+-- ~<`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[] ~<` floor(random()*5)::int is not null;
+
+-- ~>`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[] ~>` floor(random()*5)::int is not null;
+
+-- ><`
+select fv_new_randn(0.0, 1.1, array[4,3,5,2])::decimal[] ><` floor(random()*5)::int is not null;
+
+-- ||~|
+select ||~| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |-~|
+select |-~| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |+~|
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |+~| 1 is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |+~| 2 is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |+~| 3 is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |+~| 4 is not null;
+
+-- |<~|
+select |<~| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |>~|
+select |>~| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |*~|
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |*~| array[2,3] is not null;
+
+-- |~~|
+select |~~| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |~~| array[2,4] is not null;
+
+-- |^~|
+select |^~| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+select fv_new_randn(0.0, 1.1, array[4,3,5  ]) |^~| array[2,3] is not null;
+
+-- |~^|
+select |~^| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |-||
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |-|| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- ||||
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |||| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |`|
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |`| fv_new_randn(0.0, 1.1, array[4,3,5,2]) is not null;
+
+-- |**|
+select fv_new_randn(0.0, 1.1, array[4,3,5,6]) |**| fv_new_randn(0.0, 1.1, array[4,3,6,7]) is not null;
+
+-- |@=|
+select |@=| fv_nullif((fv_new_rand(2.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])::int[],0) is not null;
+select fv_nullif((fv_new_rand(2.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])::int[],0) |@=| array[4,3,5,6] is not null;
+
+-- |@&`|
+select |@&`| fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[] is not null;
+select |@&`| ((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[] is not null;
+select fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[] |@&`| array[4,3,5,6] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[] |@&`| array[4,3,5,6] is not null;
+
+-- |@|`|
+select |@|`| fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[] is not null;
+select |@|`| ((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[] is not null;
+select fv_new_rand(array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::int[]::boolean[] |@|`| array[4,3,5,6] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[] |@|`| array[4,3,5,6] is not null;
+
+-- |@|||
+select |@||| ((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[] is not null;
+select ((fv_new_rand(16.0,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[])~<`0)::int[]::bit(4)[] |@||| array[4,3,5,6] is not null;
+
+-- |@/<|
+select |@/<| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@/<| array[4,3,5,6] is not null;
+
+-- |@/>|
+select |@/>| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@/>| array[4,3,5,6] is not null;
+
+-- |@%`|
+select |@%`| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@%`| array[4,3,5,6] is not null;
+
+-- |@%|
+select |@%| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@%| array[4,3,5,6] is not null;
+
+-- |@#`|
+select |@#`| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@#`| array[4,3,5,6] is not null;
+
+-- |@#|
+select |@#| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@#| array[4,3,5,6] is not null;
+
+-- |@/=|
+select |@/=| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@/=| array[4,3,5,6] is not null;
+
+-- |@<|
+select |@<| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@<| array[4,3,5,6] is not null;
+
+-- |@>|
+select |@>| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@>| array[4,3,5,6] is not null;
+
+-- |@/|
+select |@/| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@/| array[4,3,5,6] is not null;
+
+-- |@*|
+select |@*| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[] is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[])::decimal[] |@*| array[4,3,5,6] is not null;
+
+-- |@+|
+select |@+| fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) is not null;
+select fv_new_randn(0.0, 1.1,array[4,3,5,6]*`(fv_new_rand(3,array[4])::decimal[]~>`0)::int[]) |@+| array[4,3,5,6] is not null;
+
+-- |`^|
+select fv_new_randn(0.0, 1.1, array[4,3,5,2]) |`^| 3.0::float is not null;
+
+-- |*^|
+select fv_new_randn(0.0, 1.1, array[4,3,5,5]) |*^| 3 is not null;
+
+-- +`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) +`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- -`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) -`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- *`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) *`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- /`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) /`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- ^`|
+select fv_new_rand(1.1,array[2,5,18,10]) ^`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- ^!`|
+select fv_new_rand(1.1,array[2,5,18,10]) ^!`| fv_new_rand(1.1,array[4,3]) is not null;
+
+-- |-`
+select fv_new_randn(0.0,1.1,array[4,3]) |-` fv_new_randn(0.0,1.1,array[2,5,18,10]) is not null;
+
+-- |/`
+select fv_new_randn(0.0,1.1,array[4,3]) |/` fv_new_randn(0.0,1.1,array[2,5,18,10]) is not null;
+
+-- |^`
+select fv_new_rand(1.1,array[4,3]) |^` fv_new_randn(0.0,1.1,array[2,5,18,10]) is not null;
+
+-- |^!`
+select fv_new_rand(1.1,array[4,3]) |^!` fv_new_rand(1.1,array[2,5,18,10]) is not null;
+
+-- %+`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) %+`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- %-`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) %-`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- %*`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) %*`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- %/`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) %/`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- %^`|
+select fv_new_rand(1.1,array[2,5,18,10]) %^`| fv_new_randn(0.0,1.1,array[4,3]) is not null;
+
+-- %^!`|
+select fv_new_rand(1.1,array[2,5,18,10]) %^!`| fv_new_rand(1.1,array[4,3]) is not null;
+
+-- |-`%
+select fv_new_randn(0.0,1.1,array[4,3]) |-`% fv_new_randn(0.0,1.1,array[2,5,18,10]) is not null;
+
+-- |/`%
+select fv_new_randn(0.0,1.1,array[4,3]) |/`% fv_new_randn(0.0,1.1,array[2,5,18,10]) is not null;
+
+-- |^`%
+select fv_new_rand(1.1,array[4,3]) |^`% fv_new_randn(0.0,1.1,array[2,5,18,10]) is not null;
+
+-- |^!`%
+select fv_new_rand(1.1,array[4,3]) |^!`% fv_new_rand(1.1,array[2,5,18,10]) is not null;
+
+-- @>|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) @>| array[4,3] is not null;
+
+-- @/|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) @/| array[4,3] is not null;
+
+-- @`|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) @`| array[4,3] is not null;
+
+-- **|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) **| fv_new_randn(0.0,1.1,array[3,5]) is not null;
+
+-- %**|
+select fv_new_randn(0.0,1.1,array[2,5,18,10]) %**| fv_new_randn(0.0,1.1,array[3,5]) is not null;

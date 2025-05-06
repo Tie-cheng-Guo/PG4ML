@@ -1,0 +1,161 @@
+-- set search_path to sm_sc;
+-- boolean
+-- drop function if exists sm_sc.fv_aggr_x_or(boolean[]);
+-- -- create or replace function sm_sc.fv_aggr_x_or
+-- -- (
+-- --   i_array          boolean[]
+-- -- )
+-- -- returns boolean[]
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   -- 审计二维长度
+-- --   if array_ndims(i_array) = 2
+-- --   then
+-- --     return 
+-- --     (
+-- --       select 
+-- --         array_agg(array[sm_sc.fv_aggr_slice_or(i_array[col_a_y : col_a_y][ : ])] order by col_a_y)
+-- --       from generate_series(1, array_length(i_array, 1)) tb_a_y(col_a_y)
+-- --     );
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_array);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_aggr_x_or
+-- -- --   (
+-- -- --     array[array[true, false, false]
+-- -- --         , array[true, false, false]
+-- -- --         , array[false, true, true]
+-- -- --         , array[false, false, true]
+-- -- --         , array[true, true, true]
+-- -- --          ]
+-- -- --   );
+-- -- 
+-- -- -- ------------------------------------------------------------------------------------------------------
+-- drop function if exists sm_sc.fv_aggr_x_or(boolean[], int);
+-- -- create or replace function sm_sc.fv_aggr_x_or
+-- -- (
+-- --   i_array          boolean[],
+-- --   i_cnt_per_grp    int
+-- -- )
+-- -- returns boolean[]
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   if array_length(i_array, 2) % i_cnt_per_grp <> 0 
+-- --     or i_cnt_per_grp <= 0
+-- --   then 
+-- --     raise exception 'imperfect length_2 of i_array of this cnt_per_grp';
+-- --   end if;
+-- --   
+-- --   return 
+-- --   (
+-- --     select 
+-- --       sm_sc.fa_mx_concat_x(sm_sc.fv_aggr_x_or(i_array[ : ][a_cur : a_cur + i_cnt_per_grp - 1]) order by a_cur)
+-- --     from generate_series(1, array_length(i_array, 2), i_cnt_per_grp) tb_a_cur(a_cur)
+-- --   )
+-- --   ;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- select 
+-- -- --   sm_sc.fv_aggr_x_or
+-- -- --   (
+-- -- --     array[[true, false, false, true, false, false]
+-- -- --          ,[true, false, false, true, false, false]
+-- -- --          ,[false, true, true, false, true, true]
+-- -- --          ,[false, false, true, false, false, true]
+-- -- --          ,[true, true, true, true, true, true]
+-- -- --          ]
+-- -- --     , 2
+-- -- --   )
+-- -- 
+-- -- -- -------------------------------------------------------------------------------------------------------------------------
+-- -- 
+-- -- -- set search_path to sm_sc;
+-- -- -- bit
+-- drop function if exists sm_sc.fv_aggr_x_or(bit[], int[], int[]);
+-- -- create or replace function sm_sc.fv_aggr_x_or
+-- -- (
+-- --   i_array          bit[]
+-- -- )
+-- -- returns bit[]
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   -- 审计二维长度
+-- --   if array_ndims(i_array) = 2
+-- --   then
+-- --     return 
+-- --     (
+-- --       select 
+-- --         array_agg(array[sm_sc.fv_aggr_slice_or(i_array[col_a_y : col_a_y][ : ])] order by col_a_y)
+-- --       from generate_series(1, array_length(i_array, 1)) tb_a_y(col_a_y)
+-- --     );
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_array);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_aggr_x_or
+-- -- --   (
+-- -- --     array[array[B'10101', B'10101', B'10101']
+-- -- --         , array[B'101', B'101', B'110']
+-- -- --         , array[B'1101', B'1001', B'1101']
+-- -- --          ]
+-- -- --   );
+-- -- 
+-- -- -- ------------------------------------------------------------------------------------------------------
+-- drop function if exists sm_sc.fv_aggr_x_or(bit[], int);
+-- -- create or replace function sm_sc.fv_aggr_x_or
+-- -- (
+-- --   i_array          bit[],
+-- --   i_cnt_per_grp    int
+-- -- )
+-- -- returns bit[]
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   if array_length(i_array, 2) % i_cnt_per_grp <> 0 
+-- --     or i_cnt_per_grp <= 0
+-- --   then 
+-- --     raise exception 'imperfect length_2 of i_array of this cnt_per_grp';
+-- --   end if;
+-- --   
+-- --   return 
+-- --   (
+-- --     select 
+-- --       sm_sc.fa_mx_concat_x(sm_sc.fv_aggr_x_or(i_array[ : ][a_cur : a_cur + i_cnt_per_grp - 1]) order by a_cur)
+-- --     from generate_series(1, array_length(i_array, 2), i_cnt_per_grp) tb_a_cur(a_cur)
+-- --   )
+-- --   ;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- select 
+-- -- --   sm_sc.fv_aggr_x_or
+-- -- --   (
+-- -- --     array[[B'00101', B'10101', B'11101', B'10101', B'10101', B'10011']
+-- -- --          ,[B'101', B'101', B'110', B'101', B'101', B'010']
+-- -- --          ,[B'1101', B'1001', B'1101', B'1101', B'1001', B'1101']
+-- -- --          ]
+-- -- --     , 2
+-- -- --   )

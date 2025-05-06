@@ -1,0 +1,116 @@
+-- -- -- -- 卷积的矩阵乘法实现：
+-- -- -- --   https://www.cnblogs.com/shine-lee/p/10775831.html
+-- -- -- --   https://blog.csdn.net/qq_40263477/article/details/104979609
+-- -- -- -- 卷积的 fft 实现
+-- -- -- --   https://blog.csdn.net/qq_37527608/article/details/120922348
+-- -- -- -- 卷积与矩阵乘法算法调优：
+-- -- -- --  https://blog.csdn.net/lizhengx/article/details/83246833
+-- -- -- -- 卷积求导
+-- -- -- --  https://blog.csdn.net/wangjianyu0115/article/details/62222301
+-- -- 
+-- -- -- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_d_conv_2d_dloss_dindepdt_1(int[2], float[][], float[][], int[2], int[4]);
+-- -- create or replace function sm_sc.fv_d_conv_2d_dloss_dindepdt_1
+-- -- (
+-- --   i_array_len          int[2]                                               ,  -- 原矩阵高宽
+-- --   i_dloss_ddepdt           float[]                                     ,  -- 即已求出的损失函数对 y 的导数矩阵
+-- --   i_window             float[]                                     ,  -- 卷积核窗口
+-- --   i_stride             int[2]              default  array[1, 1]             ,  -- 纵向与横向步长
+-- --   i_padding            int[4]              default  array[0, 0, 0, 0]          -- 上下左右补齐行数/列数
+-- -- )
+-- -- returns float[][]
+-- -- as
+-- -- $$
+-- -- declare
+-- --   v_dloss_dindepdt               float[];     --   intact 之后的新矩阵
+-- --   v_y                      int             :=   coalesce(i_padding[1], 0) + i_array_len[1] + coalesce(i_padding[2], 0);     --   新矩阵高
+-- --   v_x                      int             :=   coalesce(i_padding[3], 0) + i_array_len[2] + coalesce(i_padding[4], 0);     --   新矩阵宽
+-- --   v_cur_y                  int             ;     --   新矩阵高游标
+-- --   v_cur_x                  int             ;     --   新矩阵宽游标
+-- --   v_windows_cnt_reciproca  float  :=   1.0 :: float/ (array_length(i_dloss_ddepdt, 1) * array_length(i_dloss_ddepdt, 2));     -- 开窗数量的倒数
+-- --   v_window_len_y           int             :=   array_length(i_window, 1);
+-- --   v_window_len_x           int             :=   array_length(i_window, 2);
+-- -- begin
+-- --   -- 审计二维长度
+-- --   if array_ndims(i_dloss_ddepdt) <> 2
+-- --   then 
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_dloss_ddepdt);
+-- --   elsif (v_y - v_window_len_y) % i_stride[1] <> 0
+-- --   then 
+-- --     raise exception 'imperfect window at 1d.';
+-- --   elsif (v_x - v_window_len_x) % i_stride[2] <> 0
+-- --   then 
+-- --     raise exception 'imperfect window at 2d.';
+-- --   elsif array_length(i_dloss_ddepdt, 1) <> (v_y - v_window_len_y) / i_stride[1] + 1
+-- --     or array_length(i_dloss_ddepdt, 2) <> (v_x - v_window_len_x) / i_stride[2] + 1
+-- --   then
+-- --     raise exception 'unmatch length between y and dloss/dy.';
+-- --   else
+-- --     v_dloss_dindepdt := sm_sc.fv_new(0.0 :: float, array[v_y, v_x]);
+-- --     
+-- --     v_cur_y := v_y;
+-- --     while v_cur_y >= 1
+-- --     loop 
+-- --       v_cur_x := v_x;
+-- --       while v_cur_x >= 1
+-- --       loop 
+-- --         v_dloss_dindepdt[v_cur_y][v_cur_x] := 
+-- --           coalesce 
+-- --           (
+-- --             (
+-- --               select
+-- --                 sum
+-- --                 (
+-- --                   coalesce((|~~| i_window)[v_cur_y - ((a_cur_y_dloss_ddepdt - 1) * i_stride[1])][v_cur_x - ((a_cur_x_dloss_ddepdt - 1) * i_stride[2])], 0.0 :: float) 
+-- --                     * i_dloss_ddepdt[a_cur_y_dloss_ddepdt][a_cur_x_dloss_ddepdt]     --   dloss_dindepdt 当个元素对应的 dloss_ddepdt 元素      
+-- --                     * v_windows_cnt_reciproca                    
+-- --                 ) 
+-- --               from 
+-- --                 -- 以 y 方向为例推导
+-- --                 -- 对于 i_array 的第 v_cur_y 个元素，寻找其在 i_dloss_ddepdt 对应的  a_cur_y_dloss_ddepdt 
+-- --                 -- a_cur_y_dloss_ddepdt 这个滑窗之前存在 (a_cur_y_dloss_ddepdt - 1) 个 i_stride[1]，且 v_cur_y 落入该窗口
+-- --                 -- 即: (a_cur_y_dloss_ddepdt - 1) * i_stride[1] + 1 <= v_cur_y <= (a_cur_y_dloss_ddepdt - 1) * i_stride[1] + i_window_len
+-- --                 --   => v_cur_y - i_window_len <= (a_cur_y_dloss_ddepdt - 1) * i_stride[1] <= v_cur_y - 1
+-- --                 --   => (v_cur_y - i_window_len) / i_stride[1] + 1 <= a_cur_y_dloss_ddepdt <= (v_cur_y - 1) / i_stride[1] + 1
+-- --                 generate_series(greatest(ceil((v_cur_y :: decimal - v_window_len_y) / i_stride[1]) + 1, 1), least((v_cur_y - 1) / i_stride[1] + 1, v_y), 1) tb_a_cur_y(a_cur_y_dloss_ddepdt),  
+-- --                 generate_series(greatest(ceil((v_cur_x :: decimal - v_window_len_x) / i_stride[2]) + 1, 1), least((v_cur_x - 1) / i_stride[2] + 1, v_x), 1) tb_a_cur_x(a_cur_x_dloss_ddepdt)
+-- --             )
+-- --             , 0.0
+-- --           )
+-- --           ;
+-- --         v_cur_x := v_cur_x - 1;
+-- --       end loop;
+-- --       v_cur_y := v_cur_y - 1;
+-- --     end loop;
+-- --     
+-- --     return -- 还原为排除 intact 的子矩阵
+-- --       v_dloss_dindepdt[1 + i_padding[1] : v_y - i_padding[2]][1 + i_padding[3] : v_x - i_padding[4]]
+-- --     ;
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_d_conv_2d_dloss_dindepdt_1
+-- -- --   (
+-- -- --     array[5, 7]
+-- -- --    , array[array[1.1, 1.1, 1.1]
+-- -- --         ,array[1.1, 1.1, 1.1]
+-- -- --          ]
+-- -- --    , array[array[0.5 :: float, 1.1, 0.5], array[1.1, 2.1, 1.1], array[0.5 :: float, 1.1, 0.5]]
+-- -- --    , array[2, 2]
+-- -- --   );
+-- -- 
+-- -- -- select sm_sc.fv_d_conv_2d_dloss_dindepdt_1
+-- -- --   (
+-- -- --     array[5, 6]
+-- -- --    , array[array[1.1, 1.1, 1.1]
+-- -- --         ,array[1.1, 1.1, 1.1]
+-- -- --         ,array[1.1, 1.1, 1.1]
+-- -- --          ]
+-- -- --    , array[array[0.5 :: float, 1.1, 0.5], array[1.1, 2.1, 1.1], array[0.5 :: float, 1.1, 0.5]]
+-- -- --    , array[2, 2]
+-- -- --    , array[1, 1, 1, 0]
+-- -- --   );

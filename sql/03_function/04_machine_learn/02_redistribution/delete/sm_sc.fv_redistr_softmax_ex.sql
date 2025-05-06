@@ -1,0 +1,115 @@
+-- drop function if exists sm_sc.fv_redistr_softmax_ex(float[], int[]);
+-- -- create or replace function sm_sc.fv_redistr_softmax_ex
+-- -- (
+-- --   i_array          float[] ,
+-- --   i_cnt_per_grp    int[]      default null
+-- -- )
+-- -- returns float[]
+-- -- as
+-- -- $$
+-- -- -- declare
+-- -- begin
+-- --   if i_cnt_per_grp is null
+-- --   then 
+-- --     i_cnt_per_grp := 
+-- --       (
+-- --         select 
+-- --           array_agg(array_length(i_array, a_dim_no) order by a_dim_no)
+-- --         from generate_series(1, array_ndims(i_array)) tb_a(a_dim_no)
+-- --       )
+-- --     ;
+-- --   elsif sm_sc.fv_aggr_slice_is_exists_null(i_cnt_per_grp)
+-- --   then 
+-- --     i_cnt_per_grp :=
+-- --       sm_sc.fv_coalesce
+-- --       (
+-- --         i_cnt_per_grp
+-- --       , (
+-- --           select 
+-- --             array_agg(array_length(i_array, a_dim_no) order by a_dim_no)
+-- --           from generate_series(1, array_ndims(i_array)) tb_a(a_dim_no)
+-- --         )
+-- --       )
+-- --     ;
+-- --   end if;
+-- --   
+-- --   if current_setting('pg4ml._v_is_debug_check', true) = '1'
+-- --   then
+-- --     if array_ndims(i_cnt_per_grp) > 1 
+-- --     then 
+-- --       raise exception 'unsupport ndims of i_cnt_per_grp > 1.';
+-- --     elsif array_ndims(i_array) <> array_length(i_cnt_per_grp, 1)
+-- --     then 
+-- --       raise exception 'unmatch between ndims of i_array and length of i_cnt_per_grp.';
+-- --     elsif 
+-- --       0 <> any 
+-- --       (
+-- --         (
+-- --           select 
+-- --             array_agg(array_length(i_array, a_cur_dim) order by a_cur_dim) 
+-- --           from generate_series(1, array_ndims(i_array)) tb_a_cur_dim(a_cur_dim)
+-- --         )
+-- --         %` i_cnt_per_grp
+-- --       )
+-- --     then 
+-- --       raise exception 'unperfect i_array''s length for i_cnt_per_grp at some dims';
+-- --     end if;
+-- --   end if;
+-- -- 
+-- --   if array_ndims(i_array) is null
+-- --   then 
+-- --     return i_array;
+-- --   elsif array_ndims(i_array) <= 4
+-- --   then
+-- --     i_array :=    i_array -` sm_sc.fv_repeat_axis_py(i_array |@>| i_cnt_per_grp, (select array_agg(a_no) from generate_series(1, array_length(i_cnt_per_grp, 1)) tb_a(a_no)), i_cnt_per_grp);  -- 避免上溢
+-- --     
+-- --     i_array :=         
+-- --       -- 幂运算下溢元素，用 -inf 替代，等价于 sum(0)。   
+-- --       i_array 
+-- --       +` 
+-- --       sm_sc.fv_ele_replace
+-- --       (
+-- --         (i_array <` -1.0e2 :: float) :: int[] :: float[]      -- 此处exp(-7.45e2)刚好不溢出，但进一步运算可能溢出
+-- --       , array[1.0 :: float]
+-- --       , '-inf' :: float
+-- --       )
+-- --     ;
+-- --     i_array := ^` i_array;
+-- --   
+-- -- -- -- debug 
+-- -- -- raise notice 'sm_sc.fv_aggr_slice_prod_py(i_cnt_per_grp) :: decimal: %;  cardinality(i_array) :: decimal: %;  i_cnt_per_grp: %;  i_array: %;  sm_sc.fv_aggr_slice_sum_py(i_array, i_cnt_per_grp): %'
+-- -- -- , sm_sc.fv_aggr_slice_prod(i_cnt_per_grp) :: decimal
+-- -- -- , cardinality(i_array) :: decimal
+-- -- -- , i_cnt_per_grp
+-- -- -- , i_array
+-- -- -- , sm_sc.fv_aggr_slice_sum_py(i_array, i_cnt_per_grp)
+-- -- -- ;
+-- --   
+-- --     return 
+-- --       sm_sc.fv_ele_replace
+-- --       (
+-- --         -- https://baijiahao.baidu.com/s?id=1772381174338322854&wfr=spider&for=pc
+-- --         -- 对 softmax_1 改进，避免小数量分类失真。
+-- --         i_array 
+-- --         /` 
+-- --         (
+-- --           sm_sc.fv_repeat_axis_py
+-- --           (
+-- --             (log(2.0, sm_sc.fv_aggr_slice_prod_py(i_cnt_per_grp) :: decimal) / 128.0) :: float 
+-- --             +` 
+-- --             sm_sc.fv_aggr_slice_sum_py(i_array, i_cnt_per_grp)
+-- --           , (select array_agg(a_no) from generate_series(1, array_length(i_cnt_per_grp, 1)) tb_a(a_no))
+-- --           , i_cnt_per_grp
+-- --           )
+-- --         )
+-- --       , array['NaN' :: float]
+-- --       , 0.0 :: float
+-- --       );
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_array);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;

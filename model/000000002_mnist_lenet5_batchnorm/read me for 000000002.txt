@@ -1,0 +1,71 @@
+准备条件: 
+  首先安装 pg4ml 深度学习框架。
+
+一、如果从零开始，创建以及训练模型。如果要导入模型直接部署，略过该步，参考第二步。
+  1. 创建表结构，用于存放训练集。
+       执行如下 sql 脚本: 
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\01_mnist_dataset\01_create_source_data_table.sql
+  2. 导入训练集数据。
+       向数据表 sm_dat.tb_tmp_mnist_000000002 导入以下备份
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\01_mnist_dataset\02_import_source_data\tb_tmp_minist_000000002.zip\tb_tmp_mnist_000000002.csv
+  3. 加工数据集为模型输入张量。
+       执行如下 sql 脚本: 
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\02_import_to_buffer_table\01_import_dataset.sql
+  4. 创建模型的训练任务和神经网络结构: 
+       执行如下 sql 脚本: 
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\03_create_train_nn_task\01_create_task.sql
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\03_create_train_nn_task\02_create_nn.sql
+  5. 训练的准备。
+       在如下 sql 脚本中: 
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\04_train\01_prepare.sql
+       调整 v_batch_amt: 小批量随机的每个分类的样本数量；
+       调整 i_limit_train_times: 本轮训练的目标次数；
+       执行该 sql 脚本。如与上一轮训练的 v_batch_amt 相同，可不执行匿名 sql 程序块；
+  6. 执行训练。
+       在如下 sql 脚本中:
+         model\000000002_mnist_lenet5_batchnorm\01_create_model_train\04_train\02_exec_train.sql
+       调整 i_learn_rate: 初始学习率；
+       调整 i_loss_delta_least_stop_threshold: 损失函数阈值；
+       执行该 sql 脚本；
+  7. 重复步骤 5 - 6，并观察训练时损失函数值变化，直至损失函数值足够小或达到预定训练次数，结束训练。
+     训练期间，可以参考和执行如下 sql 脚本，用于跟踪模型的训练快照: 
+       model\000000002_mnist_lenet5_batchnorm\01_create_model_train\04_train\03_track_data_in_nn_node.sql
+  
+二、略过第一步，导入模型直接部署。
+  1. 创建表结构，用于临时导入模型。
+       执行如下 sql 脚本:
+         model\000000002_mnist_lenet5_batchnorm\02_model_backup_deploy\01_create_tmp_data_table.sql
+  2. 导入模型。
+       a. 向数据表 sm_dat.__vt_nn_node_000000002 导入以下备份
+            model\000000002_mnist_lenet5_batchnorm\02_model_backup_deploy\02_deploy_backup\sm_dat.__vt_nn_node_000000002.csv
+       b. 向数据表 sm_dat.__vt_nn_path_000000002 导入以下备份
+            model\000000002_mnist_lenet5_batchnorm\02_model_backup_deploy\02_deploy_backup\sm_dat.__vt_nn_path_000000002.csv
+  3. 将模型部署在 pg4ml 框架内统一的结构。
+       执行如下 sql 脚本:
+         model\000000002_mnist_lenet5_batchnorm\02_model_backup_deploy\03_insert_node_path.sql
+  4. 注册请求的 session 资源。
+       执行如下 sql 脚本:
+         \model\000000002_mnist_lenet5_batchnorm\02_model_backup_deploy\04_add_del_sess\01_add_sess.sql
+
+三、执行模型预测任务
+  1. 请求的 session 资源
+       执行如下 sql 脚本:
+         model\000000002_mnist_lenet5_batchnorm\03_validation\01_subscribe_sess.sql
+       记下输出的 subscribe sess_id，比如输出为 9527。
+  2. 预测请求响应
+       参考如下 sql 脚本，包含两个调用例子，其中一段 sql 是传入单独一条请求属性数据、另一段 sql 是传入多条请求属性数据: 
+       需要将上一步骤获得的 sess_id: 9527，填入 $_sess_id
+         model\000000002_mnist_lenet5_batchnorm\03_validation\02_predict.sql
+  3. 注销请求的 session 资源
+       执行如下 sql 脚本:
+       需要将上一步骤获得的 sess_id: 9527，填入 $_sess_id
+         model\000000002_mnist_lenet5_batchnorm\03_validation\03_release_sess.sql
+
+四、释放或卸载模型
+  1. 释放或缩容请求的 session 资源
+       pg4ml 框架中，模型的 session 资源是可以被不同时间的请求反复申请、占用、释放的。
+       如需要释放或缩容 session 资源，执行如下 sql 脚本:
+         \model\000000002_mnist_lenet5_batchnorm\02_model_backup_deploy\04_add_del_sess\03_del_sess.sql
+  2. 卸载模型
+       要彻底卸载模型的部署、训练任务和删除 mnist 数据集，选择性的执行如下 sql 脚本: 
+         \model\000000002_mnist_lenet5_batchnorm\04_clear\01_clear_deploy_train_dataset.sql

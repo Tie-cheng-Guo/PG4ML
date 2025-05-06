@@ -1,0 +1,46 @@
+-- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_d_turn_y_x_90_dloss_dindepdt(anyarray);
+-- -- create or replace function sm_sc.fv_d_turn_y_x_90_dloss_dindepdt
+-- -- (
+-- --   i_dloss_ddepdt     anyarray
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   -- set search_path to sm_sc;
+-- --     
+-- --   if array_ndims(i_dloss_ddepdt) is null
+-- --   then 
+-- --     return i_dloss_ddepdt;
+-- --   elsif array_ndims(i_dloss_ddepdt) = 2
+-- --   then
+-- --     return 	
+-- --       sm_sc.__fv_turn_x_y_90(i_dloss_ddepdt)
+-- --     ;
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_dloss_ddepdt);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_d_turn_y_x_90_dloss_dindepdt
+-- -- --   (
+-- -- --     array[array[1, 2], array[3, 4]]
+-- -- --   );
+-- -- -- select sm_sc.fv_d_turn_y_x_90_dloss_dindepdt
+-- -- --   (
+-- -- --     array[array[1, 2], array[3, 4], array[5, 6]]
+-- -- --   );
+-- -- -- select sm_sc.fv_d_turn_y_x_90_dloss_dindepdt
+-- -- --   (
+-- -- --     array[[[1,2,3,4],[11,12,13,14],[111,112,113,114]],[[5,6,7,8],[15,16,17,18],[115,116,117,118]]]
+-- -- --   );
+-- -- -- select sm_sc.fv_d_turn_y_x_90_dloss_dindepdt
+-- -- --   (
+-- -- --     array[[[[1,2,3,4],[11,12,13,14]],[[5,6,7,8],[15,16,17,18]]],[[[21,22,23,24],[31,32,33,34]],[[25,26,27,28],[35,36,37,38]]]]
+-- -- --   );

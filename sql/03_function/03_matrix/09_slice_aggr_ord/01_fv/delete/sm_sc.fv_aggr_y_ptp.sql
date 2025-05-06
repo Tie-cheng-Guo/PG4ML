@@ -1,0 +1,82 @@
+-- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_aggr_y_ptp(anyarray);
+-- -- create or replace function sm_sc.fv_aggr_y_ptp
+-- -- (
+-- --   i_array          anyarray
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   -- 审计二维长度
+-- --   if array_ndims(i_array) = 2
+-- --   then
+-- --     return 
+-- --     (
+-- --       select 
+-- --         array[array_agg(sm_sc.fv_aggr_slice_ptp(i_array[ : ][col_a_x : col_a_x]) order by col_a_x)]
+-- --       from generate_series(1, array_length(i_array, 2)) tb_a_x(col_a_x)
+-- --     );
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_array);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_aggr_y_ptp
+-- -- --   (
+-- -- --     array[array[1,2,3,4,5,6]
+-- -- --         , array[10,20,30,40,50,60]
+-- -- --         , array[100,200,300,400,500,600]
+-- -- --         , array[-1,-2,-3,-4,-5,-6]
+-- -- --         , array[-10,-20,-30,-40,-50,-60]
+-- -- --         , array[-100,-200,-300,-400,-500,-600]
+-- -- --          ]::float[]
+-- -- --   );
+-- -- 
+-- -- -- ------------------------------------------------------------------------------------------------------
+-- drop function if exists sm_sc.fv_aggr_y_ptp(anyarray, int);
+-- -- create or replace function sm_sc.fv_aggr_y_ptp
+-- -- (
+-- --   i_array          anyarray,
+-- --   i_cnt_per_grp    int
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   if array_length(i_array, 1) % i_cnt_per_grp <> 0 
+-- --     or i_cnt_per_grp <= 0
+-- --   then 
+-- --     raise exception 'imperfect length_1 of i_array of this cnt_per_grp';
+-- --   end if;
+-- --   
+-- --   return 
+-- --   (
+-- --     select 
+-- --       sm_sc.fa_mx_concat_y(sm_sc.fv_aggr_y_ptp(i_array[a_cur : a_cur + i_cnt_per_grp - 1][ : ]) order by a_cur)
+-- --     from generate_series(1, array_length(i_array, 1), i_cnt_per_grp) tb_a_cur(a_cur)
+-- --   )
+-- --   ;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- select sm_sc.fv_aggr_y_ptp
+-- -- --   (
+-- -- --     array[[1,2,3,4,5,6]
+-- -- --          ,[10,20,30,40,50,60]
+-- -- --          ,[100,200,300,400,500,600]
+-- -- --          ,[-1,-2,-3,-4,-5,-6]
+-- -- --          ,[-10,-20,-30,-40,-50,-60]
+-- -- --          ,[-100,-200,-300,-400,-500,-600]
+-- -- --          ]::float[]
+-- -- --     , 3
+-- -- --   ) :: decimal[] ~=` 3;
+

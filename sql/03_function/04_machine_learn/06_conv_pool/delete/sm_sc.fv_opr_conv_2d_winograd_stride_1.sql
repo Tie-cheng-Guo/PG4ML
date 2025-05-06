@@ -1,0 +1,252 @@
+-- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_opr_conv_2d_winograd_stride_1(float[], float[], float[], int[4], float);
+-- -- -- i_background 较大时，结果矩阵左上角部分数据对不上，尚未定位到原因，也许是多项式插值有问题，也许是 padding 有问题，也许是切块儿截取问题，也许也有误差因素。
+-- -- -- https://freshmou.github.io/2018/05/winograd/
+-- -- -- 性能也有很大问题，等算法问题解决后，改用 plpython3u 实现
+-- -- create or replace function sm_sc.fv_opr_conv_2d_winograd_stride_1
+-- -- (
+-- --   i_background         float[]                               
+-- -- , i_window             float[]           -- 窗口
+-- -- , i_window_bias        float[]    default  null                    -- 卷积核的偏移量。限定与 i_window 的维数一致，且窗口高宽以外的维度长度与 i_background, i_window 一致，窗口高宽的维度长度都是1
+-- -- -- , i_stride             int[2]     default  array[1, 1]             -- 纵向与横向步长
+-- -- , i_padding            int[4]     default  array[0, 0, 0, 0]       -- 上下左右补齐行数/列数
+-- -- , i_padding_value      float      default  0.0                     -- 补齐填充元素值
+-- -- )
+-- -- returns float[]
+-- -- as
+-- -- $$
+-- -- declare 
+-- --   v_window_len_heigh        int      :=    array_length(i_window, array_ndims(i_window) - 1)  ;
+-- --   v_window_len_width        int      :=    array_length(i_window, array_ndims(i_window))  ;
+-- --   v_background_len_heigh    int      :=    array_length(i_background, array_ndims(i_background) - 1)  ;
+-- --   v_background_len_width    int      :=    array_length(i_background, array_ndims(i_background))      ;
+-- --   v_return                  float[]  ;
+-- --   v_window_padding_value_0  float[]  :=    case array_ndims(i_window) when 2 then array[[0.0]] when 3 then array[[[0.0]]] when 4 then array[[[[0.0]]]] end ;
+-- --   v_return_heigh            int      ;
+-- --   v_return_width            int      ;
+-- --   -- v_window_padding_ex       float[]  :=    i_window;
+-- --   v_window_turn_180         float[]  :=    |~~| i_window;
+-- -- begin
+-- --   -- 审计
+-- --   if current_setting('pg4ml._v_is_debug_check', true) = '1'
+-- --   then
+-- --     -- 审计二维长度
+-- --     if array_ndims(i_background) > 4
+-- --     then 
+-- --       raise exception 'no method for such i_background length!  Dims: %;', array_dims(i_background);
+-- --     elsif array_ndims(i_window) > 2 and array_ndims(i_window) <> array_ndims(i_background)
+-- --     then 
+-- --       raise exception 'no method for such i_window length!  Dims: %;', array_dims(i_window);
+-- --     elsif (coalesce(i_padding[1], 0) + v_background_len_heigh + coalesce(i_padding[2], 0) - v_window_len_heigh) % i_stride[1] <> 0
+-- --     then 
+-- --       raise exception 'imperfect window at 1d.';
+-- --     elsif (coalesce(i_padding[3], 0) + v_background_len_width + coalesce(i_padding[4], 0) - v_window_len_width) % i_stride[2] <> 0
+-- --     then 
+-- --       raise exception 'imperfect window at 2d.';
+-- --     elsif array_ndims(i_window) = 3 and array_length(i_window, 1) <> array_length(i_background, 1)
+-- --       or array_ndims(i_window) = 4 and (array_length(i_window, 1) <> array_length(i_background, 1) or array_length(i_window, 2) <> array_length(i_background, 2))
+-- --     then 
+-- --       raise exception 'unmatch length between i_window and i_background at 3d or 4d.';
+-- --     elsif array_ndims(i_window_bias) <> array_ndims(i_window)
+-- --       or array_length(i_window_bias, array_ndims(i_window_bias) - 1) <> 1
+-- --       or array_length(i_window_bias, array_ndims(i_window_bias)) <> 1
+-- --       or array_ndims(i_window_bias) = 3 and array_length(i_window, 1) <> array_length(i_window_bias, 1)
+-- --       or array_ndims(i_window_bias) = 4 and (array_length(i_window, 1) <> array_length(i_window_bias, 1) or array_length(i_window, 2) <> array_length(i_window_bias, 2))
+-- --     then 
+-- --       raise exception 'unmatch ndims or length for such i_window_bias';
+-- --     end if;
+-- --   end if;
+-- --   
+-- --   -- 1D 卷积
+-- --   if array_ndims(i_background) = 1 and array_ndims(i_window) = 1
+-- --   then 
+-- --     if array_length(i_background, 1) < array_length(i_window, 1)
+-- --     then 
+-- --       raise exception 'imperfect window at 1d.';
+-- --     else 
+-- --       return 
+-- --       (
+-- --         select 
+-- --           array_agg(i_background[col_a_y : col_a_y + array_length(i_window, 1) - 1] |`| i_window order by col_a_y)
+-- --         from generate_series(1, array_length(i_background, 1) - array_length(i_window, 1) + 1) tb_a_y(col_a_y)
+-- --       )
+-- --       ;
+-- --     end if;
+-- --   end if;
+-- --   
+-- --   if array_length(i_background, array_ndims(i_background) - 1) < array_length(i_window, 1)
+-- --   then 
+-- --     raise exception 'imperfect window at 1d.';
+-- --   elsif array_length(i_background, array_ndims(i_background)) < array_length(i_window, 2)
+-- --   then 
+-- --     raise exception 'imperfect window at 2d.';
+-- --   else
+-- --     -- padding
+-- --     if 0 <> any(i_padding)
+-- --     then 
+-- --       i_background := 
+-- --         sm_sc.fv_augmented
+-- --         (
+-- --           i_background, 
+-- --           array[-i_padding[1] + 1, -i_padding[3] + 1], 
+-- --           array[v_background_len_heigh + i_padding[2], v_background_len_width + i_padding[4]], 
+-- --           i_padding_value
+-- --         );
+-- --       v_background_len_heigh :=    array_length(i_background, array_ndims(i_background) - 1)  ;
+-- --       v_background_len_width :=    array_length(i_background, array_ndims(i_background))      ;
+-- --     end if;
+-- --   
+-- --     -- i_window 180° 旋转
+-- --     v_window_turn_180 := |~~| i_window;
+-- --     
+-- --     v_return_heigh := v_background_len_heigh - v_window_len_heigh + 1;
+-- --     v_return_width := v_background_len_width - v_window_len_width + 1;
+-- --     
+-- --     -- 将窗口向下或向右 padding 0 值，为方阵，
+-- --     if v_window_len_heigh > v_window_len_width
+-- --     then       
+-- --       -- v_window_padding_ex := sm_sc.fv_lpad(v_window_turn_180, v_window_padding_value_0, v_window_len_heigh - v_window_len_width);
+-- --       v_window_turn_180 := sm_sc.fv_rpad(v_window_turn_180, v_window_padding_value_0, v_window_len_heigh - v_window_len_width);
+-- --       i_background := sm_sc.fv_rpad(i_background, v_window_padding_value_0, v_window_len_heigh - v_window_len_width);
+-- --       v_window_len_width = v_window_len_heigh;
+-- --       v_background_len_width :=    array_length(i_background, array_ndims(i_background))      ;
+-- --     elsif v_window_len_heigh < v_window_len_width
+-- --     then 
+-- --       -- v_window_padding_ex := sm_sc.fv_apad(v_window_turn_180, v_window_padding_value_0, v_window_len_width - v_window_len_heigh);
+-- --       v_window_turn_180 := sm_sc.fv_bpad(v_window_turn_180, v_window_padding_value_0, v_window_len_width - v_window_len_heigh);
+-- --       i_background := sm_sc.fv_bpad(i_background, v_window_padding_value_0, v_window_len_width - v_window_len_heigh);
+-- --       v_window_len_heigh = v_window_len_width;
+-- --       v_background_len_heigh :=    array_length(i_background, array_ndims(i_background) - 1)  ;
+-- --     end if;
+-- -- 
+-- --     -- 将非方阵 i_background 递归切块儿为方阵，做 winograd 卷积
+-- --     if v_background_len_heigh > v_background_len_width
+-- --     then 
+-- --       -- 切块为上下两部分，上块儿为方阵，下面块儿的上沿多保留 v_window_len_heigh - 1 个 padding 
+-- --       if array_ndims(i_background) = 2
+-- --       then
+-- --         v_return := 
+-- --           sm_sc.__fv_conv_2d_square_winograd_stride_1_py(i_background[ : v_background_len_width][ : ], v_window_turn_180)
+-- --           |-||
+-- --           sm_sc.fv_opr_conv_2d_winograd_stride_1(i_background[v_background_len_width - v_window_len_heigh + 2 : ][ : ], |~~| v_window_turn_180)
+-- --         ;
+-- --       elsif array_ndims(i_background) = 3
+-- --       then 
+-- --         v_return := 
+-- --           sm_sc.__fv_conv_2d_square_winograd_stride_1_py(i_background[ : ][ : v_background_len_width][ : ], v_window_turn_180)
+-- --           |-||
+-- --           sm_sc.fv_opr_conv_2d_winograd_stride_1(i_background[ : ][v_background_len_width - v_window_len_heigh + 2 : ][ : ], |~~| v_window_turn_180)
+-- --         ;
+-- --       elsif array_ndims(i_background) = 4
+-- --       then 
+-- --         v_return := 
+-- --           sm_sc.__fv_conv_2d_square_winograd_stride_1_py(i_background[ : ][ : ][ : v_background_len_width][ : ], v_window_turn_180)
+-- --           |-||
+-- --           sm_sc.fv_opr_conv_2d_winograd_stride_1(i_background[ : ][ : ][v_background_len_width - v_window_len_heigh + 2 : ][ : ], |~~| v_window_turn_180)
+-- --         ;
+-- --       end if;
+-- --     elsif v_background_len_heigh < v_background_len_width
+-- --     then 
+-- --       -- 切块为左右两部分，左块儿为方阵，右面块儿的左沿多保留 v_window_len_width - 1 个 padding 
+-- --       if array_ndims(i_background) = 2
+-- --       then
+-- --         v_return := 
+-- --           sm_sc.__fv_conv_2d_square_winograd_stride_1_py(i_background[ : ][ : v_background_len_heigh], v_window_turn_180)
+-- --           ||||
+-- --           sm_sc.fv_opr_conv_2d_winograd_stride_1(i_background[ : ][v_background_len_heigh - v_window_len_width + 2 : ], |~~| v_window_turn_180)
+-- --         ;
+-- --       elsif array_ndims(i_background) = 3
+-- --       then 
+-- --         v_return := 
+-- --           sm_sc.__fv_conv_2d_square_winograd_stride_1_py(i_background[ : ][ : ][ : v_background_len_heigh], v_window_turn_180)
+-- --           ||||
+-- --           sm_sc.fv_opr_conv_2d_winograd_stride_1(i_background[ : ][ : ][v_background_len_heigh - v_window_len_width + 2 : ], |~~| v_window_turn_180)
+-- --         ;
+-- --       elsif array_ndims(i_background) = 4
+-- --       then 
+-- --         v_return := 
+-- --           sm_sc.__fv_conv_2d_square_winograd_stride_1_py(i_background[ : ][ : ][ : ][ : v_background_len_heigh], v_window_turn_180)
+-- --           ||||
+-- --           sm_sc.fv_opr_conv_2d_winograd_stride_1(i_background[ : ][ : ][ : ][v_background_len_heigh - v_window_len_width + 2 : ], |~~| v_window_turn_180)
+-- --         ;
+-- --       end if;
+-- --     else
+-- --       v_return := 
+-- --         sm_sc.__fv_conv_2d_square_winograd_stride_1_py
+-- --         (
+-- --           i_background 
+-- --         , v_window_turn_180
+-- --         )
+-- --       ;
+-- --     end if;
+-- --     
+-- --     -- if array_ndims(v_return) = 2
+-- --     -- then 
+-- --     --   v_return := v_return[ : v_return_heigh][ : v_return_width];
+-- --     -- elsif array_ndims(v_return) = 3
+-- --     -- then 
+-- --     --   v_return := v_return[ : ][ : v_return_heigh][ : v_return_width];
+-- --     -- elsif array_ndims(v_return) = 4
+-- --     -- then 
+-- --     --   v_return := v_return[ : ][ : ][ : v_return_heigh][ : v_return_width];
+-- --     -- end if;
+-- -- 
+-- --     -- add i_window_bias
+-- --     if i_window_bias is not null
+-- --     then 
+-- --       v_return := v_return +` i_window_bias;
+-- --     end if;
+-- --     
+-- --     return v_return;
+-- --     
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- 
+-- -- -- -- set search_path to sm_sc;
+-- -- -- with 
+-- -- -- cte_arr as 
+-- -- -- (
+-- -- --   select 
+-- -- --     sm_sc.fv_new_rand(array[9, 9]) as a_backgroud
+-- -- --   , sm_sc.fv_new_rand(array[3, 3]) as a_window
+-- -- -- )
+-- -- -- select 
+-- -- --   array_dims(a_window)
+-- -- -- , sm_sc.fv_opr_conv_2d_winograd_stride_1
+-- -- --   (
+-- -- --     a_backgroud
+-- -- --   , a_window
+-- -- --   )  :: decimal[] ~=` 3
+-- -- --   = 
+-- -- --   sm_sc.fv_conv_2d_v_im2col
+-- -- --   (
+-- -- --     a_backgroud
+-- -- --   , a_window
+-- -- --   ) :: decimal[] ~=` 3
+-- -- -- from cte_arr
+-- -- 
+-- -- -- with 
+-- -- -- cte_arr as 
+-- -- -- (
+-- -- --   select 
+-- -- --     sm_sc.fv_new_rand(array[10, 8]) as a_backgroud
+-- -- --   , sm_sc.fv_new_rand(array[3, 4]) as a_window
+-- -- -- )
+-- -- -- select 
+-- -- --   array_dims(a_window)
+-- -- -- , sm_sc.fv_opr_conv_2d_winograd_stride_1
+-- -- --   (
+-- -- --     a_backgroud
+-- -- --   , a_window
+-- -- --   )  :: decimal[] ~=` 3
+-- -- --   = 
+-- -- --   sm_sc.fv_conv_2d_v_im2col
+-- -- --   (
+-- -- --     a_backgroud
+-- -- --   , a_window
+-- -- --   ) :: decimal[] ~=` 3
+-- -- -- from cte_arr

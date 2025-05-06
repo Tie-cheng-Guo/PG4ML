@@ -1,0 +1,35 @@
+准备条件: 
+  首先安装 pg4ml 深度学习框架。
+
+一、如果从零开始，创建以及训练模型。如果要导入模型直接部署，略过该步，参考第二步。
+  1. 加工数据集为模型输入张量。
+       执行如下 sql 脚本: 
+         model\000000001_xor\01_create_model_train\02_import_to_buffer_table\01_import_dataset.sql
+  2. 创建模型的训练任务和神经网络结构: 
+       执行如下 sql 脚本: 
+         model\000000001_xor\01_create_model_train\03_create_train_nn_task\01_create_task.sql
+         model\000000001_xor\01_create_model_train\03_create_train_nn_task\02_create_nn.sql
+  3. 训练的准备。
+       在如下 sql 脚本中: 
+         model\000000001_xor\01_create_model_train\04_train\01_prepare.sql
+       谨慎调整 v_batch_amt: 小批量随机的每个分类的样本数量；
+       谨慎调整 i_limit_train_times: 本轮训练的目标次数；
+       执行该 sql 脚本的 part 1。如与上一轮训练的 v_batch_amt 相同，可不执行匿名 sql 程序块；
+  4. 执行训练。
+       在如下 sql 脚本中:
+         model\000000001_xor\01_create_model_train\04_train\02_exec_train.sql
+       谨慎调整 i_learn_rate: 初始学习率；
+       谨慎调整 i_loss_delta_least_stop_threshold: 损失函数阈值；
+       执行该 sql 脚本的 part 1；
+  5. 执行步骤 3 中 01_prepare.sql 脚本 part 2 和步骤 4，执行步骤 3 中 01_prepare.sql 脚本 part 3 和步骤 4，并观察训练时损失函数值变化，直至损失函数值足够小或达到预定训练次数，结束训练。
+
+三、执行模型预测任务
+  1. 预测请求响应
+       参考如下 sql 脚本，包含两个调用例子，其中一段 sql 是传入单独一条请求属性数据、另一段 sql 是传入多条请求属性数据: 
+       需要将上一步骤获得的 sess_id: 9527，填入 $_sess_id
+         model\000000001_xor\03_validation\02_predict.sql
+
+四、释放或卸载模型
+  1. 卸载模型
+       要彻底卸载模型的部署、训练任务和删除 mnist 数据集，选择性的执行如下 sql 脚本: 
+         \model\000000001_xor\04_clear\01_clear_deploy_train_dataset.sql

@@ -1,0 +1,80 @@
+-- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_aggr_x_coalesce(anyarray);
+-- -- create or replace function sm_sc.fv_aggr_x_coalesce
+-- -- (
+-- --   i_array          anyarray
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   -- 审计二维长度
+-- --   if array_ndims(i_array) = 2
+-- --   then
+-- --     return 
+-- --     (
+-- --       select 
+-- --         array_agg(array[sm_sc.fv_aggr_slice_coalesce(i_array[col_a_y : col_a_y][ : ])] order by col_a_y)
+-- --       from generate_series(1, array_length(i_array, 1)) tb_a_y(col_a_y)
+-- --     );
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_array);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_aggr_x_coalesce
+-- -- --   (
+-- -- --     array[array[1,2,null,4,5,6]
+-- -- --         , array[null,20,30,40,null,60]
+-- -- --         , array[100,null,300,400,500,null]
+-- -- --         , array[-1,null,-3,null,-5,-6]
+-- -- --         , array[-10,null,-30,null,null,-60]
+-- -- --          ]
+-- -- --   );
+-- -- 
+-- -- -- ------------------------------------------------------------------------------------------------------
+-- drop function if exists sm_sc.fv_aggr_x_coalesce(anyarray, int);
+-- -- create or replace function sm_sc.fv_aggr_x_coalesce
+-- -- (
+-- --   i_array          anyarray,
+-- --   i_cnt_per_grp    int
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   if array_length(i_array, 2) % i_cnt_per_grp <> 0 
+-- --     or i_cnt_per_grp <= 0
+-- --   then 
+-- --     raise exception 'imperfect length_2 of i_array of this cnt_per_grp';
+-- --   end if;
+-- --   
+-- --   return 
+-- --   (
+-- --     select 
+-- --       sm_sc.fa_mx_concat_x(sm_sc.fv_aggr_x_coalesce(i_array[ : ][a_cur : a_cur + i_cnt_per_grp - 1]) order by a_cur)
+-- --     from generate_series(1, array_length(i_array, 2), i_cnt_per_grp) tb_a_cur(a_cur)
+-- --   )
+-- --   ;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- select 
+-- -- --   sm_sc.fv_aggr_x_coalesce
+-- -- --   (
+-- -- --     array[[1,2,null,4,5,6]
+-- -- --          ,[null,20,30,40,null,60]
+-- -- --          ,[100,null,300,400,null,null]
+-- -- --          ,[-1,null,-3,null,-5,-6]
+-- -- --          ,[-10,null,-30,null,null,-60]]
+-- -- --     , 2
+-- -- --   )
+

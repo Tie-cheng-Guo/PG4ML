@@ -1,0 +1,104 @@
+-- drop function if exists sm_sc.fv_lambda_parallel_by_array_slice_1_opr(anyarray, varchar(64));
+-- -- 用于将大矩阵细粒度计算，按对半切片递归拆分。如果 pg 库内允许函数内多线程，那么可用于大矩阵计算的并行改造
+-- create or replace function sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+-- (
+--   i_arr     anyarray
+-- , i_lambda  varchar(64)
+-- )
+-- returns anyarray
+-- as 
+-- $$
+-- -- declare
+-- begin
+--   if cardinality(i_arr) > 65535
+--   then 
+--     if array_ndims(i_arr) <= 4
+--     then
+--       -- 切片第一维度
+--       if array_length(i_arr, 1) > 16
+--       then 
+--         return 
+--           sm_sc.fv_concat_y
+--           (
+--             sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : floor(array_length(i_arr, 1) / 2.0) :: int]
+--             , i_lambda
+--             )
+--           , sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ceil(array_length(i_arr, 1) / 2.0) :: int : ]
+--             , i_lambda
+--             )
+--           )
+--         ;
+--       -- 切片第二维度
+--       elsif array_length(i_arr, 2) > 16
+--       then 
+--         return 
+--           sm_sc.fv_concat_x
+--           (
+--             sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : ][ : floor(array_length(i_arr, 1) / 2.0) :: int]
+--             , i_lambda
+--             )
+--           , sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : ][ceil(array_length(i_arr, 1) / 2.0) :: int : ]
+--             , i_lambda
+--             )
+--           )
+--         ;
+--       -- 切片第三维度
+--       elsif array_length(i_arr, 3) > 16
+--       then 
+--         return 
+--           sm_sc.fv_concat_x3
+--           (
+--             sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : ][ : ][ : floor(array_length(i_arr, 1) / 2.0) :: int]
+--             , i_lambda
+--             )
+--           , sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : ][ : ][ceil(array_length(i_arr, 1) / 2.0) :: int : ]
+--             , i_lambda
+--             )
+--           )
+--         ;
+--       -- 切片第四维度
+--       elsif array_length(i_arr, 4) > 16
+--       then 
+--         return 
+--           sm_sc.fv_concat_x4
+--           (
+--             sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : ][ : ][ : ][ : floor(array_length(i_arr, 1) / 2.0) :: int]
+--             , i_lambda
+--             )
+--           , sm_sc.fv_lambda_parallel_by_array_slice_1_opr
+--             (
+--               i_arr[ : ][ : ][ : ][ceil(array_length(i_arr, 1) / 2.0) :: int : ]
+--             , i_lambda
+--             )
+--           )
+--         ;
+--       else
+--         return 
+--           sm_sc.fv_lambda(i_arr, i_lambda)
+--         ;
+--       end if;
+--     else 
+--       return 
+--         sm_sc.fv_lambda(i_arr, i_lambda)
+--       ;
+--     end if;
+--   end if;
+-- end
+-- $$
+-- language plpgsql stable
+-- parallel safe
+-- cost 100;

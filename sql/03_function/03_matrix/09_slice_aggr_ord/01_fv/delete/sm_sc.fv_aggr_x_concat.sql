@@ -1,0 +1,80 @@
+-- set search_path to sm_sc;
+-- drop function if exists sm_sc.fv_aggr_x_concat(anyarray);
+-- -- create or replace function sm_sc.fv_aggr_x_concat
+-- -- (
+-- --   i_array          anyarray
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   -- 审计二维长度
+-- --   if array_ndims(i_array) = 2
+-- --   then
+-- --     return 
+-- --     (
+-- --       select 
+-- --         array_agg(array[sm_sc.fv_aggr_slice_concat(i_array[col_a_y : col_a_y][ : ])] order by col_a_y)
+-- --       from generate_series(1, array_length(i_array, 1)) tb_a_y(col_a_y)
+-- --     );
+-- --   else
+-- --     raise exception 'no method for such length!  Dims: %;', array_dims(i_array);
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_aggr_x_concat
+-- -- --   (
+-- -- --     array[array['afwe', 'bbrg', 'ccc']
+-- -- --         , array['a2gg', 'b2ykjk', 'c2gfh']
+-- -- --         , array['a3hj', 'b3jy', 'c3jm']
+-- -- --         , array['a4 nnf', 'b4nn', 'c4t']
+-- -- --         , array['a6grrg', 'b6hn', 'c6k']
+-- -- --          ]
+-- -- --   );
+-- -- 
+-- -- -- ------------------------------------------------------------------------------------------------------
+-- drop function if exists sm_sc.fv_aggr_x_concat(anyarray, int);
+-- -- create or replace function sm_sc.fv_aggr_x_concat
+-- -- (
+-- --   i_array          anyarray,
+-- --   i_cnt_per_grp    int
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   if array_length(i_array, 2) % i_cnt_per_grp <> 0 
+-- --     or i_cnt_per_grp <= 0
+-- --   then 
+-- --     raise exception 'imperfect length_2 of i_array of this cnt_per_grp';
+-- --   end if;
+-- --   
+-- --   return 
+-- --   (
+-- --     select 
+-- --       sm_sc.fa_mx_concat_x(sm_sc.fv_aggr_x_concat(i_array[ : ][a_cur : a_cur + i_cnt_per_grp - 1]) order by a_cur)
+-- --     from generate_series(1, array_length(i_array, 2), i_cnt_per_grp) tb_a_cur(a_cur)
+-- --   )
+-- --   ;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- select 
+-- -- --   sm_sc.fv_aggr_x_concat
+-- -- --   (
+-- -- --     array[['afwe', 'bbrg', 'ccc', 'afwe', 'bbrg', 'ccc']
+-- -- --          ,['a2gg', 'b2ykjk', 'c2gfh', 'a2gg', 'b2ykjk', 'c2gfh']
+-- -- --          ,['a3hj', 'b3jy', 'c3jm', 'a3hj', 'b3jy', 'c3jm']
+-- -- --          ,['a4 nnf', 'b4nn', 'c4t', 'a4 nnf', 'b4nn', 'c4t']
+-- -- --          ,['a6grrg', 'b6hn', 'c6k', 'a6grrg', 'b6hn', 'c6k']
+-- -- --          ]
+-- -- --     , 2
+-- -- --   )

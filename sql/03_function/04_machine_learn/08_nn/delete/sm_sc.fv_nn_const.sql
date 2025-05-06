@@ -1,0 +1,16 @@
+-- drop function if exists sm_sc.fv_nn_const(anyarray);
+-- -- create or replace function sm_sc.fv_nn_const
+-- -- (
+-- --   i_const_from_node_depdt_vals    anyarray
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- -- declare 
+-- -- begin
+-- --   return i_const_from_node_depdt_vals;
+-- -- end
+-- -- $$
+-- -- language plpgsql volatile
+-- -- parallel safe
+-- -- cost 100;

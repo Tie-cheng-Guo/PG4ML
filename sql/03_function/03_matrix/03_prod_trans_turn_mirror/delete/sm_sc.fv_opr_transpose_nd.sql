@@ -1,0 +1,304 @@
+-- drop function if exists sm_sc.fv_opr_transpose_nd(anyarray, int[]);
+-- -- create or replace function sm_sc.fv_opr_transpose_nd
+-- -- (
+-- --   i_array_nd      anyarray      ,
+-- --   i_dims          int[]
+-- -- )
+-- -- returns anyarray
+-- -- as
+-- -- $$
+-- -- declare
+-- --   v_ret     i_array_nd%type;
+-- --   v_cur_1   int   ;
+-- --   v_cur_2   int   ;
+-- -- begin
+-- --   if array_ndims(i_array_nd) not in (2, 3, 4)
+-- --   then 
+-- --     raise exception 'ndims of i_array_nd should be 2, 3 or 4.';
+-- --   end if;
+-- --   
+-- --   if pg_typeof(i_array_nd) = ('double precision[]' :: regtype)
+-- --   then 
+-- --     return sm_sc.fv_opr_transpose_nd_py(i_array_nd, i_dims);
+-- --   end if;
+-- --   
+-- --   if array_ndims(i_dims) <> 1
+-- --     or sm_sc.fv_ord_by_row(array[i_dims], 1) <> (select array_agg(a_no order by a_no) from generate_series(1, array_ndims(i_array_nd)) tb_a(a_no))
+-- --   then 
+-- --     raise exception 'illegal i_dims';
+-- --   end if;
+-- --  
+-- --   if array_ndims(i_array_nd) = 2
+-- --   then 
+-- --     if i_dims = array[2, 1]
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 2), array_length(i_array_nd, 1)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 2)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 1)
+-- --         loop 
+-- --           v_ret[v_cur_1 : v_cur_1][v_cur_2 : v_cur_2] := i_array_nd[v_cur_2 : v_cur_2][v_cur_1 : v_cur_1];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --     elsif i_dims = array[1, 2]
+-- --       return i_array_nd;
+-- --     end if;
+-- --     
+-- --   elsif array_ndims(i_array_nd) = 3
+-- --   then
+-- --     if i_dims = array[2, 1, 3] -- in (array[1, 2], array[2, 1])
+-- --     then 
+-- --       -- -- return 
+-- --       -- -- (
+-- --       -- --   with 
+-- --       -- --   cte_slice_x as 
+-- --       -- --   (
+-- --       -- --     select 
+-- --       -- --       a_cur_z,
+-- --       -- --       a_cur_y,
+-- --       -- --       array_agg(i_array_nd[a_cur_z][a_cur_y][a_cur_x] order by a_cur_x) as a_slice_x
+-- --       -- --     from generate_series(1, array_length(i_array_nd, 1)) tb_a_cur_z(a_cur_z)
+-- --       -- --       , generate_series(1, array_length(i_array_nd, 2)) tb_a_cur_y(a_cur_y)
+-- --       -- --       , generate_series(1, array_length(i_array_nd, 3)) tb_a_cur_x(a_cur_x)
+-- --       -- --     group by a_cur_z, a_cur_y
+-- --       -- --   ),
+-- --       -- --   cte_slice_z_x as 
+-- --       -- --   (
+-- --       -- --     select 
+-- --       -- --       a_cur_y, 
+-- --       -- --       array_agg(a_slice_x order by a_cur_z) as a_slice_z_x
+-- --       -- --     from cte_slice_x
+-- --       -- --     group by a_cur_y
+-- --       -- --   )
+-- --       -- --   select 
+-- --       -- --     array_agg(a_slice_z_x order by a_cur_y)
+-- --       -- --   from cte_slice_z_x
+-- --       -- -- );
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 2), array_length(i_array_nd, 1), array_length(i_array_nd, 3)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 2)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 1)
+-- --         loop 
+-- --           v_ret[v_cur_1 : v_cur_1][v_cur_2 : v_cur_2][ : ] := i_array_nd[v_cur_2 : v_cur_2][v_cur_1 : v_cur_1][ : ];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --       
+-- --     elsif i_dims = array[3, 2, 1] -- in (array[1, 3], array[3, 1])
+-- --     then 
+-- --       -- -- return 
+-- --       -- -- (
+-- --       -- --   with 
+-- --       -- --   cte_slice_z as 
+-- --       -- --   (
+-- --       -- --     select 
+-- --       -- --       a_cur_x,
+-- --       -- --       a_cur_y,
+-- --       -- --       array_agg(i_array_nd[a_cur_z][a_cur_y][a_cur_x] order by a_cur_z) as a_slice_z
+-- --       -- --     from generate_series(1, array_length(i_array_nd, 1)) tb_a_cur_z(a_cur_z)
+-- --       -- --       , generate_series(1, array_length(i_array_nd, 2)) tb_a_cur_y(a_cur_y)
+-- --       -- --       , generate_series(1, array_length(i_array_nd, 3)) tb_a_cur_x(a_cur_x)
+-- --       -- --     group by a_cur_x, a_cur_y
+-- --       -- --   ),
+-- --       -- --   cte_slice_y_x as 
+-- --       -- --   (
+-- --       -- --     select 
+-- --       -- --       a_cur_x, 
+-- --       -- --       array_agg(a_slice_z order by a_cur_y) as a_slice_y_z
+-- --       -- --     from cte_slice_z
+-- --       -- --     group by a_cur_x
+-- --       -- --   )
+-- --       -- --   select 
+-- --       -- --     array_agg(a_slice_y_z order by a_cur_x)
+-- --       -- --   from cte_slice_y_x
+-- --       -- -- );
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 3), array_length(i_array_nd, 2), array_length(i_array_nd, 1)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 3)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 1)
+-- --         loop 
+-- --           v_ret[v_cur_1 : v_cur_1][ : ][v_cur_2 : v_cur_2] := i_array_nd[v_cur_2 : v_cur_2][ : ][v_cur_1 : v_cur_1];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --       
+-- --     elsif i_dims = array[1, 3, 2]  -- in (array[2, 3], array[3, 2])
+-- --     then 
+-- --       -- -- return 
+-- --       -- -- (
+-- --       -- --   with 
+-- --       -- --   cte_slice_y as 
+-- --       -- --   (
+-- --       -- --     select 
+-- --       -- --       a_cur_z,
+-- --       -- --       a_cur_x,
+-- --       -- --       array_agg(i_array_nd[a_cur_z][a_cur_y][a_cur_x] order by a_cur_y) as a_slice_y
+-- --       -- --     from generate_series(1, array_length(i_array_nd, 1)) tb_a_cur_z(a_cur_z)
+-- --       -- --       , generate_series(1, array_length(i_array_nd, 2)) tb_a_cur_y(a_cur_y)
+-- --       -- --       , generate_series(1, array_length(i_array_nd, 3)) tb_a_cur_x(a_cur_x)
+-- --       -- --     group by a_cur_z, a_cur_x
+-- --       -- --   ),
+-- --       -- --   cte_slice_x_y as 
+-- --       -- --   (
+-- --       -- --     select 
+-- --       -- --       a_cur_z, 
+-- --       -- --       array_agg(a_slice_y order by a_cur_x) as a_slice_x_y
+-- --       -- --     from cte_slice_y
+-- --       -- --     group by a_cur_z
+-- --       -- --   )
+-- --       -- --   select 
+-- --       -- --     array_agg(a_slice_x_y order by a_cur_z)
+-- --       -- --   from cte_slice_x_y
+-- --       -- -- );
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 1), array_length(i_array_nd, 3), array_length(i_array_nd, 2)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 3)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 2)
+-- --         loop 
+-- --           v_ret[ : ][v_cur_1 : v_cur_1][v_cur_2 : v_cur_2] := i_array_nd[ : ][v_cur_2 : v_cur_2][v_cur_1 : v_cur_1];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --       
+-- --     elsif i_dims = array[1, 2, 3]
+-- --     then 
+-- --       return i_array_nd;
+-- --     end if;
+-- --     
+-- --   elsif array_ndims(i_array_nd) = 4
+-- --   then 
+-- --     if i_dims = array[2, 1, 3, 4] -- in (array[1, 2], array[2, 1])
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 2), array_length(i_array_nd, 1), array_length(i_array_nd, 3), array_length(i_array_nd, 4)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 2)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 1)
+-- --         loop 
+-- --           v_ret[v_cur_1 : v_cur_1][v_cur_2 : v_cur_2][ : ][ : ] := i_array_nd[v_cur_2 : v_cur_2][v_cur_1 : v_cur_1][ : ][ : ];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --     elsif i_dims = array[3, 2, 1, 4] -- in (array[1, 3], array[3, 1])
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 3), array_length(i_array_nd, 2), array_length(i_array_nd, 1), array_length(i_array_nd, 4)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 3)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 1)
+-- --         loop 
+-- --           v_ret[v_cur_1 : v_cur_1][ : ][v_cur_2 : v_cur_2][ : ] := i_array_nd[v_cur_2 : v_cur_2][ : ][v_cur_1 : v_cur_1][ : ];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --     elsif i_dims = array[4, 2, 3, 1] -- in (array[1, 4], array[4, 1])
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 4), array_length(i_array_nd, 2), array_length(i_array_nd, 3), array_length(i_array_nd, 1)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 4)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 1)
+-- --         loop 
+-- --           v_ret[v_cur_1 : v_cur_1][ : ][ : ][v_cur_2 : v_cur_2] := i_array_nd[v_cur_2 : v_cur_2][ : ][ : ][v_cur_1 : v_cur_1];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --     elsif i_dims = array[1, 3, 2, 4] -- in (array[2, 3], array[3, 2])
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 1), array_length(i_array_nd, 3), array_length(i_array_nd, 2), array_length(i_array_nd, 4)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 3)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 2)
+-- --         loop 
+-- --           v_ret[ : ][v_cur_1 : v_cur_1][v_cur_2 : v_cur_2][ : ] := i_array_nd[ : ][v_cur_2 : v_cur_2][v_cur_1 : v_cur_1][ : ];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --     elsif i_dims = array[1, 4, 3, 2] -- in (array[2, 4], array[4, 2])
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 1), array_length(i_array_nd, 4), array_length(i_array_nd, 3), array_length(i_array_nd, 2)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 4)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 2)
+-- --         loop 
+-- --           v_ret[ : ][v_cur_1 : v_cur_1][ : ][v_cur_2 : v_cur_2] := i_array_nd[ : ][v_cur_2 : v_cur_2][ : ][v_cur_1 : v_cur_1];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --     elsif i_dims = array[1, 2, 4, 3] -- in (array[3, 4], array[4, 3])
+-- --     then 
+-- --       v_ret := array_fill(nullif(i_array_nd[0], i_array_nd[0]), array[array_length(i_array_nd, 1), array_length(i_array_nd, 2), array_length(i_array_nd, 4), array_length(i_array_nd, 3)]);
+-- --       for v_cur_1 in 1 .. array_length(i_array_nd, 4)
+-- --       loop 
+-- --         for v_cur_2 in 1 .. array_length(i_array_nd, 3)
+-- --         loop 
+-- --           v_ret[ : ][ : ][v_cur_1 : v_cur_1][v_cur_2 : v_cur_2] := i_array_nd[ : ][ : ][v_cur_2 : v_cur_2][v_cur_1 : v_cur_1];
+-- --         end loop;
+-- --       end loop;
+-- --       return v_ret;
+-- --       
+-- --     elsif i_dims = array[1, 2, 3, 4]
+-- --     then 
+-- --       return i_array_nd;
+-- --     end if;
+-- --   end if;
+-- -- end
+-- -- $$
+-- -- language plpgsql stable
+-- -- parallel safe
+-- -- cost 100;
+-- -- -- -- set search_path to sm_sc;
+-- -- -- select sm_sc.fv_opr_transpose_nd
+-- -- --   (
+-- -- --     array
+-- -- --     [
+-- -- --       [
+-- -- --         [1, 2, 3, 4],
+-- -- --         [5, 6, 7, 8],
+-- -- --         [9, 10, 11, 12]
+-- -- --       ],
+-- -- --       [
+-- -- --         [21, 22, 23, 24],
+-- -- --         [25, 26, 27, 28],
+-- -- --         [29, 30, 31, 32]
+-- -- --       ]
+-- -- --     ]
+-- -- --     , array[2, 1]  -- array[1, 2]
+-- -- --   );
+-- -- -- select sm_sc.fv_opr_transpose_nd
+-- -- --   (
+-- -- --     array
+-- -- --     [
+-- -- --       [
+-- -- --         [1, 2, 3, 4],
+-- -- --         [5, 6, 7, 8],
+-- -- --         [9, 10, 11, 12]
+-- -- --       ],
+-- -- --       [
+-- -- --         [21, 22, 23, 24],
+-- -- --         [25, 26, 27, 28],
+-- -- --         [29, 30, 31, 32]
+-- -- --       ]
+-- -- --     ]
+-- -- --     , array[1, 3, 2]   -- array[1, 2, 3]  -- array[2, 3, 1]  -- array[2, 1, 3]
+-- -- --   );
+-- -- -- select sm_sc.fv_opr_transpose_nd
+-- -- --   (
+-- -- --     array
+-- -- --     [
+-- -- --       [
+-- -- --         [1, 2, 3, 4],
+-- -- --         [5, 6, 7, 8],
+-- -- --         [9, 10, 11, 12]
+-- -- --       ],
+-- -- --       [
+-- -- --         [21, 22, 23, 24],
+-- -- --         [25, 26, 27, 28],
+-- -- --         [29, 30, 31, 32]
+-- -- --       ]
+-- -- --     ]
+-- -- --     , array[2, 3, 1]
+-- -- --   );
+-- -- -- select sm_sc.fv_opr_transpose_nd
+-- -- --   (
+-- -- --     sm_sc.fv_new_rand(array[2,3,4,5])
+-- -- --   , array[1,2]
+-- -- --   );

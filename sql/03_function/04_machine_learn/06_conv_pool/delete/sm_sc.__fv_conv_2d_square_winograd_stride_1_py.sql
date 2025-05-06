@@ -1,0 +1,161 @@
+-- py 版本的矩阵乘法
+-- -- 需要安装 plpython3u
+--   dnf -y install postgresql13-plpython3.x86_64
+-- --   dnf -y install postgresql13-pltcl.x86_64
+--   pip3 install numpy --timeout=100 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+
+-- -- 需要安装扩展
+--   create extension plpython3u;
+-- --   create extension pltclu;  -- or pltcl
+
+-- drop function if exists sm_sc.__fv_conv_2d_square_winograd_stride_1_py(float[], float[]);
+-- -- -- i_background 较大时，结果矩阵左上角部分数据对不上，尚未定位到原因，也许是多项式插值有问题，也许是 padding 有问题，也许是切块儿截取问题，也许也有误差因素。
+-- -- -- https://freshmou.github.io/2018/05/winograd/
+-- -- create or replace function sm_sc.__fv_conv_2d_square_winograd_stride_1_py
+-- -- (
+-- --   i_background         float[]                                      -- 背景矩阵，可以为三维四维，背景以最高两个维度当作滑动高宽。winograd 要求为方阵
+-- -- , i_window_no_mirror   float[]                                      -- 卷积核窗口矩阵，限二维窗口。winograd 要求为方阵
+-- -- )
+-- -- returns float[]
+-- -- as
+-- -- $$
+-- --   import numpy as np
+-- --   from sympy import symbols, Matrix, Poly, zeros, eye, Indexed, simplify, IndexedBase, init_printing, pprint
+-- --   from operator import mul
+-- --   from functools import reduce
+-- --   # from scipy import signal
+-- --   
+-- --   v_background      = np.float64(i_background)     
+-- --   v_window_no_mirror          = np.float64(i_window_no_mirror)           
+-- --   
+-- --   # brodcast window dims align
+-- --   if v_window_no_mirror.ndim == v_background.ndim - 1 :
+-- --     v_window_no_mirror = np.repeat(v_window_no_mirror[np.newaxis, : ], v_background.shape[0], axis = 0)
+-- --   elif v_window_no_mirror.ndim == v_background.ndim - 2 :
+-- --     v_window_no_mirror = np.repeat( \
+-- --     np.repeat(v_window_no_mirror[np.newaxis , np.newaxis, :], v_background.shape[1], axis = 1) \
+-- --     , v_background.shape[0], axis = 0)
+-- --   
+-- --   # winograd  refer https://github.com/andravin/wincnn
+-- --   def At(a,m,n):
+-- --     return Matrix(m, n, lambda i,j: a[i]**j)
+-- --   def A(a,m,n):
+-- --     return At(a, m-1, n).row_insert(m-1, Matrix(1, n, lambda i,j: 1 if j==n-1 else 0))
+-- --   def T(a,n):
+-- --     return Matrix(Matrix.eye(n).col_insert(n, Matrix(n, 1, lambda i,j: -a[i]**n)))
+-- --   def Lx(a,n):
+-- --     x=symbols('x')
+-- --     return Matrix(n, 1, lambda i,j: Poly((reduce(mul, ((x-a[k] if k!=i else 1) for k in range(0,n)), 1)).expand(basic=True), x))
+-- --   def F(a,n):
+-- --     return Matrix(n, 1, lambda i,j: reduce(mul, ((a[i]-a[k] if k!=i else 1) for k in range(0,n)), 1))
+-- --   def Fdiag(a,n):
+-- --     f=F(a,n)
+-- --     return Matrix(n, n, lambda i,j: (f[i,0] if i==j else 0))
+-- --   def FdiagPlus1(a,n):
+-- --     f = Fdiag(a,n-1)
+-- --     f = f.col_insert(n-1, zeros(n-1,1))
+-- --     f = f.row_insert(n-1, Matrix(1,n, lambda i,j: (1 if j==n-1 else 0)))
+-- --     return f
+-- --   def L(a,n):
+-- --     lx = Lx(a,n)
+-- --     f = F(a, n)
+-- --     return Matrix(n, n, lambda i,j: lx[i, 0].nth(j)/f[i]).T
+-- --   def Bt(a,n):
+-- --     return L(a,n)*T(a,n)
+-- --   def B(a,n):
+-- --     return Bt(a,n-1).row_insert(n-1, Matrix(1, n, lambda i,j: 1 if j==n-1 else 0))
+-- --   FractionsInG=0
+-- --   FractionsInA=1
+-- --   FractionsInB=2
+-- --   FractionsInF=3
+-- --   def cookToomFilter(a,n,r,fractionsIn=FractionsInG):
+-- --     alpha = n+r-1
+-- --     f = FdiagPlus1(a,alpha)
+-- --     if f[0,0] < 0:
+-- --       f[0,:] *= -1
+-- --     if fractionsIn == FractionsInG:
+-- --       AT = A(a,alpha,n).T
+-- --       G = (A(a,alpha,r).T*f**(-1)).T
+-- --       BT = f * B(a,alpha).T
+-- --     elif fractionsIn == FractionsInA:
+-- --       BT = f * B(a,alpha).T
+-- --       G = A(a,alpha,r)
+-- --       AT = (A(a,alpha,n)).T*f**(-1)
+-- --     elif fractionsIn == FractionsInB:
+-- --       AT = A(a,alpha,n).T
+-- --       G = A(a,alpha,r)
+-- --       BT = B(a,alpha).T
+-- --     else:
+-- --       AT = A(a,alpha,n).T
+-- --       G = A(a,alpha,r)
+-- --       BT = f * B(a,alpha).T
+-- --     return (AT,G,BT,f)
+-- --   def filterVerify(n, r, AT, G, BT):
+-- --     alpha = n+r-1
+-- --     di = IndexedBase('d')
+-- --     gi = IndexedBase('g')
+-- --     d = Matrix(alpha, 1, lambda i,j: di[i])
+-- --     g = Matrix(r, 1, lambda i,j: gi[i])
+-- --     V = BT*d
+-- --     U = G*g
+-- --     M = U.multiply_elementwise(V)
+-- --     Y = simplify(AT*M)
+-- --     return Y
+-- --   def convolutionVerify(n, r, B, G, A):
+-- --     di = IndexedBase('d')
+-- --     gi = IndexedBase('g')
+-- --     d = Matrix(n, 1, lambda i,j: di[i])
+-- --     g = Matrix(r, 1, lambda i,j: gi[i])
+-- --     V = A*d
+-- --     U = G*g
+-- --     M = U.multiply_elementwise(V)
+-- --     Y = simplify(B*M)
+-- --     return Y
+-- -- 
+-- --   v_at,v_g,v_bt,v_f = cookToomFilter(np.random.normal(0.0, 1.0, size=[v_background.shape[-1] + v_window_no_mirror.shape[-1] - 2]) \
+-- --                                      , v_background.shape[-1] - (v_window_no_mirror.shape[-1] - 1), v_window_no_mirror.shape[-1])
+-- --   v_b = v_bt.transpose()
+-- --   v_a = v_at.transpose()
+-- --   v_gt = v_g.transpose()
+-- -- 
+-- --   v_g_wx_gt = np.matmul(np.matmul(v_g, v_window_no_mirror), v_gt)
+-- --   v_bt_backg_b = np.matmul(np.matmul(v_bt, v_background), v_b)
+-- --   v_g_wx_gt_bt_backg_b = v_g_wx_gt * v_bt_backg_b
+-- --   v_return = np.matmul(np.matmul(v_at, v_g_wx_gt_bt_backg_b), v_a)
+-- --   
+-- --   return v_return.tolist()
+-- -- $$
+-- -- language plpython3u stable
+-- -- parallel safe
+-- -- ;
+-- -- 
+-- -- -- select sm_sc.__fv_conv_2d_square_winograd_stride_1_py
+-- -- --   (
+-- -- --     array[[1,2,3,4,5]
+-- -- --         , [10,20,30,40,50]
+-- -- --         , [100,200,300,400,500]
+-- -- --         , [-1,-2,-3,-4,-5]
+-- -- --         , [-10,-20,-30,-40,-50]
+-- -- --          ]
+-- -- --    , array[[1.1, 1.1, 1.1], [1.1, 2.1, 1.1], [1.1, 1.1, 1.1]]
+-- -- --   ) :: decimal[] ~=` 3;
+-- -- -- 
+-- -- 
+-- -- -- with 
+-- -- -- cte_arr as 
+-- -- -- (
+-- -- --   select 
+-- -- --     sm_sc.fv_new_rand(array[9, 9]) as a_backgroud
+-- -- --   , sm_sc.fv_new_rand(array[a_no, a_no]) as a_window
+-- -- --   from generate_series(1, 9) tb_a(a_no)
+-- -- -- )
+-- -- -- select 
+-- -- --   array_dims(a_window)
+-- -- -- , sm_sc.__fv_conv_2d_square_winograd_stride_1_py
+-- -- --   (
+-- -- --     a_backgroud
+-- -- --   , |~~| a_window
+-- -- --   )  :: decimal[] ~=` 3
+-- -- --   = 
+-- -- --   (a_backgroud **| a_window) :: decimal[] ~=` 3
+-- -- -- from cte_arr
